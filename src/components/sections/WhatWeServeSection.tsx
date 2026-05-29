@@ -165,10 +165,10 @@ export default function WhatWeServeSection() {
       {/* Premium Infinite Autoplay & Draggable Swiper Carousel for ALL Viewports */}
       <div className="overflow-hidden w-full relative z-10 py-4" data-lenis-prevent>
         {/* Left Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 bg-linear-to-r from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 sm:bg-linear-to-r from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
         
         {/* Right Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 bg-linear-to-l from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 sm:bg-linear-to-l from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
 
         <Swiper
           modules={[Autoplay, FreeMode]}
