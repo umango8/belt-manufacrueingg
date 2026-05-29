@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -95,6 +96,8 @@ const SERVICES: ServiceItem[] = [
 const DOUBLE_SERVICES = [...SERVICES, ...SERVICES];
 
 export default function WhatWeServeSection() {
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
+
   return (
     <section id="services" className="section-padding bg-[#0A0E1A] relative overflow-hidden">
       {/* Hardware-Accelerated Continuous Linear Easing Override */}
@@ -165,10 +168,10 @@ export default function WhatWeServeSection() {
       {/* Premium Infinite Autoplay & Draggable Swiper Carousel for ALL Viewports */}
       <div className="overflow-hidden w-full relative z-10 py-4" data-lenis-prevent>
         {/* Left Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 sm:bg-linear-to-r from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 bg-linear-to-r from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
         
         {/* Right Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 sm:bg-linear-to-l from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 bg-linear-to-l from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
 
         <Swiper
           modules={[Autoplay, FreeMode]}
@@ -187,13 +190,6 @@ export default function WhatWeServeSection() {
             pauseOnMouseEnter: false,
           }}
           speed={4500}
-          breakpoints={{
-            1024: {
-              allowTouchMove: false,
-              grabCursor: false,
-              simulateTouch: false,
-            }
-          }}
           className="w-full px-6! md:px-12! serve-swiper"
         >
           {SERVICES.map((service) => {
@@ -206,7 +202,7 @@ export default function WhatWeServeSection() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover  transition-transform duration-600 ease-in-out"
+                      className="object-cover transition-transform duration-700 ease-in-out"
                       sizes="310px"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-[#0A0E1A]/40 via-[#0A0E1A]/60 to-[#0A0E1A]/20 group-hover:via-[#0A0E1A]/75 transition-all duration-700 ease-in-out" />
@@ -225,7 +221,6 @@ export default function WhatWeServeSection() {
                   {/* Bottom Content Area with Slide Up Reveal Panel */}
                   <div className="relative w-full h-full flex flex-col justify-end overflow-hidden pt-6 md:pt-10 lg:pt-12 z-10">
                     <div className="translate-y-0 lg:translate-y-[194px] lg:group-hover:translate-y-0 transition-transform duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-end">
-                      
                       {/* Title */}
                       <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-left transition-colors duration-300 group-hover:text-accent">
                         {service.title}
