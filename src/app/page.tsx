@@ -10,6 +10,7 @@ import ProcessSection from "@/components/sections/ProcessSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import CTASection from "@/components/sections/CTASection";
 import ReviewsSection from "@/components/sections/ReviewsSection";
+import WhatWeServe from "@/components/sections/WhatServe";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
         <HeroSection />
         <StatsSection />
         <AboutSection />
-        <WhatWeServeSection />
+        {/* <WhatWeServeSection /> */}
+        <WhatWeServe/>
         <ProductsSection />
         {/* <IndustriesSection /> */}
         <ProcessSection />
