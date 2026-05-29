@@ -106,7 +106,7 @@ export default function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-white/70 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.04)] border-b border-black/[0.05]"
+            ? "bg-white/70 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.04)] border-b border-black/5"
             : "bg-transparent border-b border-transparent"
         }`}
       >
@@ -177,7 +177,7 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] lg:hidden"
+            className="fixed inset-0 z-100 lg:hidden"
           >
             <div className="absolute inset-0 bg-dark/40 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
             <motion.nav

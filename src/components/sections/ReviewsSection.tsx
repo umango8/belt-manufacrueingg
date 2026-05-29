@@ -81,8 +81,8 @@ export default function ReviewsSection() {
             {/* Viewport Frame with Left & Right Vignette Masks */}
             <div className="relative overflow-hidden py-4 w-full rounded-2xl">
               {/* Soft Gradient Vignette Overlays */}
-              <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-white via-white/40 to-transparent pointer-events-none z-20" />
-              <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-white via-white/40 to-transparent pointer-events-none z-20" />
+              <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-linear-to-r from-white via-white/40 to-transparent pointer-events-none z-20" />
+              <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-linear-to-l from-white via-white/40 to-transparent pointer-events-none z-20" />
 
               <Swiper
                 onSwiper={setSwiper}
@@ -144,7 +144,7 @@ export default function ReviewsSection() {
                         </div>
 
                         {/* Main Quote Content */}
-                        <p className="text-xs sm:text-[13px] font-medium text-title/90 leading-relaxed text-left italic z-10 mt-3 flex-grow">
+                        <p className="text-xs sm:text-[13px] font-medium text-title/90 leading-relaxed text-left italic z-10 mt-3 grow">
                           &ldquo;{testimonial.quote}&rdquo;
                         </p>
 

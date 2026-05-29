@@ -97,32 +97,21 @@ const DOUBLE_SERVICES = [...SERVICES, ...SERVICES];
 export default function WhatWeServeSection() {
   return (
     <section id="services" className="section-padding bg-[#0A0E1A] relative overflow-hidden">
-      {/* Hardware-Accelerated Marquee Stylesheet Injection */}
+      {/* Hardware-Accelerated Continuous Linear Easing Override */}
       <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes marquee {
-          0% {
-            transform: translate3d(0, 0, 0);
-          }
-          100% {
-            transform: translate3d(-2004px, 0, 0);
-          }
-        }
-        .animate-marquee-custom {
-          animation: marquee 35s linear infinite;
-        }
-        .parent-hover-pause:hover .animate-marquee-custom {
-          animation-play-state: paused;
+        .serve-swiper .swiper-wrapper {
+          transition-timing-function: linear !important;
         }
       `}} />
 
       {/* Huge Background Vector Watermark Text (Double Watermark) */}
       <div className="absolute inset-x-0 bottom-0 flex justify-center overflow-hidden pointer-events-none select-none z-0">
-        <span className="text-[14vw] font-black text-accent/4 tracking-[0.10em] leading-none uppercase lg:translate-y-[28%] md:translate-y-[15%] translate-y-[10%] select-none">
+        <span className="text-[14vw] font-black text-accent/4 tracking-widest leading-none uppercase lg:translate-y-[28%] md:translate-y-[15%] translate-y-[10%] select-none">
           BELTFORGE
         </span>
       </div>
       <div className="absolute inset-x-0 top-0 flex justify-center overflow-visible pointer-events-none select-none z-0">
-        <span className="text-[14vw] font-black text-white/4 tracking-[0.10em] leading-none uppercase lg:translate-y-[-25%] md:translate-y-[-15%] translate-y-[-10%] select-none">
+        <span className="text-[14vw] font-black text-white/4 tracking-widest leading-none uppercase lg:translate-y-[-25%] md:translate-y-[-15%] translate-y-[-10%] select-none">
           BELTFORGE
         </span>
       </div>
@@ -176,42 +165,51 @@ export default function WhatWeServeSection() {
       {/* Premium Infinite Autoplay & Draggable Swiper Carousel for ALL Viewports */}
       <div className="overflow-hidden w-full relative z-10 py-4" data-lenis-prevent>
         {/* Left Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-r from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 bg-linear-to-r from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
         
         {/* Right Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-l from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 bg-linear-to-l from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
 
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, FreeMode]}
           slidesPerView="auto"
           spaceBetween={24}
           loop={true}
+          freeMode={true}
           grabCursor={true}
           allowTouchMove={true}
           touchEventsTarget="container"
           threshold={1}
           watchSlidesProgress={true}
           autoplay={{
-            delay: 3000,
+            delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true,
+            pauseOnMouseEnter: false,
           }}
-          className="w-full !px-6 md:!px-12"
+          speed={4500}
+          breakpoints={{
+            1024: {
+              allowTouchMove: false,
+              grabCursor: false,
+              simulateTouch: false,
+            }
+          }}
+          className="w-full px-6! md:px-12! serve-swiper"
         >
           {SERVICES.map((service) => {
             return (
               <SwiperSlide key={service.id} style={{ width: "310px" }} className="py-2">
-                <div className="group relative overflow-hidden lg:rounded-3xl md:rounded-xl rounded-lg h-[440px] w-[310px] shrink-0 p-8 flex flex-col justify-between border border-white/5 transition-shadow duration-500 shadow-lg shadow-black/30 cursor-grab active:cursor-grabbing">
+                <div className="group relative overflow-hidden lg:rounded-3xl md:rounded-xl rounded-lg h-[440px] w-[310px] shrink-0 p-8 flex flex-col justify-between border border-white/5 transition-shadow duration-500 shadow-lg shadow-black/30 cursor-pointer lg:cursor-pointer md:cursor-grab md:active:cursor-grabbing">
                   {/* Background Image & Premium Dark Overlay */}
-                  <div className="absolute inset-0 z-0 transition-transform duration-700 ease-in-out">
+                  <div className="absolute inset-0 z-0 transition-transform duration-600 ease-in-out">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover group-hover:scale-108 transition-transform duration-700 ease-in-out"
+                      className="object-cover  transition-transform duration-600 ease-in-out"
                       sizes="310px"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A]/40 via-[#0A0E1A]/60 to-[#0A0E1A]/20 group-hover:via-[#0A0E1A]/75 transition-all duration-700 ease-in-out" />
+                    <div className="absolute inset-0 bg-linear-to-t from-[#0A0E1A]/40 via-[#0A0E1A]/60 to-[#0A0E1A]/20 group-hover:via-[#0A0E1A]/75 transition-all duration-700 ease-in-out" />
                   </div>
 
                   {/* Top Row - STATIC LIGHT BACKGROUND CIRCLE with SVG Icon */}
@@ -226,7 +224,7 @@ export default function WhatWeServeSection() {
 
                   {/* Bottom Content Area with Slide Up Reveal Panel */}
                   <div className="relative w-full h-full flex flex-col justify-end overflow-hidden pt-6 md:pt-10 lg:pt-12 z-10">
-                    <div className="translate-y-0 lg:translate-y-[194px] lg:group-hover:translate-y-0 transition-transform duration-[650ms] ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-end">
+                    <div className="translate-y-0 lg:translate-y-[194px] lg:group-hover:translate-y-0 transition-transform duration-650 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-end">
                       
                       {/* Title */}
                       <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-left transition-colors duration-300 group-hover:text-accent">
@@ -234,15 +232,15 @@ export default function WhatWeServeSection() {
                       </h3>
                       
                       {/* Divider Line (Desktop Only) */}
-                      <div className="h-px bg-white/20 w-full mb-4 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-[50ms] ease-out" />
+                      <div className="h-px bg-white/20 w-full mb-4 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-50 ease-out" />
                       
                       {/* Short Description Paragraph (Desktop Only) */}
-                      <p className="text-[13.5px] text-white/80 leading-[1.55] text-left mb-6 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-[100ms] ease-out font-medium font-body">
+                      <p className="text-[13.5px] text-white/80 leading-[1.55] text-left mb-6 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-100 ease-out font-medium font-body">
                         {service.description}
                       </p>
                       
                       {/* Full Read More Option Button (Visible on all viewports) */}
-                      <div className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-[150ms] ease-out w-full">
+                      <div className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-150 ease-out w-full">
                         <Button
                           href="#contact"
                           variant="primary"

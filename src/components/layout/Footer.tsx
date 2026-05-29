@@ -189,7 +189,7 @@ export default function Footer() {
         </div>
 
         {/* Giant Watermark Text behind bottom bar */}
-        <span className="block text-[14vw] font-black uppercase text-white/[0.015] select-none pointer-events-none text-center tracking-tighter leading-none mt-2 select-none z-0">
+        <span className="block text-[14vw] font-black uppercase text-white/1.5 select-none pointer-events-none text-center tracking-tighter leading-none mt-2 z-0">
           beltforge
         </span>
 
