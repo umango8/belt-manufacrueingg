@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
 
 interface ServiceItem {
   id: string;
@@ -169,80 +173,91 @@ export default function WhatWeServeSection() {
         </div>
       </div>
 
-      {/* Sliding Infinite Loop Marquee Container - OUTSIDE container-custom for full-width viewport bleed */}
-      <div className="overflow-hidden w-full relative z-10 parent-hover-pause py-4">
+      {/* Premium Infinite Autoplay & Draggable Swiper Carousel for ALL Viewports */}
+      <div className="overflow-hidden w-full relative z-10 py-4" data-lenis-prevent>
         {/* Left Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 md:bg-gradient-to-r from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-r from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
         
         {/* Right Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 md:bg-gradient-to-l from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 bg-gradient-to-l from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
 
-        <div className="flex gap-6 animate-marquee-custom w-max px-6 md:px-12">
-          {DOUBLE_SERVICES.map((service, index) => {
-            // Unique key to prevent duplicates matching keys in DOM
-            const uniqueKey = `${service.id}-${index}`;
-            
+        <Swiper
+          modules={[Autoplay]}
+          slidesPerView="auto"
+          spaceBetween={24}
+          loop={true}
+          grabCursor={true}
+          allowTouchMove={true}
+          touchEventsTarget="container"
+          threshold={1}
+          watchSlidesProgress={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          className="w-full !px-6 md:!px-12"
+        >
+          {SERVICES.map((service) => {
             return (
-              <div
-                key={uniqueKey}
-                className="group relative overflow-hidden lg:rounded-3xl md:rounded-xl rounded-lg h-[440px] w-[310px] shrink-0 p-8 flex flex-col justify-between border border-white/5 transition-shadow duration-500 cursor-pointer"
-              >
-                {/* Background Image & Premium Dark Overlay */}
-                <div className="absolute inset-0 z-0   transition-transform duration-700 ease-in-out">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-108 transition-transform duration-700 ease-in-out"
-                    sizes="310px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A]/40 via-[#0A0E1A]/60 to-[#0A0E1A]/20 group-hover:via-[#0A0E1A]/75 transition-all duration-700 ease-in-out" />
-                </div>
-
-                {/* Top Row - STATIC LIGHT BACKGROUND CIRCLE with SVG Icon */}
-                <div className="flex items-center justify-between w-full relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-white/95 text-[#0A0E1A] flex items-center justify-center shadow-md border border-white/20 backdrop-blur-sm group-hover:bg-accent group-hover:text-white transition-all duration-400 ease-in-out">
-                    {service.icon}
+              <SwiperSlide key={service.id} style={{ width: "310px" }} className="py-2">
+                <div className="group relative overflow-hidden lg:rounded-3xl md:rounded-xl rounded-lg h-[440px] w-[310px] shrink-0 p-8 flex flex-col justify-between border border-white/5 transition-shadow duration-500 shadow-lg shadow-black/30 cursor-grab active:cursor-grabbing">
+                  {/* Background Image & Premium Dark Overlay */}
+                  <div className="absolute inset-0 z-0 transition-transform duration-700 ease-in-out">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover group-hover:scale-108 transition-transform duration-700 ease-in-out"
+                      sizes="310px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A]/40 via-[#0A0E1A]/60 to-[#0A0E1A]/20 group-hover:via-[#0A0E1A]/75 transition-all duration-700 ease-in-out" />
                   </div>
-                  <span className="text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md uppercase tracking-wider">
-                    {service.badge}
-                  </span>
-                </div>
 
-                {/* Bottom Content Area with Slide Up Reveal Panel (Title & Button only on mobile/tablet) */}
-                <div className="relative w-full h-full flex flex-col justify-end overflow-hidden pt-6 md:pt-10 lg:pt-12 z-10">
-                  {/* Comfortable slightly-bottom position achieved using translate-y-[194px] on desktop */}
-                  <div className="translate-y-0 lg:translate-y-[194px] lg:group-hover:translate-y-0 transition-transform duration-[650ms] ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-end">
-                    
-                    {/* Title (White -> Industrial Orange on hover) */}
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-left transition-colors duration-300 group-hover:text-accent">
-                      {service.title}
-                    </h3>
-                    
-                    {/* Divider Line (Desktop Only) */}
-                    <div className="h-px bg-white/20 w-full mb-4 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-[50ms] ease-out" />
-                    
-                    {/* Short Description Paragraph (Desktop Only) */}
-                    <p className="text-[13.5px] text-white/80 leading-[1.55] text-left mb-6 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-[100ms] ease-out font-medium">
-                      {service.description}
-                    </p>
-                    
-                    {/* Full Read More Option Button (Visible on all viewports) */}
-                    <div className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-[150ms] ease-out w-full">
-                      <Button
-                        href="#contact"
-                        variant="primary"
-                        className="w-full justify-center py-2.5 text-xs font-bold tracking-widest uppercase"
-                      >
-                        Read More
-                      </Button>
+                  {/* Top Row - STATIC LIGHT BACKGROUND CIRCLE with SVG Icon */}
+                  <div className="flex items-center justify-between w-full relative z-10">
+                    <div className="w-12 h-12 rounded-full bg-white/95 text-[#0A0E1A] flex items-center justify-center shadow-md border border-white/20 backdrop-blur-sm group-hover:bg-accent group-hover:text-white transition-all duration-400 ease-in-out">
+                      {service.icon}
+                    </div>
+                    <span className="text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md uppercase tracking-wider">
+                      {service.badge}
+                    </span>
+                  </div>
+
+                  {/* Bottom Content Area with Slide Up Reveal Panel */}
+                  <div className="relative w-full h-full flex flex-col justify-end overflow-hidden pt-6 md:pt-10 lg:pt-12 z-10">
+                    <div className="translate-y-0 lg:translate-y-[194px] lg:group-hover:translate-y-0 transition-transform duration-[650ms] ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-end">
+                      
+                      {/* Title */}
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-left transition-colors duration-300 group-hover:text-accent">
+                        {service.title}
+                      </h3>
+                      
+                      {/* Divider Line (Desktop Only) */}
+                      <div className="h-px bg-white/20 w-full mb-4 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-[50ms] ease-out" />
+                      
+                      {/* Short Description Paragraph (Desktop Only) */}
+                      <p className="text-[13.5px] text-white/80 leading-[1.55] text-left mb-6 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-[100ms] ease-out font-medium font-body">
+                        {service.description}
+                      </p>
+                      
+                      {/* Full Read More Option Button (Visible on all viewports) */}
+                      <div className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 group-hover:delay-[150ms] ease-out w-full">
+                        <Button
+                          href="#contact"
+                          variant="primary"
+                          className="w-full justify-center py-2.5 text-xs font-bold tracking-widest uppercase"
+                        >
+                          Read More
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </SwiperSlide>
             );
           })}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
