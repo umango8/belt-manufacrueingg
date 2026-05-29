@@ -73,22 +73,55 @@ export default function ProductsSection() {
       </div>
 
       <div className="container-custom relative z-10">
-        {/* Heading - Left-aligned & correctly styled */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="text-left lg:mb-12 mb-8"
-        >
-          <span className="inline-flex items-center gap-2.5 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            OUR PRODUCTS
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-title leading-[1.15] tracking-tight max-w-3xl">
-            <span className="text-accent">Professional</span> conveyor <span className="text-accent">solutions</span> for every industry today
-          </h2>
-        </motion.div>
+        {/* Heading - Left-aligned with 'See All Products' button on the top right */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 lg:mb-12 mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="text-left"
+          >
+            <span className="inline-flex items-center gap-2.5 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              OUR PRODUCTS
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-title leading-[1.15] tracking-tight max-w-3xl">
+              <span className="text-accent">Professional</span> conveyor <span className="text-accent">solutions</span> for every industry today
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="shrink-0 flex self-start md:self-end"
+          >
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-3 text-[15px] font-bold text-title hover:text-accent transition-colors group"
+              id="see-all-products-header"
+            >
+              See All Products
+              <div className="w-10 h-10 rounded-full border border-dark/10 bg-dark/5 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all duration-300">
+                <svg
+                  className="w-4 h-4 text-dark group-hover:text-white transition-colors duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </div>
+            </a>
+          </motion.div>
+        </div>
 
         {/* Interactive Split Grid Catalog */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:mt-12 mt-8 items-start">
