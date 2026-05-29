@@ -5,11 +5,11 @@ import StatsSection from "@/components/sections/StatsSection";
 import AboutSection from "@/components/sections/AboutSection";
 import WhatWeServeSection from "@/components/sections/WhatWeServeSection";
 import ProductsSection from "@/components/sections/ProductsSection";
-import IndustriesSection from "@/components/sections/IndustriesSection";
+// import IndustriesSection from "@/components/sections/IndustriesSection";  
 import ProcessSection from "@/components/sections/ProcessSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import CTASection from "@/components/sections/CTASection";
-import ContactSection from "@/components/sections/ContactSection";
+import ReviewsSection from "@/components/sections/ReviewsSection";
 
 export default function Home() {
   return (
@@ -21,11 +21,11 @@ export default function Home() {
         <AboutSection />
         <WhatWeServeSection />
         <ProductsSection />
-        <IndustriesSection />
+        {/* <IndustriesSection /> */}
         <ProcessSection />
         <WhyUsSection />
         <CTASection />
-        <ContactSection />
+        <ReviewsSection />
       </main>
       <Footer />
     </>

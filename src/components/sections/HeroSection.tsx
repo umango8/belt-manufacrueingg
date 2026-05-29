@@ -1,9 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "@/components/ui/Button";
 
 export default function HeroSection() {
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 100], [1, 0]);
   return (
     <section id="home" className="relative min-h-[95vh] flex items-center bg-black overflow-hidden py-20 lg:py-0">
       {/* Background Video */}
@@ -37,17 +39,16 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
-          <h1 className="text-[2.75rem] sm:text-[3.75rem] lg:text-[5rem] xl:text-[5.5rem] font-bold text-white leading-[1.05] tracking-tight mb-8">
+          <h1 className="text-[1.75rem] sm:text-[3.75rem] lg:text-[5rem] xl:text-[5.5rem] font-bold text-white leading-[1.05] tracking-tight mb-8">
             Precision-Engineered
-            <br />
-            <span className="text-accent">Conveyor Belts</span> Built to Last
+            <span className="text-accent flex">Conveyor Belts</span>Built to Last
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-lg lg:text-xl text-white/80 max-w-2xl mb-8 leading-relaxed"
+            className="text-sm lg:text-xl text-white/80 max-w-2xl mb-8 leading-relaxed  text-left"
           >
             High-performance industrial conveyor belts designed for mining, cement, steel, 
             and power generation plants. Engineered with certified compounds to maximize uptime.
@@ -78,8 +79,11 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Floating Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 z-10">
+      {/* Floating Scroll Indicator - Fades out dynamically on scroll */}
+      <motion.div 
+        style={{ opacity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 z-10"
+      >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
@@ -87,7 +91,7 @@ export default function HeroSection() {
         >
           <div className="w-1.5 h-1.5 bg-white rounded-full" />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import ScrollRevealProvider from "../components/layout/ScrollRevealProvider";
+import SmoothScrollProvider from "../components/layout/SmoothScrollProvider";
 
 const inter = Inter({
   variable: "--font-body",
@@ -76,7 +78,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <ScrollRevealProvider />
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
+      </body>
     </html>
   );
 }

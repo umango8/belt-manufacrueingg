@@ -108,14 +108,14 @@ function ScrollProgressCard({
   const startRotate = index === 0 ? -5 : index === 1 ? 4 : index === 2 ? -3 : 2;
   const startScale = 0.92 + index * 0.025;
 
-  // Sync horizontal, vertical, rotation, and scale transforms with scroll progress
-  const x = useTransform(progress, [0, startRange, endRange, 1], [finalStartX, finalStartX, 0, 0]);
-  const y = useTransform(progress, [0, startRange, endRange, 1], [finalStartY, finalStartY, 0, 0]);
-  const rotate = useTransform(progress, [0, startRange, endRange, 1], [startRotate, startRotate, 0, 0]);
-  const scale = useTransform(progress, [0, startRange, endRange, 1], [startScale, startScale, 1, 1]);
+  // Sync horizontal, vertical, rotation, and scale transforms with scroll progress (Desktop Only)
+  const x = isDesktop ? useTransform(progress, [0, startRange, endRange, 1], [finalStartX, finalStartX, 0, 0]) : 0;
+  const y = isDesktop ? useTransform(progress, [0, startRange, endRange, 1], [finalStartY, finalStartY, 0, 0]) : 0;
+  const rotate = isDesktop ? useTransform(progress, [0, startRange, endRange, 1], [startRotate, startRotate, 0, 0]) : 0;
+  const scale = isDesktop ? useTransform(progress, [0, startRange, endRange, 1], [startScale, startScale, 1, 1]) : 1;
 
   // Subtle opacity fade-in
-  const opacity = useTransform(progress, [0, startRange, startRange + 0.08, 1], [0.75, 0.75, 1, 1]);
+  const opacity = isDesktop ? useTransform(progress, [0, startRange, startRange + 0.08, 1], [0.75, 0.75, 1, 1]) : 1;
 
   // Staggered dynamic shadow depth
   const shadowStyle = isDesktop && index < 3 ? "shadow-md border-white/50" : "shadow-md border-border/50";
@@ -162,10 +162,10 @@ export default function StatsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-20 -mt-12 bg-[#F9FAFB] rounded-[48px] md:h-[220vh] shadow-[0_-15px_30px_rgba(0,0,0,0.03)] overflow-visible"
+      className="relative z-20 -mt-12 bg-[#F9FAFB] rounded-[48px] lg:h-[220vh] shadow-[0_-15px_30px_rgba(0,0,0,0.03)] overflow-visible"
     >
       {/* Sticky Child Wrapper - Pinned on desktop, standard static layout on mobile */}
-      <div className="relative md:sticky md:top-0 md:h-screen w-full md:flex md:flex-col md:justify-center overflow-hidden py-24 md:py-0">
+      <div className="relative lg:sticky lg:top-[80px] lg:h-[calc(100vh-80px)] w-full lg:flex lg:flex-col lg:justify-center lg:overflow-hidden py-16 md:py-24 lg:py-0">
         <div className="container-custom">
           {/* Top Text Block - Scroll Progress Text Fill */}
           <div className="w-full mb-12">

@@ -8,7 +8,7 @@ interface ButtonProps {
   children: ReactNode;
   href?: string;
   variant?: "primary" | "outline" | "dark" | "white" | "accent";
-  size?: "sm" | "md" | "lg";
+  size?: "lg";
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit";
@@ -25,9 +25,12 @@ export default function Button({
   type = "button",
   id,
 }: ButtonProps) {
+  // Check if a display class is provided to avoid conflicting with the default 'inline-flex'
+  const hasDisplayClass = /\b(hidden|flex|inline-flex|block|inline-block|grid|inline-grid)\b/.test(className);
+
   // Base pill class with premium editorial styling
   const baseStyles =
-    "group relative inline-flex items-center justify-center font-semibold tracking-wide uppercase rounded-full overflow-hidden transition-all duration-300 ease-out cursor-pointer select-none border-1.5";
+    `group relative ${hasDisplayClass ? "" : "inline-flex"} items-center justify-center font-semibold tracking-wide uppercase rounded-full overflow-hidden transition-all duration-300 ease-out cursor-pointer select-none border-1.5`;
 
   // Base background and text colors
   const variants = {
@@ -39,9 +42,8 @@ export default function Button({
   };
 
   const sizes = {
-    sm: "px-6 py-3 text-xs",
-    md: "px-8 py-4 text-sm",
-    lg: "px-10 py-4.5 text-sm",
+ 
+    lg: "lg:px-10 lg:py-4.5 lg:text-sm md:px-8 md:py-4 md:text-sm px-6 py-3 text-xs",
   };
 
   // Hover panel background colors for the center-split animation
@@ -72,8 +74,6 @@ export default function Button({
       <span
         className={`absolute top-0 left-1/2 bottom-0 right-0 ${hoverBgColors[variant]} origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-0`}
       />
-      {/* Visual center split indicator line (subtle detail) */}
-      <span className="absolute left-1/2 top-0 bottom-0 w-px bg-white/5 z-0" />
       
       {/* Text label with transition */}
       <span className={`relative z-10 flex items-center gap-2 ${hoverTextStyles[variant]} transition-colors duration-300`}>

@@ -1,28 +1,27 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #0F172A;
+  --color-primary: #0f172a;
   --color-primary-dark: #020617;
-  --color-primary-light: #1E293B;
+  --color-primary-light: #1e293b;
   --color-secondary: #334155;
-  --color-accent: #F97316;
-  --color-background: #F8FAFC;
-  --color-background-light: #F1F5F9;
-  --color-background-soft: #F8FAFC;
-  --color-background-card: #FFFFFF;
+  --color-accent: #f97316;
+  --color-background: #f8fafc;
+  --color-background-light: #f1f5f9;
+  --color-background-soft: #f8fafc;
+  --color-background-card: #ffffff;
   --color-subtitle: #334155;
-  --color-title: #0F172A;
+  --color-title: #0f172a;
   --color-white: #ffffff;
-  --color-dark: #1E293B;
+  --color-dark: #1e293b;
   --color-dark-light: #334155;
-  --color-border: #E2E8F0;
-  --color-border-light: #F1F5F9;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
   --font-heading: var(--font-body);
   --font-body: var(--font-body);
 }
 
 /* Base Reset */
-
 
 html {
   scroll-behavior: smooth;
@@ -39,7 +38,12 @@ body {
 }
 
 /* Typography - Flampt-inspired large editorial style */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.15;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -106,6 +110,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 5rem;
 }
 
+
 @media (min-width: 768px) {
   .section-padding {
     padding-top: 6.5rem;
@@ -116,6 +121,24 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1024px) {
   .section-padding {
     padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+.buttom-padding{
+  padding-top: ppx;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .buttom-padding {
+    padding-top: 0px;
+    padding-bottom: 6.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .buttom-padding {
+    padding-top: opx;
     padding-bottom: 8rem;
   }
 }
@@ -131,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dot-badge::before {
-  content: '';
+  content: "";
   display: block;
   width: 10px;
   height: 10px;
@@ -190,4 +213,124 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-primary-light);
   border-color: var(--color-primary-light);
   transform: translateY(-1px);
+}
+
+/* Premium smooth text fade in/out on scroll */
+.scroll-reveal-text {
+  opacity: 0;
+  transform: translate3d(0, 15px, 0);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-text.revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-reveal-text:not(.revealed) {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
+}
+
+/* Premium Apple-like smooth character letter reveal */
+.reveal-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 15px, 0) scale(0.96);
+  filter: blur(1.5px);
+  will-change: opacity, transform, filter;
+  transition:
+    opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    filter 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: calc(var(--char-index) * 0.015s);
+}
+
+.scroll-reveal.revealed .reveal-char,
+.scroll-reveal-text.revealed .reveal-char {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+/* Fast and seamless drop-out when scrolling away */
+.scroll-reveal:not(.revealed) .reveal-char,
+.scroll-reveal-text:not(.revealed) .reveal-char {
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
+  filter: blur(1px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    filter 0.3s ease;
+  transition-delay: 0s !important;
+}
+
+/* Letter Space */
+.reveal-char-space {
+  display: inline-block;
+}
+
+/* High-Performance image subtle scale & reveal effect */
+.scroll-reveal-img {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0) scale(0.96);
+  filter: blur(4px);
+  transition:
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal-img.revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+.scroll-reveal-img:not(.revealed) {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0) scale(0.97);
+  filter: blur(2px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out,
+    filter 0.6s ease-out;
+}
+
+/* CPU & Render Painting Optimization for Off-Screen Sections */
+section {
+  content-visibility: auto; /* Bypasses paint/layout calculations for elements outside the viewport */
+  contain-intrinsic-size: 1px 500px; /* Provides layout placeholder size for rendering engine */
+  will-change: transform, opacity;
+  scroll-margin-top: 90px; /* Accounts for sticky header height across breakpoints */
+}
+
+/* Lenis Specific Reset to support smooth scrolling */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

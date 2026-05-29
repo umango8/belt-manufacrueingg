@@ -50,7 +50,8 @@ export default function SectionHeading({
       className={`w-full max-w-3xl mb-12 ${alignClass}`}
     >
       {subtitle && (
-        <span className="dot-badge mb-6 text-dark/70 font-semibold uppercase tracking-wider text-sm">
+        <span className="inline-flex items-center gap-2.5 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
           {subtitle}
         </span>
       )}
@@ -58,7 +59,7 @@ export default function SectionHeading({
         {renderStaticHighlightedText(title, highlightWords)}
       </h2>
       {description && (
-        <p className="text-subtitle text-base md:text-lg leading-relaxed max-w-2xl">
+        <p className="text-subtitle text-base md:text-lg leading-relaxed max-w-2xl text-justify sm:text-left">
           {description}
         </p>
       )}
