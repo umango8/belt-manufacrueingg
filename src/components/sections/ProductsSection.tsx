@@ -67,7 +67,7 @@ export default function ProductsSection() {
 
       {/* Huge Background Vector Watermark in Accent Color (Spanning full width) */}
       <div className="absolute inset-x-0 bottom-0 flex justify-center overflow-hidden pointer-events-none select-none z-0">
-        <span className="text-[15vw] font-black text-accent/[0.03] tracking-[0.15em] leading-none uppercase translate-y-[25%] select-none">
+        <span className="text-[15vw] font-black text-accent/3 tracking-[0.15em] leading-none uppercase translate-y-[25%] select-none">
           BELTFORGE
         </span>
       </div>
@@ -204,14 +204,14 @@ export default function ProductsSection() {
                 />
 
                 {/* Dark Gradient Overlay for optimal readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/40 to-transparent group-hover:via-[#0F172A]/60 transition-all duration-500" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#0F172A]/90 via-[#0F172A]/40 to-transparent group-hover:via-[#0F172A]/60 transition-all duration-500" />
 
                 {/* Hover Reveal Content Panel (Heading & Read More button only on mobile/tablet, full reveal on desktop) */}
                 <div className="absolute inset-0 p-6 sm:p-8 lg:p-10 flex flex-col justify-end overflow-hidden z-10">
                   <div className="translate-y-0 lg:translate-y-[150px] lg:group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-end">
                     
                     {/* Top Tag Badges (Desktop Only) */}
-                    <div className="mb-4 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-[50ms]">
+                    <div className="mb-4 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-50">
                       <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/10 border border-accent/20 px-3.5 py-1.5 rounded-full backdrop-blur-sm">
                         {activeProduct.features[0]}
                       </span>
@@ -223,15 +223,15 @@ export default function ProductsSection() {
                     </h3>
                     
                     {/* Divider Line (Desktop Only) */}
-                    <div className="h-px bg-white/20 w-full mb-5 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-[100ms]" />
+                    <div className="h-px bg-white/20 w-full mb-5 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100" />
                     
                     {/* Detailed Product Description (Desktop Only) */}
-                    <p className="text-[13px] sm:text-[13.5px] text-white/80 leading-[1.6] text-left mb-5 sm:mb-6 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-[150ms] font-medium max-w-xl">
+                    <p className="text-[13px] sm:text-[13.5px] text-white/80 leading-[1.6] text-left mb-5 sm:mb-6 hidden lg:block lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-150 font-medium max-w-xl">
                       {activeProduct.description}
                     </p>
                     
                     {/* Horizontal Feature Bullet Badges (Desktop Only) */}
-                    <div className="hidden lg:flex flex-wrap gap-2 mb-5 sm:mb-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-[200ms]">
+                    <div className="hidden lg:flex flex-wrap gap-2 mb-5 sm:mb-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-200">
                       {activeProduct.features.map((feat) => (
                         <span
                           key={feat}
@@ -243,7 +243,7 @@ export default function ProductsSection() {
                     </div>
 
                     {/* Read More Conversion Action Button (Visible on all screens) */}
-                    <div className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-[250ms] w-full sm:w-auto">
+                    <div className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-250 w-full sm:w-auto">
                       <Button
                         href="#contact"
                         variant="primary"
