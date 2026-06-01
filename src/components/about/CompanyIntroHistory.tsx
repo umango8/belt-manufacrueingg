@@ -96,7 +96,7 @@ export default function CompanyIntroHistory() {
 
   return (
     <div ref={containerRef} className="relative h-[250vh] bg-[#F9FAFB]">
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-between py-12 sm:py-16">
+      <div className="sticky top-0 md:h-screen  overflow-hidden flex flex-col justify-between py-12 sm:py-16">
         {/* Subtle industrial texture overlay */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.015] z-0"
@@ -108,7 +108,7 @@ export default function CompanyIntroHistory() {
 
         {/* Top Content: Split-screen Header & Info */}
         <div className="container-custom relative z-10 w-full mb-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-8 gap-6 items-end">
             <div className="lg:col-span-7">
               {/* Section Tag */}
               <motion.div
@@ -157,7 +157,7 @@ export default function CompanyIntroHistory() {
 
         {/* Middle/Bottom Content: Scroll-controlled Horizontal Timeline */}
         <div className="relative z-10 w-full overflow-hidden flex-1 flex flex-col justify-center">
-          <div className="relative pt-16 pb-4 w-full pl-4 sm:pl-6 lg:pl-8 xl:pl-[calc((100vw-1216px)/2)]">
+          <div className="relative lg:pt-16 md:pt-12 sm:pt-10 pt-8 pb-4 w-full pl-4 sm:pl-6 lg:pl-8 xl:pl-[calc((100vw-1216px)/2)]">
             {/* Left overlay mask block to hide cards as they slide left */}
             <div className="absolute left-0 top-0 bottom-0 z-20 w-4 sm:w-6 lg:w-8 xl:w-[calc((100vw-1216px)/2)] bg-[#F9FAFB] pointer-events-none" />
               {/* Horizontal Track Line */}

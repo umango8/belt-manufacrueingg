@@ -123,7 +123,7 @@ export default function CertificationsGrid() {
 
       <div className="container-custom relative z-10">
         {/* Header Title */}
-        <div className="text-center mb-16 lg:mb-24 max-w-3xl mx-auto">
+        <div className="text-start mb-10 md:mb-16 sm:mb-12 lg:mb-20 max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +163,7 @@ export default function CertificationsGrid() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
         >
           {CERTIFICATIONS.map((cert) => (
             <motion.div

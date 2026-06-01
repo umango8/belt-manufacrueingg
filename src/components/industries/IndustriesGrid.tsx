@@ -191,17 +191,29 @@ function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES[0]; ind
           {industry.title}
         </h3>
 
-        {/* Description */}
-        <p className="text-sm text-white/70 leading-relaxed font-medium mb-4 group-hover:text-white transition-colors duration-300">
+        {/* Description - Desktop Only */}
+        <p className="text-sm text-white/70 leading-relaxed font-medium mb-4 group-hover:text-white transition-colors duration-300 hidden lg:block">
           {industry.description}
         </p>
 
-        {/* Application tag */}
-        <div className="mb-2">
+        {/* Application tag - Desktop Only */}
+        <div className="mb-2 hidden lg:block">
           <span className="text-[10px] font-bold text-accent uppercase tracking-wider block mb-1">Belt Application:</span>
           <p className="text-xs text-white/50 leading-relaxed max-w-xs group-hover:text-white/70 transition-colors duration-300 font-medium">
             {industry.application}
           </p>
+        </div>
+
+        {/* "Read More" Action - Mobile & Tablet Only (< 1024px) */}
+        <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between lg:hidden w-full">
+          <span className="text-xs font-bold uppercase tracking-wider text-accent">
+            Read More
+          </span>
+          <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -295,7 +307,7 @@ export default function IndustriesGrid() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-7"
         >
           {INDUSTRIES.map((industry, index) => (
             <IndustryCard key={industry.id} industry={industry} index={index} />

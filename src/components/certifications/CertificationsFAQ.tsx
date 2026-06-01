@@ -39,7 +39,7 @@ export default function CertificationsFAQ() {
       <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-primary/2 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 md:gap-10 gap-8 items-start">
           
           {/* Info Side */}
           <div className="lg:col-span-5 max-w-lg">
@@ -50,7 +50,7 @@ export default function CertificationsFAQ() {
             <h2 className="text-3xl sm:text-4xl font-bold text-title leading-[1.15] tracking-tight mb-6">
               Common Questions About Compliance
             </h2>
-            <p className="text-sm sm:text-base text-subtitle leading-relaxed font-medium mb-8">
+            <p className="text-sm sm:text-base text-subtitle leading-relaxed font-medium lg:mb-8 mb-6">
               Review details about our certification standards, testing frameworks, and custom auditing options. For specific documentation requests, reach out directly.
             </p>
             <div className="p-6 bg-white border border-border/60 rounded-2xl flex flex-col gap-4">

@@ -148,7 +148,7 @@ export default function WhyChooseUs() {
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
-        <div className="text-left mb-14 lg:mb-20 max-w-3xl">
+        <div className="text-left md:mb-16 sm:mb-12 mb-10 lg:mb-16 max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -190,7 +190,7 @@ export default function WhyChooseUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-7"
         >
           {FEATURES.map((feature, index) => (
             <motion.div

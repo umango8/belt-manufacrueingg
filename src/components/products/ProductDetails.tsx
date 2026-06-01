@@ -94,9 +94,9 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
 
           {/* CTA strip below hero */}
           <div className="bg-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#f1f5f9]">
-            <div className="flex items-center gap-2 text-xs text-[#334155]/60">
+            <div className="flex items-center gap-2 text-xs text-[#334155]/60 font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              In Stock · Fast Delivery · Custom Sizing Available
+              In Stock - Fast Delivery - Custom Sizing Available
             </div>
             <div className="flex items-center gap-3">
               <Button href="/quote" variant="primary" size="lg" className="text-xs py-2.5 px-6" id={`hero-quote-${slug}`}>
@@ -116,7 +116,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
             <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Product Overview</h2>
           </div>
           <p className="text-[15px] text-[#334155] leading-relaxed font-medium">{product.description}</p>
-          <div className="mt-5 pt-5 border-t border-[#f1f5f9]">
+          <div className="md:mt-5 pt-5 border-t border-[#f1f5f9]">
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#334155]/40 mb-2">Primary Material</p>
             <p className="text-sm font-semibold text-[#0f172a]">{product.material}</p>
           </div>

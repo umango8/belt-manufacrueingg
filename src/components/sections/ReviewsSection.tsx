@@ -208,7 +208,7 @@ export default function ReviewsSection() {
             </p>
 
             {/* Quick trust metrics */}
-            <div className="grid grid-cols-2 gap-6 md:mt-8 mt-4 md:pt-8 border-t border-border-light">
+            <div className="grid grid-cols-2 gap-6 md:mt-8 mt-4 md:pt-8 ">
               <div>
                 <span className="text-2xl sm:text-3xl font-bold text-accent block leading-none">99.2%</span>
                 <span className="text-[11px] font-bold tracking-wider text-subtitle/60 uppercase mt-2.5 block">Client Satisfaction</span>

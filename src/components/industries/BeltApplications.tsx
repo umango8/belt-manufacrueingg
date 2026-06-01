@@ -142,7 +142,7 @@ export default function BeltApplications() {
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
-        <div className="text-left mb-14 lg:mb-20 max-w-3xl">
+        <div className="text-left sm:mb-12 mb-10 md:mb-16  lg:mb-20 max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

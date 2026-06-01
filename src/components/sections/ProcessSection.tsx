@@ -159,7 +159,7 @@ export default function ProcessSection() {
     <section 
       id="process" 
       ref={containerRef} 
-      className="relative bg-[#0A0E1A] border-t border-white/5 overflow-visible"
+      className="relative bg-[#0A0E1A] border-t border-white/5 overflow-visible section-padding"
       style={isDesktop ? { height: "260vh" } : undefined} // Provides scroll headroom for sticky card stacking
     >
       {/* Background dot pattern to blend with the industrial theme */}

@@ -35,7 +35,17 @@ export default function AboutPage() {
         <CompanyIntroHistory />
         <MissionVision />
         <WhyChooseUs />
-        <div className="section-padding">
+        <div className="section-padding relative overflow-hidden">
+            <div className="absolute inset-x-0 bottom-0 flex justify-center overflow-hidden pointer-events-none select-none z-0">
+        <span className="text-[14vw] font-black text-accent/4 tracking-[0.10em] leading-none uppercase translate-y-[28%] select-none">
+          BELTFORGE
+        </span>
+      </div>
+      {/* <div className="absolute inset-x-0 top-0 flex justify-center overflow-visible pointer-events-none select-none z-0">
+        <span className="text-[14vw] font-black text-accent/8 tracking-[0.10em] leading-none uppercase translate-y-[-80%] select-none">
+          BELTFORGE
+        </span>
+      </div> */}
             <CTASection />
         </div>
       </main>

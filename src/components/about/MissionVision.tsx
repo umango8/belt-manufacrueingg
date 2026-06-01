@@ -76,7 +76,7 @@ export default function MissionVision() {
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-14 lg:mb-20">
+        <div className="text-start  md:mb-16 lg:mb-20 sm:mb-12 mb-10 ">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

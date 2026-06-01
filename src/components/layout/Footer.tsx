@@ -133,7 +133,7 @@ export default function Footer() {
                 href="#home" 
                 className="text-sm font-bold text-white/50 hover:text-white transition-all duration-300 hover:translate-x-1 lg:hover:translate-x-[-8px] tracking-tight font-heading"
               >
-                Home / Main
+                Home 
               </Link>
               <Link 
                 href="#products" 
@@ -153,18 +153,9 @@ export default function Footer() {
               >
                 Our Process
               </Link>
-              <Link 
-                href="#why-us" 
-                className="text-sm font-bold text-white/50 hover:text-white transition-all duration-300 hover:translate-x-1 lg:hover:translate-x-[-8px] tracking-tight font-heading"
-              >
-                Why Choose Us
-              </Link>
-              <Link 
-                href="#reviews" 
-                className="text-sm font-bold text-white/50 hover:text-white transition-all duration-300 hover:translate-x-1 lg:hover:translate-x-[-8px] tracking-tight font-heading"
-              >
-                Reviews
-              </Link>
+           <Link href="/certifications" className="text-sm font-bold text-white/50 hover:text-white transition-all duration-300 hover:translate-x-1 lg:hover:translate-x-[-8px] tracking-tight font-heading">
+            Certifications
+           </Link>
             </div>
           </div>
 

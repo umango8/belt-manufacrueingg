@@ -62,7 +62,7 @@ export default function IndustriesFAQ() {
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="text-left mb-14 lg:mb-16 max-w-3xl">
+          <div className="text-left md:mb-16 sm:mb-12 mb-10 lg:mb-20 max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}

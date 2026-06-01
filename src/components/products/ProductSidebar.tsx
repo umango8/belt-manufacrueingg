@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PRODUCT_CATALOG } from "@/lib/constants";
@@ -70,104 +70,238 @@ const grouped = PRODUCT_CATALOG.reduce<Record<string, typeof PRODUCT_CATALOG>>((
 export default function ProductSidebar() {
   const pathname = usePathname();
   const currentSlug = pathname.split("/").pop() ?? "";
+  const [isOpen, setIsOpen] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <aside className="w-full lg:w-[280px] xl:w-[300px] flex-shrink-0 lg:sticky lg:top-[100px]">
-      <div
-        className="bg-white rounded-2xl border border-[#e2e8f0] shadow-[0_4px_32px_rgba(15,23,42,0.06)] overflow-hidden"
-        data-lenis-prevent
-      >
-        {/* Sidebar header */}
-        <div className="px-5 py-4 border-b border-[#f1f5f9] bg-[#0f172a]">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-[#f97316] mb-1">Product Range</p>
-          <p className="text-sm font-semibold text-white">All Industrial Belts</p>
-        </div>
+    <>
+      {/* Scope a style block to hide horizontal scrollbar elements completely */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .scrollbar-none::-webkit-scrollbar {
+          display: none !important;
+        }
+        .scrollbar-none {
+          -ms-overflow-style: none !important;
+          scrollbar-width: none !important;
+        }
+      `}} />
 
-        {/* Scrollable product list */}
+      {/* ── 1. Desktop Sidebar (>= 1024px) ── */}
+      <aside className="hidden lg:block w-[280px] xl:w-[300px] flex-shrink-0 lg:sticky lg:top-[100px]">
         <div
-          className="overflow-y-auto max-h-[calc(100vh-200px)] lg:max-h-[70vh]"
-          style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(249,115,22,0.3) transparent" }}
+          className="bg-white rounded-2xl border border-[#e2e8f0] shadow-[0_4px_32px_rgba(15,23,42,0.06)] overflow-hidden"
+          data-lenis-prevent
         >
-          {Object.entries(grouped).map(([category, products]) => (
-            <div key={category}>
-              {/* Category label */}
-              <div className="px-4 pt-4 pb-1.5">
-                <span className="text-[9px] font-bold uppercase tracking-widest text-[#334155]/40">{category}</span>
-              </div>
+          {/* Sidebar header */}
+          <div className="px-5 py-4 border-b border-[#f1f5f9] bg-[#0f172a]">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#f97316] mb-1">Product Range</p>
+            <p className="text-sm font-semibold text-white">All Industrial Belts</p>
+          </div>
 
-              {products.map((product, idx) => {
-                const isActive = product.slug === currentSlug;
-                return (
-                  <motion.div
-                    key={product.slug}
-                    initial={{ opacity: 0, x: -8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.04 }}
-                  >
-                    <Link
-                      href={`/products/${product.slug}`}
-                      id={`sidebar-${product.slug}`}
-                      className={`group flex items-center gap-3 mx-2 mb-1 px-3 py-3 rounded-xl transition-all duration-200 relative overflow-hidden ${
-                        isActive
-                          ? "bg-[#0f172a] text-white shadow-md"
-                          : "hover:bg-[#f8fafc] text-[#334155]"
-                      }`}
+          {/* Scrollable product list */}
+          <div
+            className="overflow-y-auto max-h-[calc(100vh-200px)] lg:max-h-[70vh]"
+            style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(249,115,22,0.3) transparent" }}
+          >
+            {Object.entries(grouped).map(([category, products]) => (
+              <div key={category}>
+                {/* Category label */}
+                <div className="px-4 pt-4 pb-1.5">
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-[#334155]/40">{category}</span>
+                </div>
+
+                {products.map((product, idx) => {
+                  const isActive = product.slug === currentSlug;
+                  return (
+                    <motion.div
+                      key={product.slug}
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.04 }}
                     >
-                      {/* Active left-border indicator */}
-                      {isActive && (
-                        <span className="absolute left-0 top-2 bottom-2 w-[3px] bg-[#f97316] rounded-r-full" />
-                      )}
+                      <Link
+                        href={`/products/${product.slug}`}
+                        id={`sidebar-${product.slug}`}
+                        className={`group flex items-center gap-3 mx-2 mb-1 px-3 py-3 rounded-xl transition-all duration-200 relative overflow-hidden ${
+                          isActive
+                            ? "bg-[#0f172a] text-white shadow-md"
+                            : "hover:bg-[#f8fafc] text-[#334155]"
+                        }`}
+                      >
+                        {/* Active left-border indicator */}
+                        {isActive && (
+                          <span className="absolute left-0 top-2 bottom-2 w-[3px] bg-[#f97316] rounded-r-full" />
+                        )}
 
-                      {/* Icon */}
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
-                        isActive
-                          ? "bg-[#f97316] text-white shadow-[0_4px_12px_rgba(249,115,22,0.4)]"
-                          : "bg-[#0f172a]/5 text-[#0f172a] group-hover:bg-[#f97316]/10 group-hover:text-[#f97316]"
-                      }`}>
-                        {iconMap[product.icon] ?? iconMap.conveyor}
-                      </div>
+                        {/* Icon */}
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
+                          isActive
+                            ? "bg-[#f97316] text-white shadow-[0_4px_12px_rgba(249,115,22,0.4)]"
+                            : "bg-[#0f172a]/5 text-[#0f172a] group-hover:bg-[#f97316]/10 group-hover:text-[#f97316]"
+                        }`}>
+                          {iconMap[product.icon] ?? iconMap.conveyor}
+                        </div>
 
-                      {/* Text */}
-                      <div className="min-w-0 flex-1">
-                        <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0f172a] group-hover:text-[#f97316]"} transition-colors`}>
-                          {product.title}
-                        </p>
-                        <p className={`text-[10px] mt-0.5 leading-tight line-clamp-1 ${isActive ? "text-white/60" : "text-[#334155]/50"}`}>
-                          {product.shortDesc}
-                        </p>
-                      </div>
+                        {/* Text */}
+                        <div className="min-w-0 flex-1">
+                          <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0f172a] group-hover:text-[#f97316]"} transition-colors`}>
+                            {product.title}
+                          </p>
+                          <p className={`text-[10px] mt-0.5 leading-tight line-clamp-1 ${isActive ? "text-white/60" : "text-[#334155]/50"}`}>
+                            {product.shortDesc}
+                          </p>
+                        </div>
 
-                      {/* Arrow */}
-                      {isActive ? (
-                        <svg className="w-3.5 h-3.5 text-[#f97316] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                        </svg>
-                      ) : (
-                        <svg className="w-3 h-3 text-[#334155]/20 group-hover:text-[#f97316] flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                        </svg>
-                      )}
-                    </Link>
-                  </motion.div>
-                );
-              })}
+                        {/* Arrow */}
+                        {isActive ? (
+                          <svg className="w-3.5 h-3.5 text-[#f97316] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                          </svg>
+                        ) : (
+                          <svg className="w-3 h-3 text-[#334155]/20 group-hover:text-[#f97316] flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                          </svg>
+                        )}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            ))}
+
+            {/* Bottom CTA */}
+            <div className="m-3 mt-3 p-4 rounded-xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] border border-[#334155]/40">
+              <p className="text-xs font-bold text-white mb-1">Need a custom belt?</p>
+              <p className="text-[11px] text-white/50 mb-3 leading-snug">Our engineers design bespoke solutions for your exact requirements.</p>
+              <Link
+                href="/quote"
+                className="block w-full text-center text-[11px] font-bold text-white bg-[#f97316] hover:bg-[#ea6c0c] py-2.5 rounded-lg transition-colors duration-200"
+                id="sidebar-get-quote"
+              >
+                Request Quote
+              </Link>
             </div>
-          ))}
+          </div>
+        </div>
+      </aside>
 
-          {/* Bottom CTA */}
-          <div className="m-3 mt-3 p-4 rounded-xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] border border-[#334155]/40">
-            <p className="text-xs font-bold text-white mb-1">Need a custom belt?</p>
-            <p className="text-[11px] text-white/50 mb-3 leading-snug">Our engineers design bespoke solutions for your exact requirements.</p>
-            <Link
-              href="/quote"
-              className="block w-full text-center text-[11px] font-bold text-white bg-[#f97316] hover:bg-[#ea6c0c] py-2.5 rounded-lg transition-colors duration-200"
-              id="sidebar-get-quote"
+      {/* ── 2. Tablet Horizontal Tab Bar (md:block lg:hidden) ── */}
+      <div className="hidden md:block lg:hidden w-full mb-3.5 relative z-10 overflow-hidden" data-lenis-prevent>
+        <div className="relative flex items-center">
+          {/* Horizontal Scroll container */}
+          <div 
+            ref={scrollRef}
+            className="flex items-center gap-3 overflow-x-auto pb-4 pt-1 px-1 scrollbar-none w-full scroll-smooth -webkit-overflow-scrolling-touch"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {PRODUCT_CATALOG.map((product) => {
+              const isActive = product.slug === currentSlug;
+              return (
+                <Link
+                  key={product.slug}
+                  href={`/products/${product.slug}`}
+                  id={`product-tab-${product.slug}`}
+                  className={`flex items-center gap-3 px-5 py-3.5 rounded-xl border text-sm font-bold whitespace-nowrap transition-all duration-300 ${
+                    isActive
+                      ? "bg-[#0f172a] text-white border-[#0f172a] shadow-[0_4px_16px_rgba(15,23,42,0.12)]"
+                      : "bg-white text-[#334155] border-border/85 hover:bg-[#f8fafc]"
+                  }`}
+                >
+                  {/* Icon */}
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
+                    isActive
+                      ? "bg-accent text-white shadow-[0_2px_8px_rgba(249,115,22,0.3)]"
+                      : "bg-[#0f172a]/5 text-[#0f172a]"
+                  }`}>
+                    {iconMap[product.icon] ?? iconMap.conveyor}
+                  </div>
+                  {/* Label */}
+                  <span>{product.title}</span>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Right indicator chevron overlay to convey scrolling availability */}
+          <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#f8fafc] via-[#f8fafc]/90 to-transparent pointer-events-none flex items-center justify-end pr-1">
+            <button 
+              onClick={() => {
+                if (scrollRef.current) {
+                  scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+                }
+              }}
+              className="w-7 h-7 rounded-full bg-white shadow-xs flex items-center justify-center text-[#0f172a] hover:text-accent border border-border/60 pointer-events-auto active:scale-95 transition-all"
+              aria-label="Scroll right"
             >
-              Request Quote
-            </Link>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
-    </aside>
+
+      {/* ── 3. Mobile Accordion/Dropdown Selector (< md / 768px) ── */}
+      <div className="block md:hidden w-full mb-5 relative z-35" data-lenis-prevent>
+        {/* Dropdown main selector button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full flex items-center justify-between px-5 py-3.5 bg-white border border-border/80 rounded-xl font-bold text-[#0f172a] shadow-xs text-left"
+        >
+          <span className="text-sm">{PRODUCT_CATALOG.find(p => p.slug === currentSlug)?.title ?? "Select Product"}</span>
+          <svg
+            className={`w-4 h-4 text-[#0f172a]/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {/* Dropdown panel list */}
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              {/* Tap backdrop to auto-close */}
+              <div className="fixed inset-0 z-20" onClick={() => setIsOpen(false)} />
+              
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2 }}
+                className="absolute left-0 right-0 mt-2 bg-white border border-border/85 rounded-xl shadow-lg z-30 max-h-[300px] overflow-y-auto"
+              >
+                <div className="py-2 px-1">
+                  {PRODUCT_CATALOG.map((product) => {
+                    const isActive = product.slug === currentSlug;
+                    return (
+                      <Link
+                        key={product.slug}
+                        href={`/products/${product.slug}`}
+                        onClick={() => setIsOpen(false)}
+                        className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
+                          isActive
+                            ? "bg-[#0f172a]/5 text-accent font-bold"
+                            : "text-[#334155] hover:bg-[#f8fafc] hover:text-[#0f172a]"
+                        }`}
+                      >
+                        <div className={`w-7 h-7 rounded-md flex items-center justify-center shrink-0 ${
+                          isActive ? "bg-accent/15 text-accent" : "bg-[#0f172a]/5 text-[#0f172a]"
+                        }`}>
+                          {iconMap[product.icon] ?? iconMap.conveyor}
+                        </div>
+                        <span>{product.title}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      </div>
+    </>
   );
 }
