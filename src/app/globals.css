@@ -336,3 +336,43 @@ html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* About Page — Subtle Conveyor Belt Motion Lines */
+.about-conveyor-line {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    rgba(15, 23, 42, 0.03) 40px,
+    rgba(15, 23, 42, 0.03) 80px
+  );
+  animation: about-conveyor-drift 20s linear infinite;
+}
+
+.about-conveyor-line-1 {
+  top: 25%;
+}
+
+.about-conveyor-line-2 {
+  top: 50%;
+  animation-duration: 28s;
+  animation-direction: reverse;
+}
+
+.about-conveyor-line-3 {
+  top: 75%;
+  animation-duration: 24s;
+}
+
+@keyframes about-conveyor-drift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

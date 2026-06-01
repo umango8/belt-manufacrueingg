@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { COMPANY, PRODUCTS } from "@/lib/constants";
+import { COMPANY, PRODUCT_CATALOG } from "@/lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -81,7 +81,7 @@ export default function Footer() {
 
             {/* Central Sleek Call To Action Button */}
             <Link
-              href={`mailto:${COMPANY.email}`}
+              href="/quote"
               className="inline-flex items-center gap-3 px-5 py-3.5 bg-[#0E1527] border border-white/10 hover:border-accent/40 rounded-xl transition-all duration-500 shadow-xl group hover:shadow-accent/5 hover:-translate-y-0.5 shrink-0"
             >
               <span className="text-xs font-bold text-white tracking-widest uppercase group-hover:text-accent transition-colors">
@@ -111,10 +111,10 @@ export default function Footer() {
               OUR PRODUCTS
             </span>
             <div className="flex flex-col items-start lg:items-end gap-3.5">
-              {PRODUCTS.slice(0, 5).map((product) => (
+              {PRODUCT_CATALOG.slice(0, 5).map((product) => (
                 <Link 
-                  key={product.id}
-                  href="#products" 
+                  key={product.slug}
+                  href={`/products/${product.slug}`} 
                   className="text-sm font-bold text-white/50 hover:text-white transition-all duration-300 hover:translate-x-1 lg:hover:translate-x-[-8px] tracking-tight font-heading"
                 >
                   {product.title}
