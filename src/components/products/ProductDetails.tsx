@@ -61,6 +61,18 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
   return (
     <AnimatePresence mode="wait">
       <motion.div key={slug} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.4, ease: "easeOut" }}>
+        {/* ── Back to Products Navigation ── */}
+        <div className="mb-4 flex">
+          <Link
+            href="/#products"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#334155]/70 hover:text-[#f97316] transition-colors uppercase tracking-widest bg-white px-5 py-2.5 rounded-full border border-[#e2e8f0] shadow-3xs"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Products
+          </Link>
+        </div>
 
         {/* ── 1. Product Hero ─────────────────────────────────────────────── */}
         <motion.div variants={fadeUp} initial="hidden" animate="visible" className="rounded-2xl overflow-hidden border border-[#e2e8f0] shadow-[0_8px_48px_rgba(15,23,42,0.1)] mb-8 relative group">
@@ -98,7 +110,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               In Stock - Fast Delivery - Custom Sizing Available
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex sm:flex-row flex-col items-center gap-3">
               <Button href="/quote" variant="primary" size="lg" className="text-xs py-2.5 px-6" id={`hero-quote-${slug}`}>
                 Request Quote
               </Button>

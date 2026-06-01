@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { PRODUCTS } from "@/lib/constants";
 import Button from "@/components/ui/Button";
 
@@ -98,8 +99,8 @@ export default function ProductsSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="shrink-0 flex self-start md:self-end"
           >
-            <a
-              href="#contact"
+            <Link
+              href="/products/conveyor-belt"
               className="inline-flex items-center gap-3 text-[15px] font-bold text-title hover:text-accent transition-colors group"
               id="see-all-products-header"
             >
@@ -119,7 +120,7 @@ export default function ProductsSection() {
                   />
                 </svg>
               </div>
-            </a>
+            </Link>
           </motion.div>
         </div>
 
@@ -228,7 +229,7 @@ export default function ProductsSection() {
                         variant="primary"
                         className="w-full sm:w-auto justify-center px-8 py-3 text-xs font-bold tracking-widest uppercase"
                       >
-                        View Details
+                        Read More
                       </Button>
                     </div>
 
@@ -342,7 +343,7 @@ export default function ProductsSection() {
                             variant="primary"
                             className="w-full justify-center py-3 text-xs font-bold tracking-widest uppercase"
                           >
-                            View Details
+                            Read More
                           </Button>
                         </motion.div>
                       </div>

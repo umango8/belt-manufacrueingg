@@ -195,7 +195,7 @@ export default function QuoteClient() {
       <main className="min-h-screen bg-linear-to-b from-[#f8fafc] via-white to-[#f8fafc] py-12 md:py-20">
         <div className="container-custom">
           {/* Header Hero Banner */}
-          <div className="max-w-4xl mb-12">
+          <div className="max-w-4xl lg:mb-12 mb-6">
             <span className="inline-flex items-center gap-2.5 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               Online Configurator
@@ -742,7 +742,7 @@ export default function QuoteClient() {
 
                           <div>
                             <label className="block text-xs font-bold text-secondary uppercase tracking-wider mb-2">Timeline Requirement</label>
-                            <div className="grid grid-cols-3 gap-3">
+                            <div className="grid sm:grid-cols-3 grid-cols-1 gap-3">
                               {[
                                 { id: "urgent", label: "Urgent (< 2 weeks)" },
                                 { id: "standard", label: "Standard (2-4 weeks)" },
@@ -787,7 +787,7 @@ export default function QuoteClient() {
                       )}
 
                       {/* Navigation buttons */}
-                      <div className="flex items-center justify-between pt-6 border-t border-border-light">
+                      <div className="flex items-center justify-between pt-6 border-t border-border-light sm:flex-row flex-col">
                         <button
                           type="button"
                           onClick={handlePrev}

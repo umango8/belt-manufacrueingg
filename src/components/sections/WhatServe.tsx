@@ -314,8 +314,8 @@ export default function WhatWeServeSection() {
 
                 {/* Bottom Content Area with Slide Up Reveal Panel */}
                 <div className="relative w-full h-full flex flex-col justify-end overflow-hidden pt-12 z-10">
-                  {/* Comfortable slightly-bottom position achieved using translate-y-[194px] */}
-                  <div className="translate-y-[160px] group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-end">
+                  {/* Comfortable slightly-bottom position achieved using translate-y-[194px] on desktop, fully open on mobile/tablet */}
+                  <div className="translate-y-0 md:translate-y-[160px] md:group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-end">
                     
                     {/* Title (White -> Industrial Orange on hover) */}
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-left transition-colors duration-300 group-hover:text-accent">
@@ -323,17 +323,17 @@ export default function WhatWeServeSection() {
                     </h3>
                     
                     {/* Divider Line */}
-                    <div className="h-px bg-white/20 w-full mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-[50ms]" />
+                    <div className="hidden md:block h-px bg-white/20 w-full mb-4 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-[50ms]" />
                     
                     {/* Short Description Paragraph */}
-                    <p className="text-[13.5px] text-white/80 leading-[1.55] text-left mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-[100ms] font-medium text-justify">
+                    <p className="hidden md:block text-[13.5px] text-white/80 leading-[1.55] text-left mb-6 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-[100ms] font-medium text-justify">
                       {service.description}
                     </p>
                     
                     {/* Full Read More Option Button */}
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-[150ms] w-full">
+                    <div className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-[150ms] w-full">
                       <div className="w-full justify-center py-2.5 text-xs font-bold tracking-widest uppercase border border-accent bg-accent text-white rounded-full flex items-center justify-center transition-colors duration-300">
-                        Explore Industry
+                        Read More
                       </div>
                     </div>
                   </div>
