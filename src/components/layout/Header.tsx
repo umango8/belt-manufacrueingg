@@ -133,7 +133,7 @@ function MegaMenu({ onClose, onMouseEnter }: MegaMenuProps) {
                       className={`group flex items-start gap-3 p-3 rounded-xl border transition-all duration-200 cursor-pointer ${
                         pathname === `/products/${product.slug}` ? "bg-[#f8fafc] border-border" : "hover:bg-[#f8fafc] border-transparent hover:border-border"
                       }`}
-                      id="mega-menu-${product.slug}"
+                      id={`mega-menu-${product.slug}`}
                     >
                       {/* Icon */}
                       <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent group-hover:text-white group-hover:shadow-[0_4px_12px_rgba(249,115,22,0.3)] ${
@@ -292,7 +292,8 @@ export default function Header() {
                     onMouseEnter={openMega}
                     onMouseLeave={closeMega}
                   >
-                    <button
+                    <Link
+                      href={link.href}
                       className={`flex items-center gap-1 text-[15px] font-medium transition-colors duration-300 ${
                         isMegaMenuOpen || isActiveLink(link.href, link.label) ? "text-accent" : "text-dark/70 hover:text-accent"
                       }`}
@@ -311,7 +312,7 @@ export default function Header() {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                       </motion.svg>
-                    </button>
+                    </Link>
 
                     <AnimatePresence>
                       {isMegaMenuOpen && (
@@ -418,6 +419,19 @@ export default function Header() {
                               className="overflow-hidden"
                             >
                               <div className="py-2 pl-4 flex flex-col gap-1 border-b border-border-light">
+                                <Link
+                                  href="/products/conveyor-belt"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="flex items-center gap-3 py-2 px-3 text-[#0f172a] hover:text-accent hover:bg-[#f8fafc] rounded-xl transition-colors font-bold text-sm"
+                                  id="mobile-product-all"
+                                >
+                                  <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 bg-[#0f172a]/5 text-[#0f172a] group-hover:bg-accent group-hover:text-white">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+                                      <path d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                  </div>
+                                  <span>View All Products</span>
+                                </Link>
                                 {PRODUCT_CATALOG.map((product) => {
                                   const isSubActive = pathname === `/products/${product.slug}`;
                                   return (

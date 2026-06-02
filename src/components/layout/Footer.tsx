@@ -130,25 +130,25 @@ export default function Footer() {
             </span>
             <div className="flex flex-col items-start lg:items-end gap-3.5">
               <Link 
-                href="#home" 
+                href="/#home" 
                 className="text-sm font-bold text-white/50 hover:text-white transition-all duration-300 hover:translate-x-1 lg:hover:translate-x-[-8px] tracking-tight font-heading"
               >
                 Home 
               </Link>
               <Link 
-                href="#products" 
+                href="/#products" 
                 className="text-sm font-bold text-white/50 hover:text-white transition-all duration-300 hover:translate-x-1 lg:hover:translate-x-[-8px] tracking-tight font-heading"
               >
                 Products
               </Link>
               <Link 
-                href="#industries" 
+                href="/#industries" 
                 className="text-sm font-bold text-white/50 hover:text-white transition-all duration-300 hover:translate-x-1 lg:hover:translate-x-[-8px] tracking-tight font-heading"
               >
                 Industries Served
               </Link>
               <Link 
-                href="#process" 
+                href="/#process" 
                 className="text-sm font-bold text-white/50 hover:text-white transition-all duration-300 hover:translate-x-1 lg:hover:translate-x-[-8px] tracking-tight font-heading"
               >
                 Our Process
