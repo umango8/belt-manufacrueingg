@@ -94,7 +94,7 @@ export default function MissionVision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-title leading-[1.15] tracking-tight mb-6 max-w-3xl mx-auto"
+            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-title leading-[1.15] tracking-tight mb-6 max-w-3xl "
           >
             Driven by <span className="text-accent">Purpose</span>, Built for{" "}
             <span className="text-accent">Impact</span>
@@ -105,7 +105,7 @@ export default function MissionVision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base lg:text-lg text-subtitle leading-relaxed max-w-2xl mx-auto font-medium"
+            className="text-base lg:text-lg text-subtitle leading-relaxed max-w-2xl  font-medium"
           >
             Our mission and vision guide every belt we engineer, every
             partnership we build, and every milestone we achieve.
