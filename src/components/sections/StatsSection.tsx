@@ -165,7 +165,7 @@ export default function StatsSection() {
       className="relative z-20 -mt-12 bg-[#F9FAFB] rounded-[48px] lg:h-[220vh] shadow-[0_-15px_30px_rgba(0,0,0,0.03)] overflow-visible"
     >
       {/* Sticky Child Wrapper - Pinned on desktop, standard static layout on mobile */}
-      <div className="relative lg:sticky lg:top-[80px] lg:h-[calc(100vh-80px)] w-full lg:flex lg:flex-col lg:justify-center lg:overflow-hidden py-16 md:py-24 lg:py-0">
+      <div className="relative lg:sticky lg:top-[80px] lg:h-[calc(100vh-80px)] w-full lg:flex lg:flex-col lg:justify-center lg:overflow-hidden pt-16 md:py-24 lg:py-0">
         <div className="container-custom">
           {/* Top Text Block - Scroll Progress Text Fill */}
           <div className="w-full mb-12">
