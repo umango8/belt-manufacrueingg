@@ -71,7 +71,7 @@ export default function Preloader() {
                   <circle cx="40" cy="50" r="16" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1" strokeDasharray="4 2" />
                   <line x1="40" y1="30" x2="40" y2="70" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
                   <line x1="20" y1="50" x2="60" y2="50" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
-                  <circle cx="40" cy="50" r="4.5" fill="#c87533" />
+                  <circle cx="40" cy="50" r="4.5" fill="#f97316" />
                 </g>
 
                 {/* Right Pulley (Spoke System) */}
@@ -80,7 +80,7 @@ export default function Preloader() {
                   <circle cx="120" cy="50" r="16" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1" strokeDasharray="4 2" />
                   <line x1="120" y1="30" x2="120" y2="70" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
                   <line x1="100" y1="50" x2="140" y2="50" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
-                  <circle cx="120" cy="50" r="4.5" fill="#c87533" />
+                  <circle cx="120" cy="50" r="4.5" fill="#f97316" />
                 </g>
 
                 {/* Outer Connecting Belt (Background Track) */}
@@ -96,7 +96,7 @@ export default function Preloader() {
                 <path
                   d="M 40,30 L 120,30 A 20,20 0 0,1 120,70 L 40,70 A 20,20 0 0,1 40,30 Z"
                   fill="none"
-                  stroke="#c87533"
+                  stroke="#f97316"
                   strokeWidth="3.5"
                   strokeLinecap="round"
                   className="moving-belt-track"
@@ -105,7 +105,7 @@ export default function Preloader() {
                 {/* --- PRODUCTS & INDUSTRIES MOVING ON THE BELT --- */}
                 {/* 1. Conveyor Belt (Product) */}
                 <g>
-                  <circle cx="0" cy="0" r="7" fill="#0c1a2e" stroke="#c87533" strokeWidth="1" />
+                  <circle cx="0" cy="0" r="7" fill="#0c1a2e" stroke="#f97316" strokeWidth="1" />
                   <g transform="scale(0.42) translate(-11.5, -11.5)">
                     <circle cx="6" cy="18" r="2" fill="none" stroke="#ffffff" strokeWidth="2" />
                     <circle cx="18" cy="18" r="2" fill="none" stroke="#ffffff" strokeWidth="2" />
@@ -124,7 +124,7 @@ export default function Preloader() {
 
                 {/* 2. Timing Belt (Product) */}
                 <g>
-                  <circle cx="0" cy="0" r="7" fill="#0c1a2e" stroke="#c87533" strokeWidth="1" />
+                  <circle cx="0" cy="0" r="7" fill="#0c1a2e" stroke="#f97316" strokeWidth="1" />
                   <g transform="scale(0.42) translate(-11.5, -11.5)">
                     <circle cx="12" cy="12" r="8" fill="none" stroke="#ffffff" strokeWidth="2" />
                     <path d="M12 6v6l4 2" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
@@ -140,7 +140,7 @@ export default function Preloader() {
 
                 {/* 3. Packaging Box (Industry) */}
                 <g>
-                  <circle cx="0" cy="0" r="7" fill="#0c1a2e" stroke="#c87533" strokeWidth="1" />
+                  <circle cx="0" cy="0" r="7" fill="#0c1a2e" stroke="#f97316" strokeWidth="1" />
                   <g transform="scale(0.42) translate(-11.5, -11.5)">
                     <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
                   </g>
@@ -155,7 +155,7 @@ export default function Preloader() {
 
                 {/* 4. Logistics Arrows (Industry) */}
                 <g>
-                  <circle cx="0" cy="0" r="7" fill="#0c1a2e" stroke="#c87533" strokeWidth="1" />
+                  <circle cx="0" cy="0" r="7" fill="#0c1a2e" stroke="#f97316" strokeWidth="1" />
                   <g transform="scale(0.42) translate(-11.5, -11.5)">
                     <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
                   </g>
