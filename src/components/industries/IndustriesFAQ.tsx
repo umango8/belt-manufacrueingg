@@ -12,7 +12,7 @@ const FAQS = [
   {
     question: "Do you provide customized industrial belts?",
     answer:
-      "Yes, BeltForge specializes in custom-engineered industrial belts. Our engineering team works closely with clients to design belts tailored to specific operational requirements — including custom widths, lengths, surface textures, compounds, and reinforcement configurations. We handle everything from prototype to large-scale production.",
+      "Yes, EarthIndia specializes in custom-engineered industrial belts. Our engineering team works closely with clients to design belts tailored to specific operational requirements — including custom widths, lengths, surface textures, compounds, and reinforcement configurations. We handle everything from prototype to large-scale production.",
   },
   {
     question: "Which belts are suitable for food processing?",
@@ -22,7 +22,7 @@ const FAQS = [
   {
     question: "Do you offer bulk manufacturing solutions?",
     answer:
-      "Absolutely. BeltForge operates state-of-the-art manufacturing facilities capable of high-volume production runs. We maintain India's largest ready-stock inventory and can scale production to meet OEM and large-scale industrial requirements. Bulk orders enjoy competitive pricing and dedicated project management.",
+      "Absolutely. EarthIndia operates state-of-the-art manufacturing facilities capable of high-volume production runs. We maintain India's largest ready-stock inventory and can scale production to meet OEM and large-scale industrial requirements. Bulk orders enjoy competitive pricing and dedicated project management.",
   },
   {
     question: "Can belts be customized according to machinery?",

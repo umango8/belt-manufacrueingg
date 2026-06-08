@@ -68,7 +68,7 @@ const SERVICES: ServiceItem[] = [
     id: "pharmaceutical",
     title: "Pharmaceutical Industry",
     badge: "PHARMA",
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbbab4?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop",
     description: "Anti-static, anti-bacterial conveyor belts meeting stringent pharmaceutical GMP standards for clean-room environments.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ const SERVICES: ServiceItem[] = [
     id: "printing",
     title: "Printing Industry",
     badge: "PRINTING",
-    image: "https://images.unsplash.com/photo-1616400619175-5ebd3009007f?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=800&auto=format&fit=crop",
     description: "Precision flat and timing belts for offset, digital, and flexographic printing machines with exact registration control.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,7 +187,7 @@ export default function WhatWeServeSection() {
   }, []);
 
   return (
-    <section id="services" className="section-padding bg-[#0A0E1A] relative overflow-hidden">
+    <section id="services" className="section-padding bg-[#0B1628] relative overflow-hidden">
       {/* Hardware-Accelerated Marquee Stylesheet Injection */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes marquee {
@@ -209,12 +209,12 @@ export default function WhatWeServeSection() {
       {/* Huge Background Vector Watermark Text (Double Watermark) */}
       <div className="absolute inset-x-0 bottom-0 flex justify-center overflow-hidden pointer-events-none select-none z-0">
         <span className="text-[14vw] font-black text-accent/4 tracking-[0.10em] leading-none uppercase translate-y-[28%] select-none">
-          BELTFORGE
+          EarthIndia
         </span>
       </div>
       <div className="absolute inset-x-0 top-0 flex justify-center overflow-visible pointer-events-none select-none z-0">
         <span className="text-[14vw] font-black text-white/4 tracking-[0.10em] leading-none uppercase translate-y-[-25%] select-none">
-          BELTFORGE
+          EarthIndia
         </span>
       </div>
 
@@ -267,10 +267,10 @@ export default function WhatWeServeSection() {
       {/* Sliding Infinite Loop Marquee Container - OUTSIDE container-custom for full-width viewport bleed */}
       <div className="overflow-hidden w-full relative z-10 parent-hover-pause py-4">
         {/* Left Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 sm:bg-gradient-to-r from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 sm:bg-gradient-to-r from-[#0B1628] via-[#0B1628]/60 to-transparent pointer-events-none z-20" />
         
         {/* Right Side Atmospheric Dark Gradient Overlay */}
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 sm:bg-gradient-to-l from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none z-20" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 sm:bg-gradient-to-l from-[#0B1628] via-[#0B1628]/60 to-transparent pointer-events-none z-20" />
 
         <div
           ref={trackRef}
@@ -299,12 +299,12 @@ export default function WhatWeServeSection() {
                     className="object-cover transition-transform duration-700 ease-out"
                     sizes="310px"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A]/40 via-[#0A0E1A]/60 to-[#0A0E1A]/20 group-hover:via-[#0A0E1A]/75 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1628]/40 via-[#0B1628]/60 to-[#0B1628]/20 group-hover:via-[#0B1628]/75 transition-all duration-500" />
                 </div>
 
                 {/* Top Row - STATIC LIGHT BACKGROUND CIRCLE with SVG Icon */}
                 <div className="flex items-center justify-between w-full relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-white/95 text-[#0A0E1A] flex items-center justify-center shadow-md border border-white/20 backdrop-blur-sm group-hover:bg-accent group-hover:text-white transition-all duration-300 ease-out">
+                  <div className="w-12 h-12 rounded-full bg-white/95 text-[#0B1628] flex items-center justify-center shadow-md border border-white/20 backdrop-blur-sm group-hover:bg-accent group-hover:text-white transition-all duration-300 ease-out">
                     {service.icon}
                   </div>
                   <span className="text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md uppercase tracking-wider">

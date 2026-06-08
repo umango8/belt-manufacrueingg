@@ -57,7 +57,7 @@ export default function Certifications() {
         className="absolute inset-0 pointer-events-none opacity-[0.008] z-0"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px)",
+            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px)",
         }}
       />
 
@@ -117,7 +117,7 @@ export default function Certifications() {
               <div className="absolute inset-0 bg-linear-to-b from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/2 group-hover:via-accent/4 group-hover:to-accent/1 transition-all duration-700 pointer-events-none" />
 
               {/* Icon */}
-              <div className="w-20 h-20 md:mx-auto bg-primary/5 border border-primary/10 flex items-center  justify-center text-primary mb-5 rounded-2xl group-hover:bg-[#0A0E1A] group-hover:border-accent group-hover:text-accent transition-all duration-500 shadow-sm group-hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] relative z-10">
+              <div className="w-20 h-20 md:mx-auto bg-primary/5 border border-primary/10 flex items-center  justify-center text-primary mb-5 rounded-2xl group-hover:bg-[#0B1628] group-hover:border-accent group-hover:text-accent transition-all duration-500 shadow-sm group-hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] relative z-10">
                 <div className="group-hover:scale-110 transition-transform duration-500">
                   {cert.icon}
                 </div>

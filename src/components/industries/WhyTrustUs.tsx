@@ -84,7 +84,7 @@ export default function WhyTrustUs() {
         className="absolute inset-0 pointer-events-none opacity-[0.012] z-0"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px)",
+            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px)",
         }}
       />
 
@@ -110,7 +110,7 @@ export default function WhyTrustUs() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-title leading-[1.15] tracking-tight mb-6"
           >
-            The <span className="text-accent">BeltForge</span> Advantage
+            The <span className="text-accent">EarthIndia</span> Advantage
           </motion.h2>
 
           <motion.p
@@ -120,7 +120,7 @@ export default function WhyTrustUs() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-base lg:text-lg text-subtitle leading-relaxed font-medium text-justify sm:text-left"
           >
-            Six pillars of engineering excellence that make BeltForge the preferred industrial
+            Six pillars of engineering excellence that make EarthIndia the preferred industrial
             belt partner for India&apos;s most demanding manufacturing environments.
           </motion.p>
         </div>
@@ -155,7 +155,7 @@ export default function WhyTrustUs() {
               <div className="absolute top-0 left-0 w-32 h-32 bg-accent/3 rounded-full blur-[60px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
               {/* Icon */}
-              <div className="w-14 h-14 bg-primary/5 border border-primary/15 flex items-center justify-center text-primary mb-6 rounded-full group-hover:bg-[#0A0E1A] group-hover:border-accent group-hover:text-accent transition-all duration-500 shadow-sm group-hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] relative z-10">
+              <div className="w-14 h-14 bg-primary/5 border border-primary/15 flex items-center justify-center text-primary mb-6 rounded-full group-hover:bg-[#0B1628] group-hover:border-accent group-hover:text-accent transition-all duration-500 shadow-sm group-hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] relative z-10">
                 <div className="group-hover:scale-110 group-hover:-translate-y-0.5 transition-all duration-500">
                   {feature.icon}
                 </div>

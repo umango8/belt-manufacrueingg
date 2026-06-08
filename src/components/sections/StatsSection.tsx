@@ -53,8 +53,8 @@ function ScrollProgressWord({ word, index, totalWords, progress }: ScrollProgres
   const start = (index / totalWords) * 0.35;
   const end = Math.min(0.35, ((index + 1.5) / totalWords) * 0.35);
 
-  // Transition from Deep Navy (#0F172A) to Industrial Orange (#F97316)
-  const color = useTransform(progress, [start, end], ["#9b9ea5", "#0f172a"]);
+  // Transition from Deep Navy (#0F172A) to Industrial Orange (#C87533)
+  const color = useTransform(progress, [start, end], ["#9b9ea5", "#0c1a2e"]);
 
   return (
     <motion.span style={{ color }} className="inline-block mr-[0.25em]">

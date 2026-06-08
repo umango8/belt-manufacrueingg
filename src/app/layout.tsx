@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "BeltForge Industries | Premium Industrial Conveyor Belt Manufacturer",
+  title: "EarthIndia Industries | Premium Industrial Conveyor Belt Manufacturer",
   description:
     "Leading manufacturer of premium industrial rubber conveyor belts. Heat resistant, chevron, oil resistant, and custom conveyor solutions for mining, cement, steel, and power industries. ISO 9001:2015 certified.",
   keywords: [
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     "oil resistant belt",
     "conveyor belt supplier",
   ],
-  authors: [{ name: "BeltForge Industries" }],
+  authors: [{ name: "EarthIndia Industries" }],
   openGraph: {
-    title: "BeltForge Industries | Premium Industrial Conveyor Belt Manufacturer",
+    title: "EarthIndia Industries | Premium Industrial Conveyor Belt Manufacturer",
     description:
       "Leading manufacturer of premium industrial rubber conveyor belts for mining, cement, steel, and power industries.",
     type: "website",
     locale: "en_IN",
-    siteName: "BeltForge Industries",
+    siteName: "EarthIndia Industries",
   },
   robots: {
     index: true,
@@ -61,12 +61,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "BeltForge Industries",
+              name: "EarthIndia Industries",
               description:
                 "Leading manufacturer of premium industrial rubber conveyor belts.",
-              url: "https://beltforge.com",
+              url: "https://earthindia.com",
               telephone: "+91-8200223669",
-              email: "info@beltforge.com",
+              email: "info@earthindia.com",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Industrial Area, Phase II",

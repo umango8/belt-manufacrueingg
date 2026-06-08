@@ -88,7 +88,7 @@ export default function IndustrySidebar() {
           data-lenis-prevent
         >
           {/* Sidebar header */}
-          <div className="px-5 py-4 border-b border-[#f1f5f9] bg-[#0f172a]">
+          <div className="px-5 py-4 border-b border-[#eef1f5] bg-[#0c1a2e]">
             <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-1">Industries</p>
             <p className="text-sm font-semibold text-white">All Industries We Serve</p>
           </div>
@@ -100,7 +100,7 @@ export default function IndustrySidebar() {
           >
             {/* Category label */}
             <div className="px-4 pt-4 pb-1.5">
-              <span className="text-[9px] font-bold uppercase tracking-widest text-[#334155]/40">Industry Verticals</span>
+              <span className="text-[9px] font-bold uppercase tracking-widest text-[#3a4a5c]/40">Industry Verticals</span>
             </div>
 
             {INDUSTRY_CATALOG.map((industry, idx) => {
@@ -117,8 +117,8 @@ export default function IndustrySidebar() {
                     id={`industry-sidebar-${industry.slug}`}
                     className={`group flex items-center gap-3 mx-2 mb-1 px-3 py-3 rounded-xl transition-all duration-200 relative overflow-hidden ${
                       isActive
-                        ? "bg-[#0f172a] text-white shadow-md"
-                        : "hover:bg-[#f8fafc] text-[#334155]"
+                        ? "bg-[#0c1a2e] text-white shadow-md"
+                        : "hover:bg-[#f7f8fa] text-[#3a4a5c]"
                     }`}
                   >
                     {/* Active left-border indicator */}
@@ -130,17 +130,17 @@ export default function IndustrySidebar() {
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 ${
                       isActive
                         ? "bg-accent text-white shadow-[0_4px_12px_rgba(249,115,22,0.4)]"
-                        : "bg-[#0f172a]/5 text-[#0f172a] group-hover:bg-accent/10 group-hover:text-accent"
+                        : "bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-accent/10 group-hover:text-accent"
                     }`}>
                       {iconMap[industry.icon] ?? iconMap.textile}
                     </div>
 
                     {/* Text */}
                     <div className="min-w-0 flex-1">
-                      <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0f172a] group-hover:text-accent"} transition-colors`}>
+                      <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0c1a2e] group-hover:text-accent"} transition-colors`}>
                         {industry.title}
                       </p>
-                      <p className={`text-[10px] mt-0.5 leading-tight line-clamp-1 ${isActive ? "text-white/60" : "text-[#334155]/50"}`}>
+                      <p className={`text-[10px] mt-0.5 leading-tight line-clamp-1 ${isActive ? "text-white/60" : "text-[#3a4a5c]/50"}`}>
                         {industry.shortDesc}
                       </p>
                     </div>
@@ -151,7 +151,7 @@ export default function IndustrySidebar() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                       </svg>
                     ) : (
-                      <svg className="w-3 h-3 text-[#334155]/20 group-hover:text-accent shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 text-[#3a4a5c]/20 group-hover:text-accent shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                       </svg>
                     )}
@@ -161,7 +161,7 @@ export default function IndustrySidebar() {
             })}
 
             {/* Bottom CTA */}
-            <div className="m-3 mt-3 p-4 rounded-xl bg-linear-to-br from-[#0f172a] to-[#1e293b] border border-[#334155]/40">
+            <div className="m-3 mt-3 p-4 rounded-xl bg-linear-to-br from-[#0c1a2e] to-[#1a2a3a] border border-[#3a4a5c]/40">
               <p className="text-xs font-bold text-white mb-1">Need a custom solution?</p>
               <p className="text-[11px] text-white/50 mb-3 leading-snug">Our engineers design belts tailored to your industry requirements.</p>
               <Link
@@ -194,15 +194,15 @@ export default function IndustrySidebar() {
                   id={`industry-tab-${industry.slug}`}
                   className={`flex items-center gap-3 px-5 py-3.5 rounded-xl border text-sm font-bold whitespace-nowrap transition-all duration-300 ${
                     isActive
-                      ? "bg-[#0f172a] text-white border-[#0f172a] shadow-[0_4px_16px_rgba(15,23,42,0.12)]"
-                      : "bg-white text-[#334155] border-border/85 hover:bg-[#f8fafc]"
+                      ? "bg-[#0c1a2e] text-white border-[#0c1a2e] shadow-[0_4px_16px_rgba(15,23,42,0.12)]"
+                      : "bg-white text-[#3a4a5c] border-border/85 hover:bg-[#f7f8fa]"
                   }`}
                 >
                   {/* Icon */}
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
                     isActive
                       ? "bg-accent text-white shadow-[0_2px_8px_rgba(249,115,22,0.3)]"
-                      : "bg-[#0f172a]/5 text-[#0f172a]"
+                      : "bg-[#0c1a2e]/5 text-[#0c1a2e]"
                   }`}>
                     {iconMap[industry.icon] ?? iconMap.textile}
                   </div>
@@ -214,14 +214,14 @@ export default function IndustrySidebar() {
           </div>
 
           {/* Right indicator chevron overlay to convey scrolling availability */}
-          <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#f8fafc] via-[#f8fafc]/90 to-transparent pointer-events-none flex items-center justify-end pr-1">
+          <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#f7f8fa] via-[#f7f8fa]/90 to-transparent pointer-events-none flex items-center justify-end pr-1">
             <button 
               onClick={() => {
                 if (scrollRef.current) {
                   scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
                 }
               }}
-              className="w-7 h-7 rounded-full bg-white shadow-xs flex items-center justify-center text-[#0f172a] hover:text-accent border border-border/60 pointer-events-auto active:scale-95 transition-all"
+              className="w-7 h-7 rounded-full bg-white shadow-xs flex items-center justify-center text-[#0c1a2e] hover:text-accent border border-border/60 pointer-events-auto active:scale-95 transition-all"
               aria-label="Scroll right"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,11 +237,11 @@ export default function IndustrySidebar() {
         {/* Dropdown main selector button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between px-5 py-3.5 bg-white border border-border/80 rounded-xl font-bold text-[#0f172a] shadow-xs text-left"
+          className="w-full flex items-center justify-between px-5 py-3.5 bg-white border border-border/80 rounded-xl font-bold text-[#0c1a2e] shadow-xs text-left"
         >
           <span className="text-sm">{INDUSTRY_CATALOG.find(i => i.slug === currentSlug)?.title ?? "Select Industry"}</span>
           <svg
-            className={`w-4 h-4 text-[#0f172a]/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+            className={`w-4 h-4 text-[#0c1a2e]/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -274,12 +274,12 @@ export default function IndustrySidebar() {
                         onClick={() => setIsOpen(false)}
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
                           isActive
-                            ? "bg-[#0f172a]/5 text-accent font-bold"
-                            : "text-[#334155] hover:bg-[#f8fafc] hover:text-[#0f172a]"
+                            ? "bg-[#0c1a2e]/5 text-accent font-bold"
+                            : "text-[#3a4a5c] hover:bg-[#f7f8fa] hover:text-[#0c1a2e]"
                         }`}
                       >
                         <div className={`w-7 h-7 rounded-md flex items-center justify-center shrink-0 ${
-                          isActive ? "bg-accent/15 text-accent" : "bg-[#0f172a]/5 text-[#0f172a]"
+                          isActive ? "bg-accent/15 text-accent" : "bg-[#0c1a2e]/5 text-[#0c1a2e]"
                         }`}>
                           {iconMap[industry.icon] ?? iconMap.textile}
                         </div>

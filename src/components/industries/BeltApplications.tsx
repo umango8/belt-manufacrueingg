@@ -76,17 +76,17 @@ export default function BeltApplications() {
       {/* Styles for glowing, flowing animated conveyor connectors */}
       <style jsx global>{`
         .conveyor-line-h {
-          background-image: linear-gradient(90deg, #f97316 60%, transparent 40%);
+          background-image: linear-gradient(90deg, #c87533 60%, transparent 40%);
           background-size: 8px 2px;
           animation: conveyor-flow-h 0.6s linear infinite;
         }
         .conveyor-line-h-rev {
-          background-image: linear-gradient(-90deg, #f97316 60%, transparent 40%);
+          background-image: linear-gradient(-90deg, #c87533 60%, transparent 40%);
           background-size: 8px 2px;
           animation: conveyor-flow-h-rev 0.6s linear infinite;
         }
         .conveyor-line-v {
-          background-image: linear-gradient(180deg, #f97316 60%, transparent 40%);
+          background-image: linear-gradient(180deg, #c87533 60%, transparent 40%);
           background-size: 2px 8px;
           animation: conveyor-flow-v 0.6s linear infinite;
         }
@@ -116,12 +116,12 @@ export default function BeltApplications() {
       {/* Giant watermark vector background */}
       <div className="absolute inset-x-0 top-12 lg:top-[-70px] flex items-center justify-center pointer-events-none select-none overflow-hidden z-0 opacity-[0.04] w-full">
         <span className="text-[14vw] font-black tracking-[0.15em] uppercase text-white font-sans leading-none select-none">
-          BELTFORGE
+          EarthIndia
         </span>
       </div>
         <div className="absolute  bottom-12 lg:bottom-[-70px] flex items-center justify-center pointer-events-none select-none overflow-hidden z-0 opacity-[0.04] w-full">
         <span className="text-[14vw] font-black tracking-[0.15em] uppercase text-accent font-sans leading-none select-none">
-          BELTFORGE
+          EarthIndia
         </span>
       </div>
 
@@ -151,7 +151,7 @@ export default function BeltApplications() {
           >
             <span className="inline-flex items-center gap-2.5 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full mb-6 border border-accent/15 backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              BELTFORGE APPLICATIONS
+              EarthIndia APPLICATIONS
             </span>
           </motion.div>
 

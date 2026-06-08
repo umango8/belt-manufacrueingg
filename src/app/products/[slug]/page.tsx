@@ -19,21 +19,21 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = PRODUCT_CATALOG.find((p) => p.slug === slug);
-  if (!product) return { title: "Product Not Found | BeltForge Industries" };
+  if (!product) return { title: "Product Not Found | EarthIndia Industries" };
 
   return {
-    title: `${product.title} | BeltForge Industries — Industrial Belt Manufacturer`,
-    description: `${product.overview} Manufactured by BeltForge Industries — ${COMPANY.iso} certified. Request a quote today.`,
+    title: `${product.title} | EarthIndia Industries — Industrial Belt Manufacturer`,
+    description: `${product.overview} Manufactured by EarthIndia Industries — ${COMPANY.iso} certified. Request a quote today.`,
     keywords: [
       product.title,
       `${product.title} manufacturer`,
       `industrial ${product.title.toLowerCase()}`,
       "belt manufacturer India",
-      "BeltForge Industries",
+      "EarthIndia Industries",
       ...product.applications,
     ],
     openGraph: {
-      title: `${product.title} | BeltForge Industries`,
+      title: `${product.title} | EarthIndia Industries`,
       description: product.overview,
       type: "website",
     },
@@ -48,11 +48,11 @@ export default async function ProductPage({ params }: Props) {
   return (
     <>
       <Header />
-      <main className="bg-[#f8fafc] min-h-screen">
+      <main className="bg-[#f7f8fa] min-h-screen">
         {/* Breadcrumb */}
         <div className="bg-white border-b border-border">
           <div className="container-custom py-3.5">
-            <nav className="flex items-center gap-2 text-[12px] text-[#334155]/60" aria-label="Breadcrumb">
+            <nav className="flex items-center gap-2 text-[12px] text-[#3a4a5c]/60" aria-label="Breadcrumb">
               <Link href="/" className="hover:text-accent transition-colors font-medium">Home</Link>
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -61,7 +61,7 @@ export default async function ProductPage({ params }: Props) {
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              <span className="text-[#0f172a] font-semibold truncate max-w-[200px]">{product.title}</span>
+              <span className="text-[#0c1a2e] font-semibold truncate max-w-[200px]">{product.title}</span>
             </nav>
           </div>
         </div>

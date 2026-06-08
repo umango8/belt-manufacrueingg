@@ -12,7 +12,7 @@ export default function IndustriesCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="cta-industries-wrapper relative overflow-hidden rounded-xl md:rounded-[24px] border border-white/10 bg-linear-to-br from-[#0F1424] to-[#0A0E1A] p-6 sm:p-12 lg:p-16 shadow-2xl shadow-accent/5"
+          className="cta-industries-wrapper relative overflow-hidden rounded-xl md:rounded-[24px] border border-white/10 bg-linear-to-br from-[#0F1424] to-[#0B1628] p-6 sm:p-12 lg:p-16 shadow-2xl shadow-accent/5"
         >
           {/* Inline hover style for background image zoom */}
           <style dangerouslySetInnerHTML={{ __html: `
@@ -29,14 +29,14 @@ export default function IndustriesCTA() {
               className="cta-ind-bg-image absolute inset-0 w-full h-full object-cover opacity-[0.35] transition-transform duration-1000 ease-out"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-linear-to-br from-[#0F1424]/95 via-[#0A0E1A]/90 to-[#0A0E1A]/95" />
+            <div className="absolute inset-0 bg-linear-to-br from-[#0F1424]/95 via-[#0B1628]/90 to-[#0B1628]/95" />
           </div>
 
           {/* Subtle tech grid */}
           <div
             className="absolute inset-0 z-0 opacity-[0.15] pointer-events-none"
             style={{
-              backgroundImage: "radial-gradient(#F97316 1px, transparent 1px)",
+              backgroundImage: "radial-gradient(#C87533 1px, transparent 1px)",
               backgroundSize: "24px 24px",
             }}
           />
@@ -52,7 +52,7 @@ export default function IndustriesCTA() {
               ))}
             </svg>
             <span className="relative z-10 text-[20px] sm:text-[30px] font-black tracking-[0.25em] text-white uppercase font-sans select-none pl-[0.25em]">
-              BELTFORGE
+              EarthIndia
             </span>
           </div>
 

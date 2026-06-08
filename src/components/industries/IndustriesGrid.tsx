@@ -65,7 +65,7 @@ const INDUSTRIES = [
     description:
       "Anti-static, anti-bacterial conveyor belts meeting stringent pharmaceutical GMP standards for clean-room environments.",
     application: "White PU belts, anti-static belts, and sealed-edge belts for tablet and capsule lines.",
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbbab4?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -91,7 +91,7 @@ const INDUSTRIES = [
     description:
       "Precision flat and timing belts for offset, digital, and flexographic printing machines with exact registration control.",
     application: "Flat drive belts, suction belts, and timing belts for presses and bindery equipment.",
-    image: "https://images.unsplash.com/photo-1616400619175-5ebd3009007f?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=800&auto=format&fit=crop",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
@@ -260,7 +260,7 @@ export default function IndustriesGrid() {
         className="absolute inset-0 pointer-events-none opacity-[0.012] z-0"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px)",
+            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px)",
         }}
       />
 

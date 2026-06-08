@@ -16,7 +16,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="cta-card-wrapper relative overflow-hidden rounded-xl md:rounded-[24px] border border-white/10 bg-linear-to-br from-[#0F1424] to-[#0A0E1A] p-6 sm:p-12 lg:p-16 shadow-2xl shadow-accent/5"
+          className="cta-card-wrapper relative overflow-hidden rounded-xl md:rounded-[24px] border border-white/10 bg-linear-to-br from-[#0F1424] to-[#0B1628] p-6 sm:p-12 lg:p-16 shadow-2xl shadow-accent/5"
         >
           {/* Custom Styles for Card Background Hover Zoom */}
           <style dangerouslySetInnerHTML={{ __html: `
@@ -34,14 +34,14 @@ export default function CTASection() {
               loading="lazy"
             />
             {/* Multi-layered dark gradients to preserve ultimate text legibility */}
-            <div className="absolute inset-0 bg-linear-to-br from-[#0F1424]/95 via-[#0A0E1A]/90 to-[#0A0E1A]/95" />
+            <div className="absolute inset-0 bg-linear-to-br from-[#0F1424]/95 via-[#0B1628]/90 to-[#0B1628]/95" />
           </div>
 
           {/* Subtle Tech Grid backdrop */}
           <div 
             className="absolute inset-0 z-0 opacity-[0.20] pointer-events-none"
             style={{
-              backgroundImage: "radial-gradient(#F97316 1px, transparent 1px)",
+              backgroundImage: "radial-gradient(#C87533 1px, transparent 1px)",
               backgroundSize: "24px 24px"
             }}
           />
@@ -67,7 +67,7 @@ export default function CTASection() {
 
             {/* Stationary Center Brand Text */}
             <span className="relative z-10 text-[20px] sm:text-[30px] font-black tracking-[0.25em] text-white  uppercase font-sans select-none pl-[0.25em]">
-              BELTFORGE
+              EarthIndia
             </span>
           </div>
 

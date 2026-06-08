@@ -48,7 +48,7 @@ export default function ProductsSection() {
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.04] select-none"
         style={{
-          backgroundImage: "radial-gradient(#F97316 1.2px, transparent 1.2px)",
+          backgroundImage: "radial-gradient(#C87533 1.2px, transparent 1.2px)",
           backgroundSize: "24px 24px"
         }}
       />
@@ -69,7 +69,7 @@ export default function ProductsSection() {
       {/* Huge Background Vector Watermark in Accent Color (Spanning full width) */}
       <div className="absolute inset-x-0 bottom-0 flex justify-center overflow-hidden pointer-events-none select-none z-0">
         <span className="text-[15vw] font-black text-accent/3 tracking-[0.15em] leading-none uppercase translate-y-[25%] select-none">
-          BELTFORGE
+          EarthIndia
         </span>
       </div>
 

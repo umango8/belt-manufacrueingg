@@ -45,8 +45,8 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
   if (!industry) {
     return (
       <div className="flex flex-col items-center justify-center py-32 text-center">
-        <p className="text-2xl font-bold text-[#0f172a] mb-4">Industry Not Found</p>
-        <p className="text-[#334155]/60 mb-8">The industry you're looking for doesn't exist.</p>
+        <p className="text-2xl font-bold text-[#0c1a2e] mb-4">Industry Not Found</p>
+        <p className="text-[#3a4a5c]/60 mb-8">The industry you're looking for doesn't exist.</p>
         <Link href="/industries" className="btn-pill btn-primary">View All Industries</Link>
       </div>
     );
@@ -59,7 +59,7 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
         <div className="mb-4 flex">
           <Link
             href="/industries"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#334155]/70 hover:text-[#f97316] transition-colors uppercase tracking-widest bg-white px-5 py-2.5 rounded-full border border-[#e2e8f0] shadow-3xs"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#3a4a5c]/70 hover:text-[#c87533] transition-colors uppercase tracking-widest bg-white px-5 py-2.5 rounded-full border border-[#dce1e8] shadow-3xs"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
@@ -87,7 +87,7 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
                 sizes="(max-width: 1024px) 100vw, 65vw"
               />
             )}
-            <div className="absolute inset-0 bg-linear-to-t from-[#0f172a]/90 via-[#0f172a]/40 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-[#0c1a2e]/90 via-[#0c1a2e]/40 to-transparent" />
 
             {/* Live active badge */}
             <div className="absolute top-5 left-5">
@@ -107,8 +107,8 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
           </div>
 
           {/* CTA strip */}
-          <div className="bg-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#f1f5f9]">
-            <div className="flex items-center gap-2 text-xs text-[#334155]/60 font-semibold">
+          <div className="bg-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#eef1f5]">
+            <div className="flex items-center gap-2 text-xs text-[#3a4a5c]/60 font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               ISO 9001:2015 Quality standards
             </div>
@@ -125,16 +125,16 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
           <div className="bg-white rounded-2xl border border-border p-6 sm:p-8 shadow-sm">
             <div className="flex items-center gap-2.5 mb-5">
               <div className="w-1 h-6 bg-accent rounded-full" />
-              <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Industry Overview</h2>
+              <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Industry Overview</h2>
             </div>
-            <p className="text-[15px] text-[#334155] leading-relaxed font-medium mb-6">{industry.overview}</p>
+            <p className="text-[15px] text-[#3a4a5c] leading-relaxed font-medium mb-6">{industry.overview}</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5 border-t border-[#f1f5f9]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5 border-t border-[#eef1f5]">
               <div>
-                <span className="text-[10px] font-bold text-[#0f172a]/40 uppercase tracking-widest mb-2 block">
+                <span className="text-[10px] font-bold text-[#0c1a2e]/40 uppercase tracking-widest mb-2 block">
                   THE CHALLENGE
                 </span>
-                <p className="text-sm text-[#334155] leading-relaxed font-medium">
+                <p className="text-sm text-[#3a4a5c] leading-relaxed font-medium">
                   {industry.challenge}
                 </p>
               </div>
@@ -142,7 +142,7 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
                 <span className="text-[10px] font-bold text-accent/80 uppercase tracking-widest mb-2 block">
                   OUR SOLUTION
                 </span>
-                <p className="text-sm text-[#334155] leading-relaxed font-medium">
+                <p className="text-sm text-[#3a4a5c] leading-relaxed font-medium">
                   {industry.solution}
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-border p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
             <div className="w-1 h-6 bg-accent rounded-full" />
-            <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Recommended Belt Types</h2>
+            <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Recommended Belt Types</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {industry.beltTypes.map((belt, i) => (
@@ -162,12 +162,12 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
                 key={belt.name}
                 className="group flex gap-4 p-4 rounded-xl border border-border hover:border-accent/30 hover:shadow-[0_4px_24px_rgba(249,115,22,0.08)] transition-all duration-300 bg-[#fafbfc]"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#0f172a]/5 text-[#0f172a] group-hover:bg-accent group-hover:text-white flex items-center justify-center shrink-0 transition-all duration-300 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-accent group-hover:text-white flex items-center justify-center shrink-0 transition-all duration-300 shadow-sm">
                   <FeatureIcon index={i} />
                 </div>
                 <div>
-                  <p className="text-[14px] font-bold text-[#0f172a] mb-1">{belt.name}</p>
-                  <p className="text-[12px] text-[#334155]/70 leading-relaxed">{belt.desc}</p>
+                  <p className="text-[14px] font-bold text-[#0c1a2e] mb-1">{belt.name}</p>
+                  <p className="text-[12px] text-[#3a4a5c]/70 leading-relaxed">{belt.desc}</p>
                 </div>
               </div>
             ))}
@@ -178,7 +178,7 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-border p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
             <div className="w-1 h-6 bg-accent rounded-full" />
-            <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Key Operational Benefits</h2>
+            <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Key Operational Benefits</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             {industry.benefits.map((benefit, i) => (
@@ -188,7 +188,7 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-[13.5px] font-semibold text-[#334155] leading-snug">{benefit}</span>
+                <span className="text-[13.5px] font-semibold text-[#3a4a5c] leading-snug">{benefit}</span>
               </div>
             ))}
           </div>
@@ -198,7 +198,7 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-border p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
             <div className="w-1 h-6 bg-accent rounded-full" />
-            <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Processes & Applications</h2>
+            <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Processes & Applications</h2>
           </div>
           <div className="flex flex-wrap gap-2.5">
             {industry.applications.map((app, i) => (
@@ -219,7 +219,7 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-border p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
             <div className="w-1 h-6 bg-accent rounded-full" />
-            <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Proven Performance Metrics</h2>
+            <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Proven Performance Metrics</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {industry.stats.map((stat, i) => (
@@ -231,7 +231,7 @@ export default function IndustryDetailContent({ slug }: IndustryDetailContentPro
                   {stat.value}
                   <span className="text-xl font-bold ml-0.5">{stat.suffix}</span>
                 </div>
-                <div className="text-[10px] font-bold text-[#334155]/70 uppercase tracking-wider leading-snug">
+                <div className="text-[10px] font-bold text-[#3a4a5c]/70 uppercase tracking-wider leading-snug">
                   {stat.label}
                 </div>
               </div>

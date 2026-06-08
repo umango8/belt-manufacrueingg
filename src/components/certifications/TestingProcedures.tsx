@@ -171,7 +171,7 @@ export default function TestingProcedures() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <span className="text-[10px] text-white/50 uppercase font-bold tracking-widest">BeltForge Testing Laboratory</span>
+                    <span className="text-[10px] text-white/50 uppercase font-bold tracking-widest">EarthIndia Testing Laboratory</span>
                     <h5 className="text-white text-xs font-bold leading-tight">ISO Compliant Facility</h5>
                   </div>
                 </div>

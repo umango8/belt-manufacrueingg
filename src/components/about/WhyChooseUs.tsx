@@ -106,17 +106,17 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-choose-us"
-      className="section-padding bg-linear-to-br from-[#0F1424] via-[#070b13] to-[#0A0E1A] relative overflow-hidden"
+      className="section-padding bg-linear-to-br from-[#0F1424] via-[#070b13] to-[#0B1628] relative overflow-hidden"
     >
       {/* Huge Backdrop text like the image */}
       <div className="absolute inset-x-0 bottom-0 flex justify-center overflow-hidden pointer-events-none select-none z-0">
         <span className="text-[14vw] font-black text-accent/4 tracking-[0.10em] leading-none uppercase translate-y-[28%] select-none">
-          BELTFORGE
+          EarthIndia
         </span>
       </div>
       <div className="absolute inset-x-0 top-0 flex justify-center overflow-visible pointer-events-none select-none z-0">
         <span className="text-[14vw] font-black text-white/4 tracking-[0.10em] leading-none uppercase translate-y-[-25%] select-none">
-          BELTFORGE
+          EarthIndia
         </span>
       </div>
 
@@ -141,7 +141,7 @@ export default function WhyChooseUs() {
       {/* <div 
         className="absolute inset-0 z-0 opacity-[0.12] pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(#F97316 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(#C87533 1px, transparent 1px)",
           backgroundSize: "24px 24px"
         }}
       /> */}
@@ -168,7 +168,7 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.15] tracking-tight mb-6"
           >
-            The <span className="text-accent">BeltForge</span> Difference
+            The <span className="text-accent">EarthIndia</span> Difference
           </motion.h2>
 
           <motion.p
@@ -178,7 +178,7 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-base lg:text-lg text-white/60 leading-relaxed font-medium text-justify sm:text-left"
           >
-            Six pillars of excellence that make BeltForge the preferred conveyor
+            Six pillars of excellence that make EarthIndia the preferred conveyor
             belt partner for India&apos;s leading industries — from raw material
             sourcing to final delivery.
           </motion.p>
@@ -196,7 +196,7 @@ export default function WhyChooseUs() {
             <motion.div
               key={feature.title}
               variants={fadeInUp}
-              className="group relative bg-[#0f172a]/40 border border-white/5 backdrop-blur-md rounded-xl p-6 sm:p-7 lg:p-8 hover:border-accent/30 hover:shadow-[0_20px_50px_rgba(249,115,22,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+              className="group relative bg-[#0c1a2e]/40 border border-white/5 backdrop-blur-md rounded-xl p-6 sm:p-7 lg:p-8 hover:border-accent/30 hover:shadow-[0_20px_50px_rgba(249,115,22,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
               id={`why-choose-${index}`}
             >
               {/* Corner bracket accents */}

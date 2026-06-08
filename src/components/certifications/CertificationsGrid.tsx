@@ -114,7 +114,7 @@ export default function CertificationsGrid() {
         className="absolute inset-0 pointer-events-none opacity-[0.015] z-0"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px)",
+            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px)",
         }}
       />
 
@@ -153,7 +153,7 @@ export default function CertificationsGrid() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-base lg:text-lg text-subtitle leading-relaxed font-medium"
           >
-            BeltForge is committed to absolute compliance. Our products undergo multi-stage auditing to assure performance under extreme industrial conditions.
+            EarthIndia is committed to absolute compliance. Our products undergo multi-stage auditing to assure performance under extreme industrial conditions.
           </motion.p>
         </div>
 

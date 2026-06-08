@@ -9,7 +9,7 @@ const TIMELINE = [
     year: "2008",
     title: "Founded in Ahmedabad",
     description:
-      "BeltForge Industries was established with a vision to manufacture world-class industrial conveyor belts, starting with a single production line in Gujarat.",
+      "EarthIndia Industries was established with a vision to manufacture world-class industrial conveyor belts, starting with a single production line in Gujarat.",
   },
   {
     year: "2012",
@@ -102,7 +102,7 @@ export default function CompanyIntroHistory() {
           className="absolute inset-0 pointer-events-none opacity-[0.015] z-0"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(90deg, transparent, transparent 60px, #0f172a 60px, #0f172a 61px), repeating-linear-gradient(0deg, transparent, transparent 60px, #0f172a 60px, #0f172a 61px)",
+              "repeating-linear-gradient(90deg, transparent, transparent 60px, #0c1a2e 60px, #0c1a2e 61px), repeating-linear-gradient(0deg, transparent, transparent 60px, #0c1a2e 60px, #0c1a2e 61px)",
           }}
         />
 
