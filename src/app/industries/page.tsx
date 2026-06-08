@@ -11,9 +11,9 @@ import IndustriesFAQ from "@/components/industries/IndustriesFAQ";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | BeltForge Industries — Industrial Belt Solutions",
+  title: "Industries We Serve | EarthIndia Industries — Industrial Belt Solutions",
   description:
-    "BeltForge Industries serves 10+ industries with premium industrial belt solutions — textile, food processing, automotive, pharmaceutical, logistics, printing, ceramic, paper, and agriculture. ISO 9001:2015 certified manufacturer.",
+    "EarthIndia Industries serves 10+ industries with premium industrial belt solutions — textile, food processing, automotive, pharmaceutical, logistics, printing, ceramic, paper, and agriculture. ISO 9001:2015 certified manufacturer.",
   keywords: [
     "industrial belt industries",
     "conveyor belt applications",
@@ -22,12 +22,12 @@ export const metadata: Metadata = {
     "automotive belts manufacturer",
     "pharmaceutical conveyor belt",
     "industrial belt solutions",
-    "BeltForge industries served",
+    "EarthIndia Industries served",
   ],
   openGraph: {
-    title: "Industries We Serve | BeltForge Industries",
+    title: "Industries We Serve | EarthIndia Industries",
     description:
-      "Discover how BeltForge's premium industrial belt solutions power operations across 10+ major industries worldwide.",
+      "Discover how EarthIndia's premium industrial belt solutions power operations across 10+ major industries worldwide.",
     type: "website",
   },
 };

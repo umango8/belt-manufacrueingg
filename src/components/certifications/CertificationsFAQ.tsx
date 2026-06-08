@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const FAQS = [
   {
     question: "Which certifications does your company have?",
-    answer: "BeltForge holds active ISO 9001:2015 (Quality Management), ISO 14001:2015 (Environmental Management), and ISO 45001:2018 (Occupational Health & Safety) certifications. Our products are also CE marked and comply fully with regional specifications like DIN (German) and IS (Indian Standards).",
+    answer: "EarthIndia holds active ISO 9001:2015 (Quality Management), ISO 14001:2015 (Environmental Management), and ISO 45001:2018 (Occupational Health & Safety) certifications. Our products are also CE marked and comply fully with regional specifications like DIN (German) and IS (Indian Standards).",
   },
   {
     question: "Are your industrial belts quality tested?",

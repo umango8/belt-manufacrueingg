@@ -108,10 +108,10 @@ export default function ProcessSection() {
         // Highlight active cards slightly with higher border intensity and subtle glow
         if (cardProgress > 0.01) {
           card.classList.add("border-accent/35", "bg-[#0E1528]");
-          card.classList.remove("border-white/5", "bg-[#0A0E1A]/80");
+          card.classList.remove("border-white/5", "bg-[#0B1628]/80");
         } else {
           card.classList.remove("border-accent/35", "bg-[#0E1528]");
-          card.classList.add("border-white/5", "bg-[#0A0E1A]/80");
+          card.classList.add("border-white/5", "bg-[#0B1628]/80");
         }
 
         // Animate Timeline Dots
@@ -159,7 +159,7 @@ export default function ProcessSection() {
     <section 
       id="process" 
       ref={containerRef} 
-      className="relative bg-[#0A0E1A] border-t border-white/5 overflow-visible section-padding"
+      className="relative bg-[#0B1628] border-t border-white/5 overflow-visible section-padding"
       style={isDesktop ? { height: "260vh" } : undefined} // Provides scroll headroom for sticky card stacking
     >
       {/* Background dot pattern to blend with the industrial theme */}
@@ -201,7 +201,7 @@ export default function ProcessSection() {
               {/* Active Scroll Indicator Timeline Track (Glows dynamically) */}
               <div 
                 ref={lineProgressRef}
-                className="absolute left-[23px] sm:left-[27px] top-6 w-[2px] bg-accent shadow-[0_0_8px_#F97316] z-0 transition-all duration-100 ease-out" 
+                className="absolute left-[23px] sm:left-[27px] top-6 w-[2px] bg-accent shadow-[0_0_8px_#C87533] z-0 transition-all duration-100 ease-out" 
                 style={isDesktop ? { height: "0%", transformOrigin: "top" } : { height: "100%" }}
               />
 
@@ -212,12 +212,12 @@ export default function ProcessSection() {
                     key={item.step}
                     ref={(el) => { cardRefs.current[index] = el; }}
                     style={isDesktop ? { opacity: 0, transform: "translate3d(0, 35px, 0)", willChange: "opacity, transform" } : { opacity: 1, transform: "none" }}
-                    className="group relative flex flex-col items-start bg-[#0A0E1A]/80 border border-white/5 rounded-2xl p-5 lg:p-6 lg:h-[125px] transition-all duration-300 ease-out cursor-pointer shadow-xl backdrop-blur-md w-full"
+                    className="group relative flex flex-col items-start bg-[#0B1628]/80 border border-white/5 rounded-2xl p-5 lg:p-6 lg:h-[125px] transition-all duration-300 ease-out cursor-pointer shadow-xl backdrop-blur-md w-full"
                   >
                     {/* Timeline Node Dot Anchor */}
                     <div 
                       ref={(el) => { dotRefs.current[index] = el; }}
-                      className={`absolute left-[-35px] sm:left-[-47px] top-7 w-5 h-5 rounded-full border-2 bg-[#0A0E1A] flex items-center justify-center z-10 transition-all duration-300 ${isDesktop ? "border-white/20" : "border-accent"}`}
+                      className={`absolute left-[-35px] sm:left-[-47px] top-7 w-5 h-5 rounded-full border-2 bg-[#0B1628] flex items-center justify-center z-10 transition-all duration-300 ${isDesktop ? "border-white/20" : "border-accent"}`}
                     >
                       <span className={`dot-inner w-1.5 h-1.5 rounded-full transition-all duration-300 ${isDesktop ? "bg-white/50" : "bg-accent scale-125"}`} />
                     </div>

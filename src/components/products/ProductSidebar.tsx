@@ -89,12 +89,12 @@ export default function ProductSidebar() {
       {/* ── 1. Desktop Sidebar (>= 1024px) ── */}
       <aside className="hidden lg:block w-[280px] xl:w-[300px] flex-shrink-0 lg:sticky lg:top-[100px]">
         <div
-          className="bg-white rounded-2xl border border-[#e2e8f0] shadow-[0_4px_32px_rgba(15,23,42,0.06)] overflow-hidden"
+          className="bg-white rounded-2xl border border-[#dce1e8] shadow-[0_4px_32px_rgba(15,23,42,0.06)] overflow-hidden"
           data-lenis-prevent
         >
           {/* Sidebar header */}
-          <div className="px-5 py-4 border-b border-[#f1f5f9] bg-[#0f172a]">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#f97316] mb-1">Product Range</p>
+          <div className="px-5 py-4 border-b border-[#eef1f5] bg-[#0c1a2e]">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#c87533] mb-1">Product Range</p>
             <p className="text-sm font-semibold text-white">All Industrial Belts</p>
           </div>
 
@@ -107,7 +107,7 @@ export default function ProductSidebar() {
               <div key={category}>
                 {/* Category label */}
                 <div className="px-4 pt-4 pb-1.5">
-                  <span className="text-[9px] font-bold uppercase tracking-widest text-[#334155]/40">{category}</span>
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-[#3a4a5c]/40">{category}</span>
                 </div>
 
                 {products.map((product, idx) => {
@@ -124,41 +124,41 @@ export default function ProductSidebar() {
                         id={`sidebar-${product.slug}`}
                         className={`group flex items-center gap-3 mx-2 mb-1 px-3 py-3 rounded-xl transition-all duration-200 relative overflow-hidden ${
                           isActive
-                            ? "bg-[#0f172a] text-white shadow-md"
-                            : "hover:bg-[#f8fafc] text-[#334155]"
+                            ? "bg-[#0c1a2e] text-white shadow-md"
+                            : "hover:bg-[#f7f8fa] text-[#3a4a5c]"
                         }`}
                       >
                         {/* Active left-border indicator */}
                         {isActive && (
-                          <span className="absolute left-0 top-2 bottom-2 w-[3px] bg-[#f97316] rounded-r-full" />
+                          <span className="absolute left-0 top-2 bottom-2 w-[3px] bg-[#c87533] rounded-r-full" />
                         )}
 
                         {/* Icon */}
                         <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
                           isActive
-                            ? "bg-[#f97316] text-white shadow-[0_4px_12px_rgba(249,115,22,0.4)]"
-                            : "bg-[#0f172a]/5 text-[#0f172a] group-hover:bg-[#f97316]/10 group-hover:text-[#f97316]"
+                            ? "bg-[#c87533] text-white shadow-[0_4px_12px_rgba(249,115,22,0.4)]"
+                            : "bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-[#c87533]/10 group-hover:text-[#c87533]"
                         }`}>
                           {iconMap[product.icon] ?? iconMap.conveyor}
                         </div>
 
                         {/* Text */}
                         <div className="min-w-0 flex-1">
-                          <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0f172a] group-hover:text-[#f97316]"} transition-colors`}>
+                          <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0c1a2e] group-hover:text-[#c87533]"} transition-colors`}>
                             {product.title}
                           </p>
-                          <p className={`text-[10px] mt-0.5 leading-tight line-clamp-1 ${isActive ? "text-white/60" : "text-[#334155]/50"}`}>
+                          <p className={`text-[10px] mt-0.5 leading-tight line-clamp-1 ${isActive ? "text-white/60" : "text-[#3a4a5c]/50"}`}>
                             {product.shortDesc}
                           </p>
                         </div>
 
                         {/* Arrow */}
                         {isActive ? (
-                          <svg className="w-3.5 h-3.5 text-[#f97316] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3.5 h-3.5 text-[#c87533] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         ) : (
-                          <svg className="w-3 h-3 text-[#334155]/20 group-hover:text-[#f97316] flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3 h-3 text-[#3a4a5c]/20 group-hover:text-[#c87533] flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         )}
@@ -170,12 +170,12 @@ export default function ProductSidebar() {
             ))}
 
             {/* Bottom CTA */}
-            <div className="m-3 mt-3 p-4 rounded-xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] border border-[#334155]/40">
+            <div className="m-3 mt-3 p-4 rounded-xl bg-gradient-to-br from-[#0c1a2e] to-[#1a2a3a] border border-[#3a4a5c]/40">
               <p className="text-xs font-bold text-white mb-1">Need a custom belt?</p>
               <p className="text-[11px] text-white/50 mb-3 leading-snug">Our engineers design bespoke solutions for your exact requirements.</p>
               <Link
                 href="/quote"
-                className="block w-full text-center text-[11px] font-bold text-white bg-[#f97316] hover:bg-[#ea6c0c] py-2.5 rounded-lg transition-colors duration-200"
+                className="block w-full text-center text-[11px] font-bold text-white bg-[#c87533] hover:bg-[#ea6c0c] py-2.5 rounded-lg transition-colors duration-200"
                 id="sidebar-get-quote"
               >
                 Request Quote
@@ -203,15 +203,15 @@ export default function ProductSidebar() {
                   id={`product-tab-${product.slug}`}
                   className={`flex items-center gap-3 px-5 py-3.5 rounded-xl border text-sm font-bold whitespace-nowrap transition-all duration-300 ${
                     isActive
-                      ? "bg-[#0f172a] text-white border-[#0f172a] shadow-[0_4px_16px_rgba(15,23,42,0.12)]"
-                      : "bg-white text-[#334155] border-border/85 hover:bg-[#f8fafc]"
+                      ? "bg-[#0c1a2e] text-white border-[#0c1a2e] shadow-[0_4px_16px_rgba(15,23,42,0.12)]"
+                      : "bg-white text-[#3a4a5c] border-border/85 hover:bg-[#f7f8fa]"
                   }`}
                 >
                   {/* Icon */}
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
                     isActive
                       ? "bg-accent text-white shadow-[0_2px_8px_rgba(249,115,22,0.3)]"
-                      : "bg-[#0f172a]/5 text-[#0f172a]"
+                      : "bg-[#0c1a2e]/5 text-[#0c1a2e]"
                   }`}>
                     {iconMap[product.icon] ?? iconMap.conveyor}
                   </div>
@@ -223,14 +223,14 @@ export default function ProductSidebar() {
           </div>
 
           {/* Right indicator chevron overlay to convey scrolling availability */}
-          <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#f8fafc] via-[#f8fafc]/90 to-transparent pointer-events-none flex items-center justify-end pr-1">
+          <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#f7f8fa] via-[#f7f8fa]/90 to-transparent pointer-events-none flex items-center justify-end pr-1">
             <button 
               onClick={() => {
                 if (scrollRef.current) {
                   scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
                 }
               }}
-              className="w-7 h-7 rounded-full bg-white shadow-xs flex items-center justify-center text-[#0f172a] hover:text-accent border border-border/60 pointer-events-auto active:scale-95 transition-all"
+              className="w-7 h-7 rounded-full bg-white shadow-xs flex items-center justify-center text-[#0c1a2e] hover:text-accent border border-border/60 pointer-events-auto active:scale-95 transition-all"
               aria-label="Scroll right"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -246,11 +246,11 @@ export default function ProductSidebar() {
         {/* Dropdown main selector button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between px-5 py-3.5 bg-white border border-border/80 rounded-xl font-bold text-[#0f172a] shadow-xs text-left"
+          className="w-full flex items-center justify-between px-5 py-3.5 bg-white border border-border/80 rounded-xl font-bold text-[#0c1a2e] shadow-xs text-left"
         >
           <span className="text-sm">{PRODUCT_CATALOG.find(p => p.slug === currentSlug)?.title ?? "Select Product"}</span>
           <svg
-            className={`w-4 h-4 text-[#0f172a]/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+            className={`w-4 h-4 text-[#0c1a2e]/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -283,12 +283,12 @@ export default function ProductSidebar() {
                         onClick={() => setIsOpen(false)}
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
                           isActive
-                            ? "bg-[#0f172a]/5 text-accent font-bold"
-                            : "text-[#334155] hover:bg-[#f8fafc] hover:text-[#0f172a]"
+                            ? "bg-[#0c1a2e]/5 text-accent font-bold"
+                            : "text-[#3a4a5c] hover:bg-[#f7f8fa] hover:text-[#0c1a2e]"
                         }`}
                       >
                         <div className={`w-7 h-7 rounded-md flex items-center justify-center shrink-0 ${
-                          isActive ? "bg-accent/15 text-accent" : "bg-[#0f172a]/5 text-[#0f172a]"
+                          isActive ? "bg-accent/15 text-accent" : "bg-[#0c1a2e]/5 text-[#0c1a2e]"
                         }`}>
                           {iconMap[product.icon] ?? iconMap.conveyor}
                         </div>

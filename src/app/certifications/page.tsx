@@ -8,7 +8,7 @@ import CertificationsFAQ from "@/components/certifications/CertificationsFAQ";
 import CertificationsCTA from "@/components/certifications/CertificationsCTA";
 
 export const metadata: Metadata = {
-  title: "Certifications & Quality Standards | BeltForge Industries",
+  title: "Certifications & Quality Standards | EarthIndia Industries",
   description:
     "Delivering high-performance industrial belt solutions backed by strict quality standards, ISO 9001:2015, ISO 14001:2015, CE compliance, and rigid lab testing.",
   keywords: [
@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     "CE certified industrial belts",
     "DIN 22102 conveyor standard",
     "quality testing laboratory",
-    "BeltForge compliance portfolio",
+    "EarthIndia compliance portfolio",
   ],
   openGraph: {
-    title: "Certifications & Quality Standards | BeltForge Industries",
+    title: "Certifications & Quality Standards | EarthIndia Industries",
     description:
-      "Explore BeltForge's premium compliance certifications, testing timelines, and globally certified bulk material handling conveyor products.",
+      "Explore EarthIndia's premium compliance certifications, testing timelines, and globally certified bulk material handling conveyor products.",
     type: "website",
   },
 };

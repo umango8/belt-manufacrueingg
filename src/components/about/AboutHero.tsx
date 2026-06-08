@@ -39,7 +39,7 @@ export default function AboutHero() {
           >
             <span className="inline-flex items-center gap-2.5 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              ABOUT BELTFORGE INDUSTRIES
+              ABOUT EarthIndia Industries
             </span>
           </motion.div>
 
@@ -59,7 +59,7 @@ export default function AboutHero() {
             className="text-base lg:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed"
           >
             From a single production line to becoming one of India&apos;s most trusted conveyor belt manufacturers — 
-            discover the story of precision, innovation, and industrial excellence that defines BeltForge.
+            discover the story of precision, innovation, and industrial excellence that defines EarthIndia.
           </motion.p>
 
           {/* Animated scroll indicator */}

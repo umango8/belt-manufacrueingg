@@ -75,14 +75,14 @@ export default function Footer() {
               </pattern>
               <rect width="100" height="50" fill="url(#gridLeft)" />
               {/* Dotted lines path */}
-              <path d="M 20 20 L 60 20 L 70 25 L 100 25" stroke="#F97316" strokeWidth="1" strokeOpacity="0.4" strokeDasharray="3 3" />
-              <circle cx="60" cy="20" r="2" fill="#F97316" className="animate-pulse" />
+              <path d="M 20 20 L 60 20 L 70 25 L 100 25" stroke="#C87533" strokeWidth="1" strokeOpacity="0.4" strokeDasharray="3 3" />
+              <circle cx="60" cy="20" r="2" fill="#C87533" className="animate-pulse" />
             </svg>
 
             {/* Central Sleek Call To Action Button */}
             <Link
               href="/quote"
-              className="inline-flex items-center gap-3 px-5 py-3.5 bg-[#0E1527] border border-white/10 hover:border-accent/40 rounded-xl transition-all duration-500 shadow-xl group hover:shadow-accent/5 hover:-translate-y-0.5 shrink-0"
+              className="inline-flex items-center gap-3 px-5 py-3.5 bg-[#0c1628] border border-white/10 hover:border-accent/40 rounded-xl transition-all duration-500 shadow-xl group hover:shadow-accent/5 hover:-translate-y-0.5 shrink-0"
             >
               <span className="text-xs font-bold text-white tracking-widest uppercase group-hover:text-accent transition-colors">
                 Request a Quote
@@ -100,8 +100,8 @@ export default function Footer() {
               </pattern>
               <rect width="100" height="50" fill="url(#gridRight)" />
               {/* Dotted lines path */}
-              <path d="M 0 25 L 30 25 L 40 30 L 80 30" stroke="#F97316" strokeWidth="1" strokeOpacity="0.4" strokeDasharray="3 3" />
-              <circle cx="30" cy="25" r="2" fill="#F97316" className="animate-pulse" />
+              <path d="M 0 25 L 30 25 L 40 30 L 80 30" stroke="#C87533" strokeWidth="1" strokeOpacity="0.4" strokeDasharray="3 3" />
+              <circle cx="30" cy="25" r="2" fill="#C87533" className="animate-pulse" />
             </svg>
           </div>
 
@@ -181,7 +181,7 @@ export default function Footer() {
 
         {/* Giant Watermark Text behind bottom bar */}
         <span className="block text-[14vw] font-black uppercase text-white/1.5 select-none pointer-events-none text-center tracking-tighter leading-none mt-2 z-0">
-          beltforge
+          EARTHINDIA
         </span>
 
       </div>

@@ -192,7 +192,7 @@ export default function QuoteClient() {
     <>
       <Header />
 
-      <main className="min-h-screen bg-linear-to-b from-[#f8fafc] via-white to-[#f8fafc] py-12 md:py-20">
+      <main className="min-h-screen bg-linear-to-b from-[#f7f8fa] via-white to-[#f7f8fa] py-12 md:py-20">
         <div className="container-custom">
           {/* Header Hero Banner */}
           <div className="max-w-4xl lg:mb-12 mb-6">
@@ -269,7 +269,7 @@ export default function QuoteClient() {
                                   }`}
                                 >
                                   <div className={`p-2.5 rounded-xl transition-colors duration-300 ${
-                                    category === cat.id ? "bg-accent text-white" : "bg-[#0f172a]/5 text-primary group-hover:bg-primary group-hover:text-white"
+                                    category === cat.id ? "bg-accent text-white" : "bg-[#0c1a2e]/5 text-primary group-hover:bg-primary group-hover:text-white"
                                   }`}>
                                     {cat.icon}
                                   </div>
@@ -338,7 +338,7 @@ export default function QuoteClient() {
                             <div>
                               <div className="flex justify-between items-center mb-2">
                                 <label className="text-xs font-bold text-secondary uppercase tracking-wider">Width (mm)</label>
-                                <span className="text-xs font-mono font-bold bg-[#0f172a]/5 px-2 py-0.5 rounded text-primary">{width} mm</span>
+                                <span className="text-xs font-mono font-bold bg-[#0c1a2e]/5 px-2 py-0.5 rounded text-primary">{width} mm</span>
                               </div>
                               <input 
                                 type="number" 
@@ -363,7 +363,7 @@ export default function QuoteClient() {
                             <div>
                               <div className="flex justify-between items-center mb-2">
                                 <label className="text-xs font-bold text-secondary uppercase tracking-wider">Thickness (mm)</label>
-                                <span className="text-xs font-mono font-bold bg-[#0f172a]/5 px-2 py-0.5 rounded text-primary">{thickness} mm</span>
+                                <span className="text-xs font-mono font-bold bg-[#0c1a2e]/5 px-2 py-0.5 rounded text-primary">{thickness} mm</span>
                               </div>
                               <input 
                                 type="number" 
@@ -392,7 +392,7 @@ export default function QuoteClient() {
                                 <label className="text-xs font-bold text-secondary uppercase tracking-wider">
                                   {category === "conveyor" ? "Length (m)" : "Length (mm/m)"}
                                 </label>
-                                <span className="text-xs font-mono font-bold bg-[#0f172a]/5 px-2 py-0.5 rounded text-primary">
+                                <span className="text-xs font-mono font-bold bg-[#0c1a2e]/5 px-2 py-0.5 rounded text-primary">
                                   {length} {category === "conveyor" ? "meters" : "units"}
                                 </span>
                               </div>
@@ -877,16 +877,16 @@ export default function QuoteClient() {
                           {/* Material load cubes if general/abrasion/ore */}
                           {step >= 3 && materialCarried !== "none" && (
                             <g className="translate-y-[-4px]">
-                              <path d="M 65 30 L 73 30 L 69 25 Z" fill="#f97316" className="animate-pulse" />
-                              <path d="M 100 30 L 108 30 L 104 25 Z" fill="#f97316" className="animate-pulse" style={{ animationDelay: "0.2s" }} />
-                              <path d="M 135 30 L 143 30 L 139 25 Z" fill="#f97316" className="animate-pulse" style={{ animationDelay: "0.4s" }} />
+                              <path d="M 65 30 L 73 30 L 69 25 Z" fill="#c87533" className="animate-pulse" />
+                              <path d="M 100 30 L 108 30 L 104 25 Z" fill="#c87533" className="animate-pulse" style={{ animationDelay: "0.2s" }} />
+                              <path d="M 135 30 L 143 30 L 139 25 Z" fill="#c87533" className="animate-pulse" style={{ animationDelay: "0.4s" }} />
                             </g>
                           )}
 
                           {/* Conveyor Belt Loop */}
                           <path 
                             d="M 45 34 L 155 34 A 16 16 0 0 1 171 50 A 16 16 0 0 1 155 66 L 45 66 A 16 16 0 0 1 29 50 A 16 16 0 0 1 45 34 Z" 
-                            stroke="#f97316" 
+                            stroke="#c87533" 
                             strokeWidth={Math.max(2, Math.min(6, thickness / 2.5))} // Dynamically scale stroke-width on thickness select
                             strokeDasharray="8 6"
                             className="draw-conveyor-belt"
@@ -928,7 +928,7 @@ export default function QuoteClient() {
                           {/* V-Belt */}
                           <path 
                             d="M 50 28 L 150 38 A 12 12 0 0 1 162 50 A 12 12 0 0 1 150 62 L 50 72 A 22 22 0 0 1 28 50 A 22 22 0 0 1 50 28 Z" 
-                            stroke="#f97316" 
+                            stroke="#c87533" 
                             strokeWidth="3.5"
                             strokeLinejoin="round"
                           />
@@ -1001,7 +1001,7 @@ export default function QuoteClient() {
                           {/* Toothed timing belt line */}
                           <path 
                             d="M 50 31 L 150 31 A 19 19 0 0 1 169 50 A 19 19 0 0 1 150 69 L 50 69 A 19 19 0 0 1 31 50 A 19 19 0 0 1 50 31 Z" 
-                            stroke="#f97316" 
+                            stroke="#c87533" 
                             strokeWidth="2.5"
                           />
                           <path 
@@ -1040,10 +1040,10 @@ export default function QuoteClient() {
 
                           {/* Technical drawing profile */}
                           <path d="M 30 65 L 70 35 L 130 35 L 170 65 Z" stroke="#ffffff80" strokeWidth="1.5" strokeDasharray="2 2" />
-                          <line x1="30" y1="65" x2="170" y2="65" stroke="#f97316" strokeWidth="1.5" />
+                          <line x1="30" y1="65" x2="170" y2="65" stroke="#c87533" strokeWidth="1.5" />
                           
-                          <circle cx="70" cy="35" r="3" fill="#f97316" />
-                          <circle cx="130" cy="35" r="3" fill="#f97316" />
+                          <circle cx="70" cy="35" r="3" fill="#c87533" />
+                          <circle cx="130" cy="35" r="3" fill="#c87533" />
                           
                           {/* Callout dimension */}
                           <path d="M 70 30 L 70 20 M 130 30 L 130 20 M 70 22 L 130 22" stroke="white" strokeWidth="0.5" />
@@ -1111,9 +1111,9 @@ export default function QuoteClient() {
                   </div>
 
                   {/* Trust badges sidebar card */}
-                  <div className="bg-[#f8fafc] rounded-3xl border border-border/80 p-6 space-y-4">
-                    <h4 className="text-xs font-bold text-[#0f172a] uppercase tracking-widest font-mono">
-                      BeltForge Guarantee
+                  <div className="bg-[#f7f8fa] rounded-3xl border border-border/80 p-6 space-y-4">
+                    <h4 className="text-xs font-bold text-[#0c1a2e] uppercase tracking-widest font-mono">
+                      EarthIndia Guarantee
                     </h4>
                     <div className="space-y-3.5">
                       {[
@@ -1237,7 +1237,7 @@ export default function QuoteClient() {
                     </div>
                   </div>
 
-                  <div className="bg-[#f8fafc] p-5 rounded-2xl border border-border flex items-start gap-4">
+                  <div className="bg-[#f7f8fa] p-5 rounded-2xl border border-border flex items-start gap-4">
                     <svg className="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>

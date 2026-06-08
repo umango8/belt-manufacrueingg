@@ -49,8 +49,8 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
   if (!product) {
     return (
       <div className="flex flex-col items-center justify-center py-32 text-center">
-        <p className="text-2xl font-bold text-[#0f172a] mb-4">Product Not Found</p>
-        <p className="text-[#334155]/60 mb-8">The product you're looking for doesn't exist.</p>
+        <p className="text-2xl font-bold text-[#0c1a2e] mb-4">Product Not Found</p>
+        <p className="text-[#3a4a5c]/60 mb-8">The product you're looking for doesn't exist.</p>
         <Link href="/products/conveyor-belt" className="btn-pill btn-primary">View All Products</Link>
       </div>
     );
@@ -65,7 +65,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         <div className="mb-4 flex">
           <Link
             href="/#products"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#334155]/70 hover:text-[#f97316] transition-colors uppercase tracking-widest bg-white px-5 py-2.5 rounded-full border border-[#e2e8f0] shadow-3xs"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#3a4a5c]/70 hover:text-[#c87533] transition-colors uppercase tracking-widest bg-white px-5 py-2.5 rounded-full border border-[#dce1e8] shadow-3xs"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
@@ -75,7 +75,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         </div>
 
         {/* ── 1. Product Hero ─────────────────────────────────────────────── */}
-        <motion.div variants={fadeUp} initial="hidden" animate="visible" className="rounded-2xl overflow-hidden border border-[#e2e8f0] shadow-[0_8px_48px_rgba(15,23,42,0.1)] mb-8 relative group">
+        <motion.div variants={fadeUp} initial="hidden" animate="visible" className="rounded-2xl overflow-hidden border border-[#dce1e8] shadow-[0_8px_48px_rgba(15,23,42,0.1)] mb-8 relative group">
           <div className="relative h-[260px] sm:h-[320px] lg:h-[380px] overflow-hidden">
             <Image
               src={product.image}
@@ -85,12 +85,12 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
               priority
               sizes="(max-width: 1024px) 100vw, 65vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/85 via-[#0f172a]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a2e]/85 via-[#0c1a2e]/30 to-transparent" />
 
             {/* Category badge */}
             <div className="absolute top-5 left-5">
-              <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[#f97316] bg-[#f97316]/10 border border-[#f97316]/20 px-3.5 py-1.5 rounded-full backdrop-blur-sm uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#f97316] animate-pulse" />
+              <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[#c87533] bg-[#c87533]/10 border border-[#c87533]/20 px-3.5 py-1.5 rounded-full backdrop-blur-sm uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#c87533] animate-pulse" />
                 {product.category}
               </span>
             </div>
@@ -105,8 +105,8 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
           </div>
 
           {/* CTA strip below hero */}
-          <div className="bg-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#f1f5f9]">
-            <div className="flex items-center gap-2 text-xs text-[#334155]/60 font-semibold">
+          <div className="bg-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#eef1f5]">
+            <div className="flex items-center gap-2 text-xs text-[#3a4a5c]/60 font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               In Stock - Fast Delivery - Custom Sizing Available
             </div>
@@ -114,7 +114,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
               <Button href="/quote" variant="primary" size="lg" className="text-xs py-2.5 px-6" id={`hero-quote-${slug}`}>
                 Request Quote
               </Button>
-              <Button href="/quote" variant="outline" size="lg" className="text-xs py-2.5 px-6 !text-[#0f172a] !border-[#e2e8f0] hover:!bg-[#f8fafc]" id={`hero-contact-${slug}`}>
+              <Button href="/quote" variant="outline" size="lg" className="text-xs py-2.5 px-6 !text-[#0c1a2e] !border-[#dce1e8] hover:!bg-[#f7f8fa]" id={`hero-contact-${slug}`}>
                 Contact Expert
               </Button>
             </div>
@@ -122,29 +122,29 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         </motion.div>
 
         {/* ── 2. Product Description ──────────────────────────────────────── */}
-        <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#e2e8f0] p-6 sm:p-8 mb-6 shadow-sm">
+        <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-5">
-            <div className="w-1 h-6 bg-[#f97316] rounded-full" />
-            <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Product Overview</h2>
+            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Product Overview</h2>
           </div>
-          <p className="text-[15px] text-[#334155] leading-relaxed font-medium">{product.description}</p>
-          <div className="md:mt-5 pt-5 border-t border-[#f1f5f9]">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-[#334155]/40 mb-2">Primary Material</p>
-            <p className="text-sm font-semibold text-[#0f172a]">{product.material}</p>
+          <p className="text-[15px] text-[#3a4a5c] leading-relaxed font-medium">{product.description}</p>
+          <div className="md:mt-5 pt-5 border-t border-[#eef1f5]">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#3a4a5c]/40 mb-2">Primary Material</p>
+            <p className="text-sm font-semibold text-[#0c1a2e]">{product.material}</p>
           </div>
         </motion.section>
 
         {/* ── 3. Specifications Table ─────────────────────────────────────── */}
-        <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#e2e8f0] p-6 sm:p-8 mb-6 shadow-sm overflow-hidden">
+        <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm overflow-hidden">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-1 h-6 bg-[#f97316] rounded-full" />
-            <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Technical Specifications</h2>
+            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Technical Specifications</h2>
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[#0f172a] text-white">
+                <tr className="bg-[#0c1a2e] text-white">
                   <th className="text-left px-5 py-3 text-xs font-bold uppercase tracking-widest rounded-tl-xl w-[40%]">Parameter</th>
                   <th className="text-left px-5 py-3 text-xs font-bold uppercase tracking-widest rounded-tr-xl">Specification</th>
                 </tr>
@@ -153,9 +153,9 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
                 {Object.entries(product.specifications).map(([key, value], i) => {
                   const label = key.replace(/([A-Z])/g, " $1").replace(/^./, (s) => s.toUpperCase());
                   return (
-                    <tr key={key} className={`border-b border-[#f1f5f9] transition-colors hover:bg-[#f8fafc] ${i % 2 === 0 ? "bg-white" : "bg-[#fafbfc]"}`}>
-                      <td className="px-5 py-3.5 text-[13px] font-semibold text-[#334155]/70 align-top">{label}</td>
-                      <td className="px-5 py-3.5 text-[13px] font-medium text-[#0f172a] align-top">{value}</td>
+                    <tr key={key} className={`border-b border-[#eef1f5] transition-colors hover:bg-[#f7f8fa] ${i % 2 === 0 ? "bg-white" : "bg-[#fafbfc]"}`}>
+                      <td className="px-5 py-3.5 text-[13px] font-semibold text-[#3a4a5c]/70 align-top">{label}</td>
+                      <td className="px-5 py-3.5 text-[13px] font-medium text-[#0c1a2e] align-top">{value}</td>
                     </tr>
                   );
                 })}
@@ -165,10 +165,10 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         </motion.section>
 
         {/* ── 4. Applications ─────────────────────────────────────────────── */}
-        <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#e2e8f0] p-6 sm:p-8 mb-6 shadow-sm">
+        <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-1 h-6 bg-[#f97316] rounded-full" />
-            <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Industry Applications</h2>
+            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Industry Applications</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {product.applications.map((app, i) => (
@@ -190,10 +190,10 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         </motion.section>
 
         {/* ── 5. Features & Benefits ──────────────────────────────────────── */}
-        <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#e2e8f0] p-6 sm:p-8 mb-6 shadow-sm">
+        <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-1 h-6 bg-[#f97316] rounded-full" />
-            <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Features & Benefits</h2>
+            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Features & Benefits</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {product.features.map((feat, i) => (
@@ -203,14 +203,14 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
-                className="group flex gap-4 p-4 rounded-xl border border-[#e2e8f0] hover:border-[#f97316]/30 hover:shadow-[0_4px_24px_rgba(249,115,22,0.08)] transition-all duration-300 hover:-translate-y-0.5"
+                className="group flex gap-4 p-4 rounded-xl border border-[#dce1e8] hover:border-[#c87533]/30 hover:shadow-[0_4px_24px_rgba(249,115,22,0.08)] transition-all duration-300 hover:-translate-y-0.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#0f172a]/5 text-[#0f172a] group-hover:bg-[#f97316] group-hover:text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-[#c87533] group-hover:text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm">
                   <FeatureIcon index={i} />
                 </div>
                 <div>
-                  <p className="text-[13px] font-bold text-[#0f172a] mb-1">{feat.title}</p>
-                  <p className="text-[12px] text-[#334155]/60 leading-relaxed">{feat.desc}</p>
+                  <p className="text-[13px] font-bold text-[#0c1a2e] mb-1">{feat.title}</p>
+                  <p className="text-[12px] text-[#3a4a5c]/60 leading-relaxed">{feat.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -219,10 +219,10 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
 
         {/* ── 6. Related Products ─────────────────────────────────────────── */}
         {relatedProducts.length > 0 && (
-          <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#e2e8f0] p-6 sm:p-8 mb-6 shadow-sm">
+          <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
             <div className="flex items-center gap-2.5 mb-6">
-              <div className="w-1 h-6 bg-[#f97316] rounded-full" />
-              <h2 className="text-lg font-bold text-[#0f172a] tracking-tight">Related Products</h2>
+              <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+              <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Related Products</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {relatedProducts.map((rel, i) => (
@@ -236,15 +236,15 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
                   <Link
                     href={`/products/${rel.slug}`}
                     id={`related-${rel.slug}`}
-                    className="group block rounded-xl overflow-hidden border border-[#e2e8f0] hover:border-[#f97316]/30 hover:shadow-[0_8px_32px_rgba(249,115,22,0.1)] transition-all duration-300 hover:-translate-y-1"
+                    className="group block rounded-xl overflow-hidden border border-[#dce1e8] hover:border-[#c87533]/30 hover:shadow-[0_8px_32px_rgba(249,115,22,0.1)] transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="relative h-[140px] overflow-hidden">
                       <Image src={rel.image} alt={rel.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="33vw" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a2e]/60 to-transparent" />
                     </div>
                     <div className="p-4 bg-white">
-                      <p className="text-[13px] font-bold text-[#0f172a] group-hover:text-[#f97316] transition-colors mb-1">{rel.title}</p>
-                      <p className="text-[11px] text-[#334155]/50 line-clamp-1">{rel.shortDesc}</p>
+                      <p className="text-[13px] font-bold text-[#0c1a2e] group-hover:text-[#c87533] transition-colors mb-1">{rel.title}</p>
+                      <p className="text-[11px] text-[#3a4a5c]/50 line-clamp-1">{rel.shortDesc}</p>
                     </div>
                   </Link>
                 </motion.div>

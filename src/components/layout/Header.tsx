@@ -93,19 +93,19 @@ function MegaMenu({ onClose, onMouseEnter }: MegaMenuProps) {
       {/* Panel */}
       <div className="bg-white rounded-2xl shadow-[0_24px_64px_rgba(15,23,42,0.12)] border border-border overflow-hidden">
         {/* Top accent bar */}
-        <div className="h-[3px] bg-linear-to-r from-[#0f172a] via-accent to-[#0f172a]" />
+        <div className="h-[3px] bg-linear-to-r from-[#0c1a2e] via-accent to-[#0c1a2e]" />
 
         <div className="p-6">
           {/* Header row */}
-          <div className="flex items-center justify-between mb-5 pb-4 border-b border-[#f1f5f9]">
+          <div className="flex items-center justify-between mb-5 pb-4 border-b border-[#eef1f5]">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-widest text-accent mb-0.5">Our Product Range</p>
-              <p className="text-sm font-semibold text-[#0f172a]">9 Premium Industrial Belt Solutions</p>
+              <p className="text-sm font-semibold text-[#0c1a2e]">9 Premium Industrial Belt Solutions</p>
             </div>
             <Link
               href="/products/conveyor-belt"
               onClick={onClose}
-              className="inline-flex items-center gap-2 text-xs font-bold text-[#0f172a] hover:text-accent transition-colors group"
+              className="inline-flex items-center gap-2 text-xs font-bold text-[#0c1a2e] hover:text-accent transition-colors group"
             >
               View All Products
               <span className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-300">
@@ -131,13 +131,13 @@ function MegaMenu({ onClose, onMouseEnter }: MegaMenuProps) {
                       href={`/products/${product.slug}`}
                       onClick={onClose}
                       className={`group flex items-start gap-3 p-3 rounded-xl border transition-all duration-200 cursor-pointer ${
-                        pathname === `/products/${product.slug}` ? "bg-[#f8fafc] border-border" : "hover:bg-[#f8fafc] border-transparent hover:border-border"
+                        pathname === `/products/${product.slug}` ? "bg-[#f7f8fa] border-border" : "hover:bg-[#f7f8fa] border-transparent hover:border-border"
                       }`}
                       id={`mega-menu-${product.slug}`}
                     >
                       {/* Icon */}
                       <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent group-hover:text-white group-hover:shadow-[0_4px_12px_rgba(249,115,22,0.3)] ${
-                        pathname === `/products/${product.slug}` ? "bg-accent text-white shadow-[0_4px_12px_rgba(249,115,22,0.2)]" : "bg-[#0f172a]/5 text-[#0f172a]"
+                        pathname === `/products/${product.slug}` ? "bg-accent text-white shadow-[0_4px_12px_rgba(249,115,22,0.2)]" : "bg-[#0c1a2e]/5 text-[#0c1a2e]"
                       }`}>
                         {iconMap[product.icon] ?? iconMap.conveyor}
                       </div>
@@ -145,17 +145,17 @@ function MegaMenu({ onClose, onMouseEnter }: MegaMenuProps) {
                       {/* Text */}
                       <div className="min-w-0 flex-1">
                         <p className={`text-[13px] font-semibold transition-colors leading-tight mb-0.5 ${
-                          pathname === `/products/${product.slug}` ? "text-accent" : "text-[#0f172a] group-hover:text-accent"
+                          pathname === `/products/${product.slug}` ? "text-accent" : "text-[#0c1a2e] group-hover:text-accent"
                         }`}>
                           {product.title}
                         </p>
-                        <p className="text-[11px] text-[#334155]/60 leading-snug line-clamp-1">{product.shortDesc}</p>
+                        <p className="text-[11px] text-[#3a4a5c]/60 leading-snug line-clamp-1">{product.shortDesc}</p>
                       </div>
 
                       {/* Arrow */}
                       <svg
                         className={`w-3.5 h-3.5 shrink-0 mt-1 transition-all duration-200 ${
-                          pathname === `/products/${product.slug}` ? "text-accent translate-x-0.5" : "text-[#0f172a]/20 group-hover:text-accent group-hover:translate-x-0.5"
+                          pathname === `/products/${product.slug}` ? "text-accent translate-x-0.5" : "text-[#0c1a2e]/20 group-hover:text-accent group-hover:translate-x-0.5"
                         }`}
                         fill="none" stroke="currentColor" viewBox="0 0 24 24"
                       >
@@ -169,15 +169,15 @@ function MegaMenu({ onClose, onMouseEnter }: MegaMenuProps) {
           </div>
 
           {/* Bottom CTA row */}
-          <div className="mt-5 pt-4 border-t border-[#f1f5f9] flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs text-[#334155]/60">
+          <div className="mt-5 pt-4 border-t border-[#eef1f5] flex items-center justify-between">
+            <div className="flex items-center gap-2 text-xs text-[#3a4a5c]/60">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               ISO 9001:2015 Certified · {COMPANY.established}+ Years Manufacturing Excellence
             </div>
             <Link
               href="/quote"
               onClick={onClose}
-              className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#0f172a] hover:bg-accent px-4 py-2 rounded-full transition-all duration-300"
+              className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#0c1a2e] hover:bg-accent px-4 py-2 rounded-full transition-all duration-300"
             >
               Request Quote
             </Link>
@@ -275,10 +275,20 @@ export default function Header() {
         <div className="container-custom flex items-center justify-between h-[72px] lg:h-[80px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5" id="header-logo">
-            <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-base">B</span>
+            <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center relative overflow-hidden">
+              {/* Industrial conveyor/motion inspired icon */}
+              <svg viewBox="0 0 36 36" fill="none" className="w-6 h-6">
+                <path d="M6 22h24M6 14h24" stroke="#C87533" strokeWidth="2.2" strokeLinecap="round" opacity="0.35"/>
+                <circle cx="10" cy="18" r="5" stroke="white" strokeWidth="2"/>
+                <circle cx="26" cy="18" r="5" stroke="white" strokeWidth="2"/>
+                <path d="M15 13.5h6M15 22.5h6" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+              </svg>
             </div>
-            <span className="text-xl font-semibold text-title tracking-tight">BeltForge</span>
+            <div className="flex flex-col leading-none">
+              <span className="text-xl font-bold text-title tracking-tight">
+                <span className="text-accent">Earth</span>India
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -374,7 +384,7 @@ export default function Header() {
               className="absolute right-0 top-0 bottom-0 w-[320px] max-w-[85vw] bg-white rounded-l-3xl flex flex-col overflow-y-auto"
               aria-label="Mobile navigation"
             >
-              <div className="flex items-center justify-between p-6 border-b border-[#f1f5f9]">
+              <div className="flex items-center justify-between p-6 border-b border-[#eef1f5]">
                 <span className="text-lg font-semibold text-title">Menu</span>
                 <button onClick={() => setIsMobileMenuOpen(false)} className="w-10 h-10 rounded-full bg-background-soft flex items-center justify-center" aria-label="Close menu" id="mobile-menu-close">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -422,10 +432,10 @@ export default function Header() {
                                 <Link
                                   href="/products/conveyor-belt"
                                   onClick={() => setIsMobileMenuOpen(false)}
-                                  className="flex items-center gap-3 py-2 px-3 text-[#0f172a] hover:text-accent hover:bg-[#f8fafc] rounded-xl transition-colors font-bold text-sm"
+                                  className="flex items-center gap-3 py-2 px-3 text-[#0c1a2e] hover:text-accent hover:bg-[#f7f8fa] rounded-xl transition-colors font-bold text-sm"
                                   id="mobile-product-all"
                                 >
-                                  <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 bg-[#0f172a]/5 text-[#0f172a] group-hover:bg-accent group-hover:text-white">
+                                  <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-accent group-hover:text-white">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
                                       <path d="M4 6h16M4 12h16M4 18h16" />
                                     </svg>
@@ -440,20 +450,20 @@ export default function Header() {
                                       href={`/products/${product.slug}`}
                                       onClick={() => setIsMobileMenuOpen(false)}
                                       className={`flex items-center gap-3 py-2.5 px-3 rounded-xl transition-colors group ${
-                                        isSubActive ? "bg-[#f8fafc]" : "hover:bg-[#f8fafc]"
+                                        isSubActive ? "bg-[#f7f8fa]" : "hover:bg-[#f7f8fa]"
                                       }`}
                                       id={`mobile-product-${product.slug}`}
                                     >
                                       <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 ${
-                                        isSubActive ? "bg-accent text-white" : "bg-[#0f172a]/5 text-[#0f172a] group-hover:bg-accent group-hover:text-white"
+                                        isSubActive ? "bg-accent text-white" : "bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-accent group-hover:text-white"
                                       }`}>
                                         <div className="scale-75">{iconMap[product.icon] ?? iconMap.conveyor}</div>
                                       </div>
                                       <div>
                                         <p className={`text-sm font-semibold leading-tight ${
-                                          isSubActive ? "text-accent" : "text-[#0f172a]"
+                                          isSubActive ? "text-accent" : "text-[#0c1a2e]"
                                         }`}>{product.title}</p>
-                                        <p className="text-[11px] text-[#334155]/50">{product.shortDesc}</p>
+                                        <p className="text-[11px] text-[#3a4a5c]/50">{product.shortDesc}</p>
                                       </div>
                                     </Link>
                                   );

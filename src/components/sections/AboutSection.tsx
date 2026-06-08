@@ -19,7 +19,7 @@ export default function AboutSection() {
           >
             <span className="inline-flex items-center gap-2.5 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              ABOUT BELTFORGE
+              ABOUT EarthIndia
             </span>
           </motion.div>
 
@@ -30,7 +30,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-2xl sm:text-3xl lg:text-[2.25rem] font-semibold text-title leading-[1.3] tracking-tight max-w-4xl text-left lg:ml-16"
           >
-            BeltForge manufactures and supplies <span className="text-accent font-bold">heavy-duty conveyor solutions</span> for industries like mining, cement, steel, and power.
+            EarthIndia manufactures and supplies <span className="text-accent font-bold">heavy-duty conveyor solutions</span> for industries like mining, cement, steel, and power.
           </motion.h2>
         </div>
 
@@ -105,7 +105,7 @@ export default function AboutSection() {
                 />
               </div>
               <p className="text-[15px] text-subtitle leading-[1.6] text-justify md:text-left mt-auto font-medium">
-                Every BeltForge solution is engineered to handle extreme loads, harsh conditions, and continuous operation, helping businesses increase productivity while reducing operational risks.
+                Every EarthIndia solution is engineered to handle extreme loads, harsh conditions, and continuous operation, helping businesses increase productivity while reducing operational risks.
               </p>
             </motion.div>
           </div>
@@ -173,7 +173,7 @@ export default function AboutSection() {
             >
               {/* Editorial text content below the images */}
               <p className="text-[15px] text-subtitle leading-[1.6] text-justify sm:text-left font-medium max-w-xl mx-0">
-                Every BeltForge solution is engineered to handle extreme loads, harsh conditions, and continuous operation, helping businesses increase productivity while reducing operational risks.
+                Every EarthIndia solution is engineered to handle extreme loads, harsh conditions, and continuous operation, helping businesses increase productivity while reducing operational risks.
               </p>
 
               {/* Read More button below the content paragraph */}

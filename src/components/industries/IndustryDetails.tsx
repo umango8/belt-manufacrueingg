@@ -67,7 +67,7 @@ const DETAIL_SECTIONS = [
     challenge:
       "Food processing environments require conveyor belts that meet strict hygiene standards, resist bacterial growth, and withstand continuous wash-down procedures without degradation.",
     solution:
-      "BeltForge food-grade belts use FDA-approved polyurethane and PVC compounds with sealed edges, anti-microbial surface treatments, and easy-clean profiles — meeting HACCP and GMP requirements.",
+      "EarthIndia food-grade belts use FDA-approved polyurethane and PVC compounds with sealed edges, anti-microbial surface treatments, and easy-clean profiles — meeting HACCP and GMP requirements.",
     benefits: [
       "FDA-approved materials",
       "Anti-microbial surface",
@@ -115,7 +115,7 @@ export default function IndustryDetails() {
         className="absolute inset-0 pointer-events-none opacity-[0.008] z-0"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0f172a 80px, #0f172a 81px)",
+            "repeating-linear-gradient(90deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px), repeating-linear-gradient(0deg, transparent, transparent 80px, #0c1a2e 80px, #0c1a2e 81px)",
         }}
       />
 

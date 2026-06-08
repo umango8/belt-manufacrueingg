@@ -274,7 +274,7 @@ export default function TestingTimeline() {
                   cx="50%"
                   cy="50%"
                   r="35%"
-                  stroke="#F97316"
+                  stroke="#C87533"
                   strokeWidth="5"
                   fill="transparent"
                   strokeDasharray={circumference}

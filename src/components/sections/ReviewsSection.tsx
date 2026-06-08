@@ -11,7 +11,7 @@ import "swiper/css";
 const TESTIMONIALS = [
   {
     id: 1,
-    quote: "The heat-resistant belts from BeltForge have exceeded our expectations. We have seen a 40% reduction in downtime on our high-temperature clinker transport lines under severe 180°C operating conditions.",
+    quote: "The heat-resistant belts from EarthIndia have exceeded our expectations. We have seen a 40% reduction in downtime on our high-temperature clinker transport lines under severe 180°C operating conditions.",
     author: "Rajesh Mehta",
     role: "Chief Operations Officer",
     company: "Gujarat Cement Works",
@@ -29,7 +29,7 @@ const TESTIMONIALS = [
   },
   {
     id: 3,
-    quote: "BeltForge fire-resistant belts are the gold standard for safety in our underground coal mining operations. Zero combustion risk, absolute safety compliance, and incredible wear-life.",
+    quote: "EarthIndia fire-resistant belts are the gold standard for safety in our underground coal mining operations. Zero combustion risk, absolute safety compliance, and incredible wear-life.",
     author: "Amitabha Roy",
     role: "Head of Electrical & Mechanical Maintenance",
     company: "Deccan Thermal Power",
@@ -54,7 +54,7 @@ export default function ReviewsSection() {
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] select-none"
         style={{
-          backgroundImage: "radial-gradient(#F97316 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(#C87533 1px, transparent 1px)",
           backgroundSize: "32px 32px"
         }}
       />

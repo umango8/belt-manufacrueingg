@@ -1,10 +1,10 @@
 export const COMPANY = {
-  name: "BeltForge Industries",
+  name: "EarthIndia Industries",
   tagline: "Engineering Excellence in Conveyor Solutions",
   description:
     "Leading manufacturer of premium industrial conveyor belts, delivering precision-engineered solutions for mining, cement, steel, and heavy industries worldwide.",
   phone: "+91-8200223669",
-  email: "info@beltforge.com",
+  email: "info@earthindia.com",
   address: "Industrial Area, Phase II, Ahmedabad, Gujarat, India",
   established: "2008",
   iso: "ISO 9001:2015",
@@ -37,7 +37,7 @@ export const PRODUCT_CATALOG = [
     category: "Core Products",
     image: "/product-conveyor-belt.png",
     overview:
-      "BeltForge Conveyor Belts are engineered for the most demanding material handling applications. Our multi-ply rubber construction ensures exceptional durability, load-bearing capacity, and resistance to operational wear in heavy industries.",
+      "EarthIndia Conveyor Belts are engineered for the most demanding material handling applications. Our multi-ply rubber construction ensures exceptional durability, load-bearing capacity, and resistance to operational wear in heavy industries.",
     description:
       "Our General Duty Conveyor Belts are the backbone of material handling across industries. Engineered with precision-selected rubber compounds, they deliver consistent performance under continuous load, harsh environments, and high-throughput operations. Each belt undergoes multi-stage quality testing before dispatch.",
     material: "Multi-ply rubber with fabric carcass",
@@ -70,9 +70,9 @@ export const PRODUCT_CATALOG = [
     category: "Precision Belts",
     image: "/product-heat-resistant.png",
     overview:
-      "Engineered for exact synchronization, BeltForge Timing Belts deliver zero-slip power transmission in high-speed and precision-critical applications across automotive, textile, and packaging industries.",
+      "Engineered for exact synchronization, EarthIndia Timing Belts deliver zero-slip power transmission in high-speed and precision-critical applications across automotive, textile, and packaging industries.",
     description:
-      "Timing Belts from BeltForge are designed to provide accurate, synchronous power transmission without the need for lubrication. With a toothed inner surface that meshes perfectly with toothed pulleys, these belts eliminate slippage, reduce noise, and deliver exceptional positional accuracy. Ideal for CNC machines, packaging lines, and automotive drives.",
+      "Timing Belts from EarthIndia are designed to provide accurate, synchronous power transmission without the need for lubrication. With a toothed inner surface that meshes perfectly with toothed pulleys, these belts eliminate slippage, reduce noise, and deliver exceptional positional accuracy. Ideal for CNC machines, packaging lines, and automotive drives.",
     material: "Neoprene / Polyurethane with fiberglass tension cord",
     applications: ["Automotive Manufacturing", "CNC Machinery", "Packaging Lines", "Textile Machinery", "Printing", "Robotics"],
     specifications: {
@@ -103,7 +103,7 @@ export const PRODUCT_CATALOG = [
     category: "Specialty Belts",
     image: "/product-oil-resistant.png",
     overview:
-      "BeltForge Polyurethane Belts offer an unmatched combination of strength, flexibility, and hygienic properties. FDA-compliant formulations make them essential in food processing, pharmaceutical, and clean-room applications.",
+      "EarthIndia Polyurethane Belts offer an unmatched combination of strength, flexibility, and hygienic properties. FDA-compliant formulations make them essential in food processing, pharmaceutical, and clean-room applications.",
     description:
       "Polyurethane (PU) Belts represent the gold standard in food-grade and hygienic belt technology. Manufactured from FDA-approved materials, these belts resist bacteria growth, withstand rigorous wash-down procedures, and maintain structural integrity under continuous exposure to food acids, fats, and cleaning agents. Their smooth, pore-free surface prevents contamination buildup.",
     material: "FDA-grade Polyurethane with high-tenacity polyester cords",
@@ -136,9 +136,9 @@ export const PRODUCT_CATALOG = [
     category: "Specialty Belts",
     image: "/product-chevron.png",
     overview:
-      "BeltForge PVC Belts combine excellent flexibility, oil resistance, and cost-efficiency for light-to-medium duty conveying across packaging, logistics, and general manufacturing applications.",
+      "EarthIndia PVC Belts combine excellent flexibility, oil resistance, and cost-efficiency for light-to-medium duty conveying across packaging, logistics, and general manufacturing applications.",
     description:
-      "PVC Conveyor Belts from BeltForge offer an exceptional balance between performance and economy. Manufactured with high-quality PVC compounds, these belts deliver reliable service in packaging, distribution, and light manufacturing environments. Their smooth, textured, or cleated surfaces can be customized to meet specific grip and friction requirements.",
+      "PVC Conveyor Belts from EarthIndia offer an exceptional balance between performance and economy. Manufactured with high-quality PVC compounds, these belts deliver reliable service in packaging, distribution, and light manufacturing environments. Their smooth, textured, or cleated surfaces can be customized to meet specific grip and friction requirements.",
     material: "PVC compound with polyester fabric reinforcement",
     applications: ["Packaging", "Logistics & Distribution", "Light Manufacturing", "Airport Baggage", "Postal Sorting", "Retail"],
     specifications: {
@@ -169,9 +169,9 @@ export const PRODUCT_CATALOG = [
     category: "Core Products",
     image: "/product-conveyor-belt.png",
     overview:
-      "BeltForge Rubber Belts are formulated for high-impact, abrasive, and chemically aggressive environments. SBR, NR, and specialty compound options deliver tailored performance for your toughest conveying challenges.",
+      "EarthIndia Rubber Belts are formulated for high-impact, abrasive, and chemically aggressive environments. SBR, NR, and specialty compound options deliver tailored performance for your toughest conveying challenges.",
     description:
-      "Our Rubber Conveyor Belts are manufactured from carefully selected natural rubber (NR), styrene-butadiene rubber (SBR), and specialty compound blends to handle the most demanding industrial environments. Whether transporting sharp rock, hot clinker, or chemically aggressive materials, BeltForge rubber belts deliver unmatched durability.",
+      "Our Rubber Conveyor Belts are manufactured from carefully selected natural rubber (NR), styrene-butadiene rubber (SBR), and specialty compound blends to handle the most demanding industrial environments. Whether transporting sharp rock, hot clinker, or chemically aggressive materials, EarthIndia rubber belts deliver unmatched durability.",
     material: "Natural Rubber (NR) / SBR / Specialty compounds",
     applications: ["Mining", "Cement", "Steel", "Chemical Plants", "Quarrying", "Agriculture"],
     specifications: {
@@ -202,9 +202,9 @@ export const PRODUCT_CATALOG = [
     category: "Drive Belts",
     image: "/product-heat-resistant.png",
     overview:
-      "BeltForge Transmission Belts — including V-belts, wedge belts, and wrapped drives — deliver efficient, reliable power transmission across pumps, compressors, fans, and industrial machinery.",
+      "EarthIndia Transmission Belts — including V-belts, wedge belts, and wrapped drives — deliver efficient, reliable power transmission across pumps, compressors, fans, and industrial machinery.",
     description:
-      "Power Transmission Belts from BeltForge are engineered to transfer mechanical power with maximum efficiency and minimum maintenance. Our V-belt, wedge belt, and banded belt range covers all standard cross-sections (A, B, C, D, E, SPZ, SPA, SPB, SPC) and custom lengths, meeting or exceeding ISO 4184 and DIN 2215 standards.",
+      "Power Transmission Belts from EarthIndia are engineered to transfer mechanical power with maximum efficiency and minimum maintenance. Our V-belt, wedge belt, and banded belt range covers all standard cross-sections (A, B, C, D, E, SPZ, SPA, SPB, SPC) and custom lengths, meeting or exceeding ISO 4184 and DIN 2215 standards.",
     material: "CR/EPDM rubber with polyester or aramid tension cords",
     applications: ["Industrial Pumps", "Air Compressors", "HVAC Systems", "Fans & Blowers", "Agricultural Machinery", "Mining Equipment"],
     specifications: {
@@ -235,9 +235,9 @@ export const PRODUCT_CATALOG = [
     category: "Drive Belts",
     image: "/product-oil-resistant.png",
     overview:
-      "BeltForge Flat Belts provide smooth, high-speed conveying and power transmission for textile machinery, woodworking, printing, and high-precision manufacturing where quiet, efficient drives are essential.",
+      "EarthIndia Flat Belts provide smooth, high-speed conveying and power transmission for textile machinery, woodworking, printing, and high-precision manufacturing where quiet, efficient drives are essential.",
     description:
-      "Flat Belts from BeltForge excel in applications requiring high-speed, smooth, and vibration-free operation. Manufactured from high-quality rubber, polyurethane, or leather substitute compounds with polyamide or polyester reinforcement, these belts maintain consistent tension and alignment even at speeds exceeding 50 m/s.",
+      "Flat Belts from EarthIndia excel in applications requiring high-speed, smooth, and vibration-free operation. Manufactured from high-quality rubber, polyurethane, or leather substitute compounds with polyamide or polyester reinforcement, these belts maintain consistent tension and alignment even at speeds exceeding 50 m/s.",
     material: "Rubber / Polyurethane / Chrome leather with polyamide fabric",
     applications: ["Textile Machinery", "Woodworking", "Printing Presses", "Paper Industry", "Light Conveying", "High-Speed Drives"],
     specifications: {
@@ -268,9 +268,9 @@ export const PRODUCT_CATALOG = [
     category: "Specialty Belts",
     image: "/product-chevron.png",
     overview:
-      "BeltForge Modular Belts are interlocking plastic belt systems that provide open mesh conveying, easy cleaning, and rapid replacement — ideal for food processing, beverage, and pharmaceutical production lines.",
+      "EarthIndia Modular Belts are interlocking plastic belt systems that provide open mesh conveying, easy cleaning, and rapid replacement — ideal for food processing, beverage, and pharmaceutical production lines.",
     description:
-      "Modular Plastic Conveyor Belts from BeltForge consist of interlocking plastic modules that snap together to form a flexible, hygienic conveyor belt. Their open-grid design allows air, water, and cleaning solutions to flow through, making them the preferred choice for food processing, washdown environments, and applications requiring product visibility during conveying.",
+      "Modular Plastic Conveyor Belts from EarthIndia consist of interlocking plastic modules that snap together to form a flexible, hygienic conveyor belt. Their open-grid design allows air, water, and cleaning solutions to flow through, making them the preferred choice for food processing, washdown environments, and applications requiring product visibility during conveying.",
     material: "Acetal (POM) / Polypropylene (PP) / Polyethylene (PE)",
     applications: ["Food & Beverage", "Meat Processing", "Poultry Plants", "Bakeries", "Pharmaceutical", "Electronics Assembly"],
     specifications: {
@@ -301,9 +301,9 @@ export const PRODUCT_CATALOG = [
     category: "Custom Solutions",
     image: "/product-oil-resistant.png",
     overview:
-      "BeltForge's Custom Belt Engineering division designs and manufactures fully bespoke industrial belts for unique operational challenges that standard off-the-shelf products cannot solve.",
+      "EarthIndia's Custom Belt Engineering division designs and manufactures fully bespoke industrial belts for unique operational challenges that standard off-the-shelf products cannot solve.",
     description:
-      "When standard belt products cannot meet your specific operational, environmental, or dimensional requirements, BeltForge's Custom Belt Engineering team delivers fully tailored solutions. From concept design and material selection through prototyping, testing, and production, we engineer belts that solve your exact problem. Our engineering team has resolved over 200 unique custom belt challenges.",
+      "When standard belt products cannot meet your specific operational, environmental, or dimensional requirements, EarthIndia's Custom Belt Engineering team delivers fully tailored solutions. From concept design and material selection through prototyping, testing, and production, we engineer belts that solve your exact problem. Our engineering team has resolved over 200 unique custom belt challenges.",
     material: "Any rubber, PU, PVC, fabric, steel cord compound",
     applications: ["Special OEM Applications", "Unique Conveyor Geometries", "Extreme Environments", "Novel Material Handling", "Research & Development", "Defense & Aerospace"],
     specifications: {
@@ -470,11 +470,11 @@ export const INDUSTRY_CATALOG = [
     icon: "textile",
     image: "https://images.unsplash.com/photo-1558244661-d248897f7bc4?q=80&w=800&auto=format&fit=crop",
     overview:
-      "The textile industry demands belts with exceptional grip, minimal elongation, and consistent tension across high-speed spinning and weaving operations. BeltForge delivers precision flat belts, timing belts, and spindle tapes that maintain dimensional stability under continuous load — ensuring zero-slip performance on looms, spinning frames, and garment production lines.",
+      "The textile industry demands belts with exceptional grip, minimal elongation, and consistent tension across high-speed spinning and weaving operations. EarthIndia delivers precision flat belts, timing belts, and spindle tapes that maintain dimensional stability under continuous load — ensuring zero-slip performance on looms, spinning frames, and garment production lines.",
     challenge:
       "Textile mills operate at extremely high speeds with zero tolerance for slippage or vibration. Any belt inconsistency leads to yarn breakage, fabric defects, and costly production downtime. Additionally, textile environments expose belts to lint, dust, static buildup, and continuous bending cycles.",
     solution:
-      "BeltForge textile-grade flat belts and timing belts are engineered with advanced polyurethane compounds that maintain dimensional stability under continuous load. Our anti-static surface treatments prevent lint adhesion, while our proprietary flex-fatigue resistant formulations deliver millions of bending cycles without degradation.",
+      "EarthIndia textile-grade flat belts and timing belts are engineered with advanced polyurethane compounds that maintain dimensional stability under continuous load. Our anti-static surface treatments prevent lint adhesion, while our proprietary flex-fatigue resistant formulations deliver millions of bending cycles without degradation.",
     benefits: [
       "Anti-static surface prevents lint adhesion",
       "Low elongation under continuous load",
@@ -504,11 +504,11 @@ export const INDUSTRY_CATALOG = [
     icon: "food",
     image: "https://images.unsplash.com/photo-1534482421-64566f976cfa?q=80&w=800&auto=format&fit=crop",
     overview:
-      "Food processing environments demand the highest standards of hygiene, safety, and regulatory compliance. BeltForge food-grade conveyor belts are manufactured from FDA-approved polyurethane and PVC compounds with sealed edges, anti-microbial surface treatments, and easy-clean profiles — meeting HACCP, GMP, and FDA 21 CFR 177.2600 requirements.",
+      "Food processing environments demand the highest standards of hygiene, safety, and regulatory compliance. EarthIndia food-grade conveyor belts are manufactured from FDA-approved polyurethane and PVC compounds with sealed edges, anti-microbial surface treatments, and easy-clean profiles — meeting HACCP, GMP, and FDA 21 CFR 177.2600 requirements.",
     challenge:
       "Food processing facilities require conveyor belts that meet strict hygiene standards, resist bacterial growth, and withstand continuous wash-down procedures without material degradation. Belts must also handle varying temperatures from frozen goods to hot ovens while maintaining food-safe compliance at every stage.",
     solution:
-      "BeltForge food-grade PU and PVC belts feature FDA-approved compounds with sealed edges that prevent moisture ingress and bacterial harborage. Our anti-microbial surface treatments actively inhibit bacterial colonization, while our easy-clean profiles allow rapid wash-down with standard food-industry sanitizers.",
+      "EarthIndia food-grade PU and PVC belts feature FDA-approved compounds with sealed edges that prevent moisture ingress and bacterial harborage. Our anti-microbial surface treatments actively inhibit bacterial colonization, while our easy-clean profiles allow rapid wash-down with standard food-industry sanitizers.",
     benefits: [
       "FDA 21 CFR 177.2600 compliant",
       "Anti-microbial surface treatment",
@@ -538,7 +538,7 @@ export const INDUSTRY_CATALOG = [
     icon: "packaging",
     image: "https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=800&auto=format&fit=crop",
     overview:
-      "Modern packaging lines operate at extremely high speeds with zero tolerance for belt-related failures. BeltForge packaging belts deliver superior grip, low friction undersides, and consistent tracking — keeping carton sealing, labeling, shrink wrapping, and automated sorting systems running at peak efficiency.",
+      "Modern packaging lines operate at extremely high speeds with zero tolerance for belt-related failures. EarthIndia packaging belts deliver superior grip, low friction undersides, and consistent tracking — keeping carton sealing, labeling, shrink wrapping, and automated sorting systems running at peak efficiency.",
     challenge:
       "Packaging operations demand belts that maintain precise product positioning at high speeds while handling diverse package sizes, weights, and surface textures. Belts must resist adhesive buildup, provide consistent grip without damaging packaging materials, and deliver reliable performance across multiple shift operations.",
     solution:
@@ -572,11 +572,11 @@ export const INDUSTRY_CATALOG = [
     icon: "automotive",
     image: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop",
     overview:
-      "Automotive manufacturing demands zero-tolerance precision, extreme durability, and uninterrupted operation. BeltForge automotive-grade V-belts, timing belts, and conveyor systems deliver synchronized power transmission with exact positional accuracy — engineered for continuous duty cycles in engine systems and automated assembly lines.",
+      "Automotive manufacturing demands zero-tolerance precision, extreme durability, and uninterrupted operation. EarthIndia automotive-grade V-belts, timing belts, and conveyor systems deliver synchronized power transmission with exact positional accuracy — engineered for continuous duty cycles in engine systems and automated assembly lines.",
     challenge:
       "Automotive assembly lines are multi-million dollar operations where any belt failure cascades into massive production losses. Belts must maintain precise synchronization at high speeds, resist oils and coolants, dampen vibrations, and deliver consistent performance across thousands of hours of continuous operation.",
     solution:
-      "BeltForge automotive belts use premium CR/EPDM rubber compounds with fiberglass and aramid tension cords that deliver exceptional power density and zero-slip synchronization. Our vibration-dampening belt constructions reduce harmonic oscillation, while oil-resistant formulations ensure stable performance in engine-room environments.",
+      "EarthIndia automotive belts use premium CR/EPDM rubber compounds with fiberglass and aramid tension cords that deliver exceptional power density and zero-slip synchronization. Our vibration-dampening belt constructions reduce harmonic oscillation, while oil-resistant formulations ensure stable performance in engine-room environments.",
     benefits: [
       "High-speed synchronized precision",
       "Oil and coolant resistant compounds",
@@ -604,13 +604,13 @@ export const INDUSTRY_CATALOG = [
     title: "Pharmaceutical Industry",
     shortDesc: "Anti-static, anti-bacterial belts for GMP environments",
     icon: "pharmaceutical",
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbbab4?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop",
     overview:
-      "Pharmaceutical manufacturing operates under the strictest regulatory environments in any industry. BeltForge pharmaceutical-grade belts meet GMP, FDA, and EU 1935/2004 standards with anti-static, anti-bacterial, and non-contaminating properties — essential for tablet, capsule, syrup, and injectable production lines.",
+      "Pharmaceutical manufacturing operates under the strictest regulatory environments in any industry. EarthIndia pharmaceutical-grade belts meet GMP, FDA, and EU 1935/2004 standards with anti-static, anti-bacterial, and non-contaminating properties — essential for tablet, capsule, syrup, and injectable production lines.",
     challenge:
       "Pharmaceutical clean-rooms require belts that produce zero particulate contamination, prevent static buildup that could damage sensitive compounds, and resist the aggressive cleaning chemicals used in sterilization cycles. Traceability, material certification, and batch documentation are mandatory.",
     solution:
-      "BeltForge pharmaceutical belts are manufactured from certified, traceable materials with sealed edges and non-porous surfaces that prevent particle shedding and microbial harborage. Our anti-static formulations safely dissipate charges, while our belts withstand CIP/SIP cycles without degradation.",
+      "EarthIndia pharmaceutical belts are manufactured from certified, traceable materials with sealed edges and non-porous surfaces that prevent particle shedding and microbial harborage. Our anti-static formulations safely dissipate charges, while our belts withstand CIP/SIP cycles without degradation.",
     benefits: [
       "GMP & FDA compliant construction",
       "Anti-static charge dissipation",
@@ -640,11 +640,11 @@ export const INDUSTRY_CATALOG = [
     icon: "logistics",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
     overview:
-      "Modern logistics and warehousing operations handle millions of packages daily, requiring conveyor belt systems that deliver exceptional reliability, speed, and sortation accuracy. BeltForge logistics belts are engineered for 24/7 high-volume distribution centers, e-commerce fulfillment hubs, and automated sorting systems.",
+      "Modern logistics and warehousing operations handle millions of packages daily, requiring conveyor belt systems that deliver exceptional reliability, speed, and sortation accuracy. EarthIndia logistics belts are engineered for 24/7 high-volume distribution centers, e-commerce fulfillment hubs, and automated sorting systems.",
     challenge:
       "Logistics facilities operate around the clock with constant start-stop cycles, steep inclines, sharp curves, and heavy package impact loads. Belts must handle diverse package types — from tiny envelopes to heavy cartons — while maintaining precise tracking and sortation accuracy at speeds exceeding 3 m/s.",
     solution:
-      "BeltForge logistics belts feature impact-absorbing top covers, low-stretch polyester carcasses, and precision-tracking profiles that maintain alignment through curves and inclines. Our modular belt systems allow rapid zone replacement without full-belt changeouts, minimizing downtime in critical sorting operations.",
+      "EarthIndia logistics belts feature impact-absorbing top covers, low-stretch polyester carcasses, and precision-tracking profiles that maintain alignment through curves and inclines. Our modular belt systems allow rapid zone replacement without full-belt changeouts, minimizing downtime in critical sorting operations.",
     benefits: [
       "24/7 continuous operation rated",
       "Impact-absorbing top covers",
@@ -672,13 +672,13 @@ export const INDUSTRY_CATALOG = [
     title: "Printing Industry",
     shortDesc: "Precision flat & timing belts for presses & bindery",
     icon: "printing",
-    image: "https://images.unsplash.com/photo-1616400619175-5ebd3009007f?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=800&auto=format&fit=crop",
     overview:
-      "Printing machinery operates at extremely high speeds where even microscopic belt inconsistencies cause registration errors, color misalignment, and paper jams. BeltForge printing-grade belts deliver the ultimate in surface smoothness, dimensional stability, and tracking precision for offset, digital, and flexographic printing operations.",
+      "Printing machinery operates at extremely high speeds where even microscopic belt inconsistencies cause registration errors, color misalignment, and paper jams. EarthIndia printing-grade belts deliver the ultimate in surface smoothness, dimensional stability, and tracking precision for offset, digital, and flexographic printing operations.",
     challenge:
       "High-speed printing presses demand belts with near-perfect surface flatness, consistent coefficient of friction, and zero stretch under varying loads. Ink, solvents, and cleaning chemicals constantly attack belt surfaces, while high-speed operation generates heat and static that can cause paper feeding issues.",
     solution:
-      "BeltForge printing belts are precision-ground to sub-millimeter surface tolerances with chemical-resistant surface treatments that withstand ink, solvents, and UV cleaning agents. Our anti-static formulations prevent paper feeding issues, while our ultra-low stretch constructions maintain perfect registration at all speeds.",
+      "EarthIndia printing belts are precision-ground to sub-millimeter surface tolerances with chemical-resistant surface treatments that withstand ink, solvents, and UV cleaning agents. Our anti-static formulations prevent paper feeding issues, while our ultra-low stretch constructions maintain perfect registration at all speeds.",
     benefits: [
       "Sub-millimeter surface flatness",
       "Chemical resistant to inks & solvents",
@@ -708,11 +708,11 @@ export const INDUSTRY_CATALOG = [
     icon: "ceramic",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
     overview:
-      "Ceramic manufacturing subjects conveyor belts to extreme heat near kilns, highly abrasive glazing materials, and heavy tile loads. BeltForge ceramic-grade belts are engineered with heat-resistant compounds and abrasion-proof surfaces that withstand the harshest conditions in tile, sanitaryware, and technical ceramic production.",
+      "Ceramic manufacturing subjects conveyor belts to extreme heat near kilns, highly abrasive glazing materials, and heavy tile loads. EarthIndia ceramic-grade belts are engineered with heat-resistant compounds and abrasion-proof surfaces that withstand the harshest conditions in tile, sanitaryware, and technical ceramic production.",
     challenge:
       "Ceramic production lines expose belts to temperatures exceeding 150°C near kilns, abrasive glazing compounds that rapidly wear standard belts, and heavy loads from stacked tiles and sanitaryware. Belts must also resist chemical attack from glazing slurries and provide smooth, mark-free product transport.",
     solution:
-      "BeltForge ceramic belts use heat-stabilized EPDM and silicone compounds rated for continuous operation at elevated temperatures. Our super-abrasion-resistant (SAR) top covers withstand glazing material contact, while non-marking surfaces prevent product discoloration during transport.",
+      "EarthIndia ceramic belts use heat-stabilized EPDM and silicone compounds rated for continuous operation at elevated temperatures. Our super-abrasion-resistant (SAR) top covers withstand glazing material contact, while non-marking surfaces prevent product discoloration during transport.",
     benefits: [
       "Heat resistant up to 200°C continuous",
       "Super abrasion resistant (SAR grade)",
@@ -742,11 +742,11 @@ export const INDUSTRY_CATALOG = [
     icon: "paper",
     image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=800&auto=format&fit=crop",
     overview:
-      "Paper manufacturing is one of the most demanding environments for conveyor belts, combining high moisture, aggressive chemicals, extreme temperatures, and continuous high-speed operation. BeltForge paper-grade belts deliver moisture-proof, chemical-resistant performance for pulp handling, paper converting, and corrugation production lines.",
+      "Paper manufacturing is one of the most demanding environments for conveyor belts, combining high moisture, aggressive chemicals, extreme temperatures, and continuous high-speed operation. EarthIndia paper-grade belts deliver moisture-proof, chemical-resistant performance for pulp handling, paper converting, and corrugation production lines.",
     challenge:
       "Paper mills expose belts to constant moisture, acidic and alkaline processing chemicals, high temperatures in drying sections, and abrasive paper dust. Belts must maintain grip on wet surfaces, resist swelling from moisture absorption, and deliver consistent tracking through complex machine geometries.",
     solution:
-      "BeltForge paper-grade belts feature moisture-barrier polyester carcasses and chemical-resistant PVC/PU compounds that maintain dimensional stability in wet environments. Our corrugator belts deliver the precise tension and heat transfer needed for single and double-face corrugation, while our felt guide belts maintain critical alignment in paper machine wet sections.",
+      "EarthIndia paper-grade belts feature moisture-barrier polyester carcasses and chemical-resistant PVC/PU compounds that maintain dimensional stability in wet environments. Our corrugator belts deliver the precise tension and heat transfer needed for single and double-face corrugation, while our felt guide belts maintain critical alignment in paper machine wet sections.",
     benefits: [
       "Moisture-proof construction",
       "Chemical resistant to pulp processing agents",
@@ -776,11 +776,11 @@ export const INDUSTRY_CATALOG = [
     icon: "agriculture",
     image: "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?q=80&w=800&auto=format&fit=crop",
     overview:
-      "Agricultural belt applications span from grain harvesting and processing to livestock feed systems and farm machinery power transmission. BeltForge agricultural belts are built rugged — engineered to withstand outdoor exposure, abrasive grain handling, and the demanding duty cycles of modern farming operations.",
+      "Agricultural belt applications span from grain harvesting and processing to livestock feed systems and farm machinery power transmission. EarthIndia agricultural belts are built rugged — engineered to withstand outdoor exposure, abrasive grain handling, and the demanding duty cycles of modern farming operations.",
     challenge:
       "Agricultural belts face a uniquely harsh combination of challenges: outdoor UV exposure, extreme temperature swings, abrasive grain and seed materials, moisture from rain and irrigation, and irregular operation schedules. Farm machinery belts must also deliver reliable power transmission with minimal maintenance in remote locations.",
     solution:
-      "BeltForge agricultural belts use UV-stabilized rubber compounds with ozone-resistant formulations that withstand years of outdoor exposure. Our chevron and rough-top profiles prevent grain rollback on inclined conveyors, while our heavy-duty rubber lagging protects drive pulleys from wear in grain elevator applications.",
+      "EarthIndia agricultural belts use UV-stabilized rubber compounds with ozone-resistant formulations that withstand years of outdoor exposure. Our chevron and rough-top profiles prevent grain rollback on inclined conveyors, while our heavy-duty rubber lagging protects drive pulleys from wear in grain elevator applications.",
     benefits: [
       "UV and ozone resistant compounds",
       "Weather-proof for outdoor exposure",

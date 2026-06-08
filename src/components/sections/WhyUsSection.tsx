@@ -45,7 +45,7 @@ export default function WhyUsSection() {
             
             {/* Title with beautiful accent colors */}
             <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-title leading-[1.15] tracking-tight max-w-3xl md:mb-6 mb-4 mt-6">
-              The <span className="text-accent">BeltForge</span> Advantage
+              The <span className="text-accent">EarthIndia</span> Advantage
             </h2>
             
             {/* Description Text */}
@@ -97,7 +97,7 @@ export default function WhyUsSection() {
                 </span>
 
                 {/* Glowing High-Tech Icon Container */}
-                <div className="w-14 h-14 bg-primary/5 border border-primary/20 flex items-center justify-center text-primary mb-6 group-hover:bg-[#0A0E1A] group-hover:border-accent group-hover:text-accent transition-all duration-500 rounded-full shadow-sm group-hover:shadow-[0_0_15px_rgba(249,115,22,0.2)]">
+                <div className="w-14 h-14 bg-primary/5 border border-primary/20 flex items-center justify-center text-primary mb-6 group-hover:bg-[#0B1628] group-hover:border-accent group-hover:text-accent transition-all duration-500 rounded-full shadow-sm group-hover:shadow-[0_0_15px_rgba(249,115,22,0.2)]">
                   <div className="group-hover:scale-110 transition-transform duration-500">
                     {iconMap[item.icon]}
                   </div>
