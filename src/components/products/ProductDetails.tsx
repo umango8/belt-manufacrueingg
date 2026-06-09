@@ -89,8 +89,8 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
 
             {/* Category badge */}
             <div className="absolute top-5 left-5">
-              <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[#c87533] bg-[#c87533]/10 border border-[#c87533]/20 px-3.5 py-1.5 rounded-full backdrop-blur-sm uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#c87533] animate-pulse" />
+              <span className="inline-flex items-center gap-2 text-[10px] font-bold text-accent bg-accent/10 border border-accent/20 px-3.5 py-1.5 rounded-full backdrop-blur-sm uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                 {product.category}
               </span>
             </div>
@@ -124,7 +124,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {/* ── 2. Product Description ──────────────────────────────────────── */}
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-5">
-            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <div className="w-1 h-6 bg-accent rounded-full" />
             <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Product Overview</h2>
           </div>
           <p className="text-[15px] text-[#3a4a5c] leading-relaxed font-medium">{product.description}</p>
@@ -137,7 +137,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {/* ── 3. Specifications Table ─────────────────────────────────────── */}
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm overflow-hidden">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <div className="w-1 h-6 bg-accent rounded-full" />
             <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Technical Specifications</h2>
           </div>
 
@@ -167,7 +167,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {/* ── 4. Applications ─────────────────────────────────────────────── */}
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <div className="w-1 h-6 bg-accent rounded-full" />
             <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Industry Applications</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -192,7 +192,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {/* ── 5. Features & Benefits ──────────────────────────────────────── */}
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <div className="w-1 h-6 bg-accent rounded-full" />
             <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Features & Benefits</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -205,7 +205,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
                 transition={{ delay: i * 0.07 }}
                 className="group flex gap-4 p-4 rounded-xl border border-[#dce1e8] hover:border-[#c87533]/30 hover:shadow-[0_4px_24px_rgba(249,115,22,0.08)] transition-all duration-300 hover:-translate-y-0.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-[#c87533] group-hover:text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-accent group-hover:text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm">
                   <FeatureIcon index={i} />
                 </div>
                 <div>
@@ -221,7 +221,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {relatedProducts.length > 0 && (
           <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
             <div className="flex items-center gap-2.5 mb-6">
-              <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+              <div className="w-1 h-6 bg-accent rounded-full" />
               <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Related Products</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -243,7 +243,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a2e]/60 to-transparent" />
                     </div>
                     <div className="p-4 bg-white">
-                      <p className="text-[13px] font-bold text-[#0c1a2e] group-hover:text-[#c87533] transition-colors mb-1">{rel.title}</p>
+                      <p className="text-[13px] font-bold text-[#0c1a2e] group-hover:text-accent transition-colors mb-1">{rel.title}</p>
                       <p className="text-[11px] text-[#3a4a5c]/50 line-clamp-1">{rel.shortDesc}</p>
                     </div>
                   </Link>

@@ -130,21 +130,21 @@ export default function ProductSidebar() {
                       >
                         {/* Active left-border indicator */}
                         {isActive && (
-                          <span className="absolute left-0 top-2 bottom-2 w-[3px] bg-[#c87533] rounded-r-full" />
+                          <span className="absolute left-0 top-2 bottom-2 w-[3px] bg-accent rounded-r-full" />
                         )}
 
                         {/* Icon */}
                         <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
                           isActive
-                            ? "bg-[#c87533] text-white shadow-[0_4px_12px_rgba(249,115,22,0.4)]"
-                            : "bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-[#c87533]/10 group-hover:text-[#c87533]"
+                            ? "bg-accent text-white shadow-[0_4px_12px_rgba(249,115,22,0.4)]"
+                            : "bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-[#c87533]/10 group-hover:text-accent"
                         }`}>
                           {iconMap[product.icon] ?? iconMap.conveyor}
                         </div>
 
                         {/* Text */}
                         <div className="min-w-0 flex-1">
-                          <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0c1a2e] group-hover:text-[#c87533]"} transition-colors`}>
+                          <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0c1a2e] group-hover:text-accent"} transition-colors`}>
                             {product.title}
                           </p>
                           <p className={`text-[10px] mt-0.5 leading-tight line-clamp-1 ${isActive ? "text-white/60" : "text-[#3a4a5c]/50"}`}>
@@ -154,11 +154,11 @@ export default function ProductSidebar() {
 
                         {/* Arrow */}
                         {isActive ? (
-                          <svg className="w-3.5 h-3.5 text-[#c87533] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3.5 h-3.5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         ) : (
-                          <svg className="w-3 h-3 text-[#3a4a5c]/20 group-hover:text-[#c87533] flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3 h-3 text-[#3a4a5c]/20 group-hover:text-accent flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         )}
@@ -175,7 +175,7 @@ export default function ProductSidebar() {
               <p className="text-[11px] text-white/50 mb-3 leading-snug">Our engineers design bespoke solutions for your exact requirements.</p>
               <Link
                 href="/quote"
-                className="block w-full text-center text-[11px] font-bold text-white bg-[#c87533] hover:bg-[#ea6c0c] py-2.5 rounded-lg transition-colors duration-200"
+                className="block w-full text-center text-[11px] font-bold text-white bg-accent hover:bg-[#ea6c0c] py-2.5 rounded-lg transition-colors duration-200"
                 id="sidebar-get-quote"
               >
                 Request Quote
