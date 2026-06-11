@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import IndustrySidebar from "@/components/industries/IndustrySidebar";
-import IndustryDetailContent from "@/components/industries/IndustryDetailContent";
-import CTASection from "@/components/sections/CTASection";
+import Header from "@/components/earthflex/layout/Header";
+import Footer from "@/components/earthflex/layout/Footer";
+import IndustrySidebar from "@/components/earthflex/industries/IndustrySidebar";
+import IndustryDetailContent from "@/components/earthflex/industries/IndustryDetailContent";
+import CTASection from "@/components/earthflex/sections/CTASection";
 import { INDUSTRY_CATALOG, COMPANY } from "@/lib/constants";
 import Link from "next/link";
 
@@ -19,21 +19,21 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const industry = INDUSTRY_CATALOG.find((ind) => ind.slug === slug);
-  if (!industry) return { title: "Industry Not Found | EarthIndia Industries" };
+  if (!industry) return { title: "Industry Not Found | Earth Flex Industries" };
 
   return {
-    title: `${industry.title} | EarthIndia Industries — Industrial Belt Solutions`,
-    description: `${industry.overview.substring(0, 160)}... Designed by EarthIndia Industries — ${COMPANY.iso} certified.`,
+    title: `${industry.title} | Earth Flex Industries — Industrial Belt Solutions`,
+    description: `${industry.overview.substring(0, 160)}... Designed by Earth Flex Industries — ${COMPANY.iso} certified.`,
     keywords: [
       industry.title,
       `${industry.title.toLowerCase()} conveyor belt`,
       `${industry.title.toLowerCase()} belt manufacturer`,
       "industrial belt solutions",
-      "EarthIndia Industries",
+      "Earth Flex Industries",
       ...industry.applications,
     ],
     openGraph: {
-      title: `${industry.title} | EarthIndia Industries`,
+      title: `${industry.title} | Earth Flex Industries`,
       description: industry.shortDesc,
       type: "website",
     },
@@ -47,7 +47,7 @@ export default async function IndustryPage({ params }: Props) {
 
   return (
     <>
-      <Header />
+      <Header theme="light" />
       <main className="bg-[#f7f8fa] min-h-screen">
         {/* Breadcrumb */}
         <div className="bg-white border-b border-border">

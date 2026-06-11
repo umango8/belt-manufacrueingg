@@ -4,14 +4,14 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "EarthIndia Industries — Premium Industrial Conveyor Belt & Transmission Solutions";
+export const alt = "Earth Flex Industries — Premium Industrial Conveyor Belt & Transmission Solutions";
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = "image/png";
 
-// Image generation — EarthIndia premium OG image
+// Image generation — Earth Flex premium OG image
 export default async function Image() {
   return new ImageResponse(
     (
@@ -87,12 +87,18 @@ export default async function Image() {
             }}
           >
             <svg viewBox="0 0 36 36" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-              <line x1="6" y1="14" x2="30" y2="14" stroke="#C87533" strokeWidth="1.8" strokeLinecap="round" opacity="0.4" />
-              <line x1="6" y1="22" x2="30" y2="22" stroke="#C87533" strokeWidth="1.8" strokeLinecap="round" opacity="0.4" />
-              <circle cx="10" cy="18" r="5" stroke="white" strokeWidth="1.8" fill="none" />
-              <circle cx="26" cy="18" r="5" stroke="white" strokeWidth="1.8" fill="none" />
-              <line x1="15" y1="13.5" x2="21" y2="13.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="15" y1="22.5" x2="21" y2="22.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="18" cy="18" r="15" stroke="rgba(255,255,255,0.15)" strokeWidth="1" strokeDasharray="3 3" />
+              <path
+                d="M 12 25 L 24 25 A 3 3 0 0 0 27 22 L 21 13 A 3 3 0 0 0 15 13 L 9 22 A 3 3 0 0 0 12 25 Z"
+                stroke="#C87533"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="12" cy="22" r="2.5" stroke="white" strokeWidth="1.5" fill="#0c1a2e" />
+              <circle cx="24" cy="22" r="2.5" stroke="white" strokeWidth="1.5" fill="#0c1a2e" />
+              <circle cx="18" cy="13" r="2.5" stroke="white" strokeWidth="1.5" fill="#0c1a2e" />
+              <circle cx="18" cy="19" r="1" fill="#C87533" />
             </svg>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -105,7 +111,7 @@ export default async function Image() {
               }}
             >
               <span style={{ color: "#C87533" }}>Earth</span>
-              <span style={{ color: "#FFFFFF" }}>India</span>
+              <span style={{ color: "#FFFFFF" }}>{" "}Flex</span>
             </span>
             <span
               style={{
@@ -238,7 +244,7 @@ export default async function Image() {
               letterSpacing: "0.05em",
             }}
           >
-            earthindia.com
+            earthflex.com
           </span>
         </div>
       </div>

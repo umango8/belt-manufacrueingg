@@ -1,28 +1,71 @@
 @import "tailwindcss";
 
 @theme inline {
- --color-primary: #0f172a;
-  --color-primary-dark: #020617;
-  --color-primary-light: #1e293b;
-  --color-secondary: #334155;
-  --color-accent: #f97316;
-  --color-background: #f8fafc;
-  --color-background-light: #f1f5f9;
-  --color-background-soft: #f8fafc;
+  /* Earth India Group Brand Palette */
+  --color-primary: #1B70B3;
+  --color-primary-dark: #1C4768;
+  --color-primary-light: #48BAD3;
+  --color-secondary: #1C4768;
+  --color-accent: #D9BB4A;
+  --color-background: #FFFFFF;
+  --color-background-light: #F8FAFC;
+  --color-background-soft: #F0F4F8;
   --color-background-card: #ffffff;
- --color-subtitle: #334155;
-  --color-title: #0f172a;
+  --color-subtitle: #475569;
+  --color-title: #1E293B;
   --color-white: #ffffff;
-   --color-dark: #1e293b;
-  --color-dark-light: #334155;
+  --color-dark: #1E293B;
+  --color-dark-light: #475569;
   --color-border: #e2e8f0;
   --color-border-light: #f1f5f9;
-  --font-heading: var(--font-body);
+  --font-heading: var(--font-heading);
   --font-body: var(--font-body);
 }
 
-/* Base Reset */
+/* EarthFlex Site Color Palette Override - Black, White, and Orange */
+.theme-earthflex {
+  --color-primary: #111827;
+  --color-primary-dark: #000000;
+  --color-primary-light: #374151;
+  --color-secondary: #FFFFFF;
+  --color-accent: #F97316;
+  --color-background: #FFFFFF;
+  --color-background-light: #F9FAFB;
+  --color-background-soft: #F3F4F6;
+  --color-background-card: #FFFFFF;
+  --color-title: #111827;
+  --color-dark: #111827;
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+}
 
+html.theme-earthflex,
+body.theme-earthflex {
+  background-color: var(--color-background) !important;
+  color: var(--color-dark) !important;
+}
+
+/* Custom Hover transitions for EarthFlex Orange */
+.theme-earthflex .hover\:text-accent:hover {
+  color: #EA580C !important;
+}
+.theme-earthflex .group:hover .group-hover\:text-accent {
+  color: #EA580C !important;
+}
+.theme-earthflex .hover\:bg-accent:hover {
+  background-color: #EA580C !important;
+}
+.theme-earthflex .group:hover .group-hover\:bg-accent {
+  background-color: #EA580C !important;
+}
+.theme-earthflex .hover\:border-accent:hover {
+  border-color: #EA580C !important;
+}
+.theme-earthflex .group:hover .group-hover\:border-accent {
+  border-color: #EA580C !important;
+}
+
+/* Base Reset */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -30,23 +73,20 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-body), 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--color-dark);
   background-color: var(--color-white);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Typography - Flampt-inspired large editorial style */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Typography - Poppins headings, Inter body */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), 'Poppins', system-ui, sans-serif;
   line-height: 1.15;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--color-title);
 }
 
 /* Selection */
@@ -65,12 +105,12 @@ h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
+  background: var(--color-primary);
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-secondary);
+  background: var(--color-primary-dark);
 }
 
 /* Focus Styles */
@@ -110,7 +150,6 @@ h6 {
   padding-bottom: 5rem;
 }
 
-
 @media (min-width: 768px) {
   .section-padding {
     padding-top: 6.5rem;
@@ -124,8 +163,9 @@ h6 {
     padding-bottom: 8rem;
   }
 }
-.buttom-padding{
-  padding-top: ppx;
+
+.buttom-padding {
+  padding-top: 0px;
   padding-bottom: 5rem;
 }
 
@@ -138,12 +178,12 @@ h6 {
 
 @media (min-width: 1024px) {
   .buttom-padding {
-    padding-top: opx;
+    padding-top: 0px;
     padding-bottom: 8rem;
   }
 }
 
-/* Flampt-style dot badge */
+/* Dot badge */
 .dot-badge {
   display: inline-flex;
   align-items: center;
@@ -199,23 +239,23 @@ h6 {
 
 .btn-outline:hover {
   background-color: var(--color-background-soft);
-  border-color: var(--color-secondary);
+  border-color: var(--color-primary);
   transform: translateY(-1px);
 }
 
 .btn-accent {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-dark);
   color: var(--color-white);
-  border-color: var(--color-primary);
+  border-color: var(--color-primary-dark);
 }
 
 .btn-accent:hover {
-  background-color: var(--color-primary-light);
-  border-color: var(--color-primary-light);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
   transform: translateY(-1px);
 }
 
-/* Premium smooth text fade in/out on scroll */
+/* Premium scroll reveal animations */
 .scroll-reveal-text {
   opacity: 0;
   transform: translate3d(0, 15px, 0);
@@ -237,10 +277,12 @@ h6 {
     opacity 0.5s ease-out,
     transform 0.5s ease-out;
 }
+
 .serve-swiper .swiper-wrapper {
   transition-timing-function: linear !important;
 }
-/* Premium Apple-like smooth character letter reveal */
+
+/* Premium character reveal */
 .reveal-char {
   display: inline-block;
   opacity: 0;
@@ -261,7 +303,6 @@ h6 {
   filter: blur(0);
 }
 
-/* Fast and seamless drop-out when scrolling away */
 .scroll-reveal:not(.revealed) .reveal-char,
 .scroll-reveal-text:not(.revealed) .reveal-char {
   opacity: 0;
@@ -274,12 +315,11 @@ h6 {
   transition-delay: 0s !important;
 }
 
-/* Letter Space */
 .reveal-char-space {
   display: inline-block;
 }
 
-/* High-Performance image subtle scale & reveal effect */
+/* Image reveal effect */
 .scroll-reveal-img {
   opacity: 0;
   transform: translate3d(0, 30px, 0) scale(0.96);
@@ -307,15 +347,15 @@ h6 {
     filter 0.6s ease-out;
 }
 
-/* CPU & Render Painting Optimization for Off-Screen Sections */
+/* Performance optimizations for off-screen sections */
 section {
-  content-visibility: auto; /* Bypasses paint/layout calculations for elements outside the viewport */
-  contain-intrinsic-size: 1px 500px; /* Provides layout placeholder size for rendering engine */
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
   will-change: transform, opacity;
-  scroll-margin-top: 90px; /* Accounts for sticky header height across breakpoints */
+  scroll-margin-top: 90px;
 }
 
-/* Lenis Specific Reset to support smooth scrolling */
+/* Lenis smooth scrolling */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -337,7 +377,7 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* About Page — Subtle Conveyor Belt Motion Lines */
+/* Subtle Conveyor Belt Motion Lines */
 .about-conveyor-line {
   position: absolute;
   left: 0;
@@ -375,4 +415,35 @@ html.lenis body {
   100% {
     transform: translateX(-50%);
   }
+}
+
+/* === EARTH INDIA GROUP HOMEPAGE SPECIFIC === */
+
+/* Animated counter pulse */
+@keyframes metricPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* Division card hover glow */
+.division-card-earthflex:hover {
+  box-shadow: 0 25px 60px rgba(27, 112, 179, 0.12), 0 8px 20px rgba(27, 112, 179, 0.06);
+}
+
+.division-card-earthhaul:hover {
+  box-shadow: 0 25px 60px rgba(28, 71, 104, 0.18), 0 8px 20px rgba(28, 71, 104, 0.08);
+}
+
+/* Subtle industrial grid pattern for sections */
+.industrial-grid-bg {
+  background-image: 
+    linear-gradient(rgba(27, 112, 179, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 112, 179, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Mobile navigation overlay */
+.mobile-nav-overlay {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }

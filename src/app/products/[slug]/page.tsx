@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import ProductSidebar from "@/components/products/ProductSidebar";
-import ProductDetails from "@/components/products/ProductDetails";
-import CTASection from "@/components/sections/CTASection";
+import Header from "@/components/earthflex/layout/Header";
+import Footer from "@/components/earthflex/layout/Footer";
+import ProductSidebar from "@/components/earthflex/products/ProductSidebar";
+import ProductDetails from "@/components/earthflex/products/ProductDetails";
+import CTASection from "@/components/earthflex/sections/CTASection";
 import { PRODUCT_CATALOG, COMPANY } from "@/lib/constants";
 import Link from "next/link";
 
@@ -19,21 +19,21 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = PRODUCT_CATALOG.find((p) => p.slug === slug);
-  if (!product) return { title: "Product Not Found | EarthIndia Industries" };
+  if (!product) return { title: "Product Not Found | Earth Flex Industries" };
 
   return {
-    title: `${product.title} | EarthIndia Industries — Industrial Belt Manufacturer`,
-    description: `${product.overview} Manufactured by EarthIndia Industries — ${COMPANY.iso} certified. Request a quote today.`,
+    title: `${product.title} | Earth Flex Industries — Industrial Belt Manufacturer`,
+    description: `${product.overview} Manufactured by Earth Flex Industries — ${COMPANY.iso} certified. Request a quote today.`,
     keywords: [
       product.title,
       `${product.title} manufacturer`,
       `industrial ${product.title.toLowerCase()}`,
       "belt manufacturer India",
-      "EarthIndia Industries",
+      "Earth Flex Industries",
       ...product.applications,
     ],
     openGraph: {
-      title: `${product.title} | EarthIndia Industries`,
+      title: `${product.title} | Earth Flex Industries`,
       description: product.overview,
       type: "website",
     },
@@ -47,7 +47,7 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <>
-      <Header />
+      <Header theme="light" />
       <main className="bg-[#f7f8fa] min-h-screen">
         {/* Breadcrumb */}
         <div className="bg-white border-b border-border">

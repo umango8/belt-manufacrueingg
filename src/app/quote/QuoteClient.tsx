@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import Button from "@/components/ui/Button";
+import Header from "@/components/earthflex/layout/Header";
+import Footer from "@/components/earthflex/layout/Footer";
+import Button from "@/components/shared/ui/Button";
 
 // Category definitions
 const CATEGORIES = [
@@ -190,7 +190,7 @@ export default function QuoteClient() {
 
   return (
     <>
-      <Header />
+      <Header theme="light" />
 
       <main className="min-h-screen bg-linear-to-b from-[#f7f8fa] via-white to-[#f7f8fa] py-12 md:py-20">
         <div className="container-custom">
@@ -1113,7 +1113,7 @@ export default function QuoteClient() {
                   {/* Trust badges sidebar card */}
                   <div className="bg-[#f7f8fa] rounded-3xl border border-border/80 p-6 space-y-4">
                     <h4 className="text-xs font-bold text-[#0c1a2e] uppercase tracking-widest font-mono">
-                      EarthIndia Guarantee
+                      Earth Flex Guarantee
                     </h4>
                     <div className="space-y-3.5">
                       {[
