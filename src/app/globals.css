@@ -65,6 +65,30 @@ body.theme-earthflex {
   border-color: var(--color-primary) !important;
 }
 
+/* EarthHaul Conveyor & Automation Division Palette */
+.theme-earthhaul {
+  --color-primary: #1565C0;
+  --color-primary-dark: #0F172A;
+  --color-primary-light: #22A6F2;
+  --color-secondary: #F28C28;
+  --color-accent: #1565C0;
+  --color-background: #F8FAFC;
+  --color-background-light: #FFFFFF;
+  --color-background-soft: #E2E8F0;
+  --color-background-card: #FFFFFF;
+  --color-title: #1E293B;
+  --color-subtitle: #475569;
+  --color-dark: #0F172A;
+  --color-border: #E2E8F0;
+  --color-border-light: #F1F5F9;
+}
+
+html.theme-earthhaul,
+body.theme-earthhaul {
+  background-color: var(--color-background) !important;
+  color: var(--color-dark) !important;
+}
+
 /* Base Reset */
 html {
   scroll-behavior: smooth;
