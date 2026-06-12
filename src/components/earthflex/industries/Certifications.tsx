@@ -110,14 +110,14 @@ export default function Certifications() {
             <motion.div
               key={cert.id}
               variants={fadeInUp}
-              className="group relative bg-[#F9FAFB] border border-border/50 rounded-xl p-6 sm:p-7 md:text-center text-start  hover:border-accent/30 hover:shadow-[0_20px_50px_rgba(249,115,22,0.07)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+              className="group relative bg-[#F9FAFB] border border-border/50 rounded-xl p-6 sm:p-7 md:text-center text-start  hover:border-accent/30 hover:shadow-[0_20px_50px_rgba(70,115,197,0.07)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
               id={`cert-${cert.id}`}
             >
               {/* Hover glow */}
               <div className="absolute inset-0 bg-linear-to-b from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/2 group-hover:via-accent/4 group-hover:to-accent/1 transition-all duration-700 pointer-events-none" />
 
               {/* Icon */}
-              <div className="w-20 h-20 md:mx-auto bg-primary/5 border border-primary/10 flex items-center  justify-center text-primary mb-5 rounded-2xl group-hover:bg-[#0B1628] group-hover:border-accent group-hover:text-accent transition-all duration-500 shadow-sm group-hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] relative z-10">
+              <div className="w-20 h-20 md:mx-auto bg-primary/5 border border-primary/10 flex items-center  justify-center text-primary mb-5 rounded-2xl group-hover:bg-[#0B1628] group-hover:border-accent group-hover:text-accent transition-all duration-500 shadow-sm group-hover:shadow-[0_0_20px_rgba(70,115,197,0.15)] relative z-10">
                 <div className="group-hover:scale-110 transition-transform duration-500">
                   {cert.icon}
                 </div>

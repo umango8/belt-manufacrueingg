@@ -110,7 +110,7 @@ export default function IndustriesFAQ() {
                 key={index}
                 className={`group bg-white border rounded-xl overflow-hidden transition-all duration-500 ${
                   openIndex === index
-                    ? "border-accent/30 shadow-[0_8px_30px_rgba(249,115,22,0.06)]"
+                    ? "border-accent/30 shadow-[0_8px_30px_rgba(70,115,197,0.06)]"
                     : "border-border/50 hover:border-accent/20"
                 }`}
                 id={`faq-item-${index}`}

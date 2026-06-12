@@ -183,12 +183,12 @@ export default function CompanyIntroHistory() {
                     className="relative w-[280px] sm:w-[320px] shrink-0 group flex"
                   >
                     {/* Timeline Dot */}
-                    {/* <div className="absolute -top-[30px] left-6 w-5 h-5 rounded-full border-2 border-accent bg-white flex items-center justify-center z-10 shadow-[0_0_12px_rgba(249,115,22,0.2)] group-hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all duration-500">
+                    {/* <div className="absolute -top-[30px] left-6 w-5 h-5 rounded-full border-2 border-accent bg-white flex items-center justify-center z-10 shadow-[0_0_12px_rgba(70,115,197,0.2)] group-hover:shadow-[0_0_20px_rgba(70,115,197,0.4)] transition-all duration-500">
                       <span className="w-2 h-2 rounded-full bg-accent" />
                     </div> */}
 
                     {/* Card */}
-                    <div className="bg-white border border-border/60 rounded-2xl p-6 sm:p-8 w-full group-hover:border-accent/30 group-hover:shadow-[0_12px_40px_rgba(249,115,22,0.06)] group-hover:-translate-y-1 transition-all duration-500 flex flex-col">
+                    <div className="bg-white border border-border/60 rounded-2xl p-6 sm:p-8 w-full group-hover:border-accent/30 group-hover:shadow-[0_12px_40px_rgba(70,115,197,0.06)] group-hover:-translate-y-1 transition-all duration-500 flex flex-col">
                       <span className="inline-block text-[10px] font-bold tracking-widest text-accent uppercase bg-accent/10 px-3 py-1 rounded mb-4 w-max font-mono">
                         {item.year}
                       </span>

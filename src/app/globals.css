@@ -6,7 +6,7 @@
   --color-primary-dark: #1C4768;
   --color-primary-light: #48BAD3;
   --color-secondary: #1C4768;
-  --color-accent: #D9BB4A;
+  --color-accent: #4673C5;
   --color-background: #FFFFFF;
   --color-background-light: #F8FAFC;
   --color-background-soft: #F0F4F8;
@@ -24,19 +24,19 @@
 
 /* EarthFlex Site Color Palette Override - Black, White, and Orange */
 .theme-earthflex {
-  --color-primary: #111827;
-  --color-primary-dark: #000000;
-  --color-primary-light: #374151;
+  --color-primary: #4673C5;
+  --color-primary-dark: #1F2937;
+  --color-primary-light: #6B7280;
   --color-secondary: #FFFFFF;
-  --color-accent: #F97316;
-  --color-background: #FFFFFF;
-  --color-background-light: #F9FAFB;
-  --color-background-soft: #F3F4F6;
+  --color-accent: #0A741C;
+  --color-background: #F8FAFC;
+  --color-background-light: #FFFFFF;
+  --color-background-soft: #E5E7EB;
   --color-background-card: #FFFFFF;
-  --color-title: #111827;
+  --color-title: #1F2937;
   --color-dark: #111827;
   --color-border: #E5E7EB;
-  --color-border-light: #F3F4F6;
+  --color-border-light: #E5E7EB;
 }
 
 html.theme-earthflex,
@@ -45,24 +45,24 @@ body.theme-earthflex {
   color: var(--color-dark) !important;
 }
 
-/* Custom Hover transitions for EarthFlex Orange */
+/* Custom Hover transitions for EarthFlex Blue */
 .theme-earthflex .hover\:text-accent:hover {
-  color: #EA580C !important;
+  color: var(--color-primary) !important;
 }
 .theme-earthflex .group:hover .group-hover\:text-accent {
-  color: #EA580C !important;
+  color: var(--color-primary) !important;
 }
 .theme-earthflex .hover\:bg-accent:hover {
-  background-color: #EA580C !important;
+  background-color: var(--color-primary) !important;
 }
 .theme-earthflex .group:hover .group-hover\:bg-accent {
-  background-color: #EA580C !important;
+  background-color: var(--color-primary) !important;
 }
 .theme-earthflex .hover\:border-accent:hover {
-  border-color: #EA580C !important;
+  border-color: var(--color-primary) !important;
 }
 .theme-earthflex .group:hover .group-hover\:border-accent {
-  border-color: #EA580C !important;
+  border-color: var(--color-primary) !important;
 }
 
 /* Base Reset */
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--color-title);
+  /* color: var(--color-title); */
 }
 
 /* Selection */

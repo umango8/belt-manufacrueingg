@@ -842,7 +842,7 @@ export default function QuoteClient() {
                   {/* Real-time Technical Schematic Card */}
                   <div className="bg-[#0b0f19] text-white rounded-3xl border border-white/5 shadow-2xl p-6 relative overflow-hidden">
                     {/* Background grid */}
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.06),transparent)] pointer-events-none" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(70,115,197,0.06),transparent)] pointer-events-none" />
                     <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
 
                     <div className="flex justify-between items-center mb-6 relative z-10">
@@ -1152,7 +1152,7 @@ export default function QuoteClient() {
                 <div className="bg-primary text-white p-8 md:p-12 text-center relative overflow-hidden">
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-accent/10 rounded-full blur-[80px] pointer-events-none" />
                   
-                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_4px_20px_rgba(249,115,22,0.4)]">
+                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_4px_20px_rgba(70,115,197,0.4)]">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>

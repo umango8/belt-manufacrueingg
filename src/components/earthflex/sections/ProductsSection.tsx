@@ -6,37 +6,86 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/shared/ui/Button";
 
-const EARTHFLEX_CATEGORIES = [
+interface ProductItem {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  specs: string[];
+  slug: string;
+}
+
+const EARTHFLEX_CATEGORIES: ProductItem[] = [
   {
-    id: "power-drive",
-    title: "Power & Drive Belts",
-    description: "High-performance power transmission belts engineered for high torque, speed variations, and efficiency. Designed to reduce slippage and energy consumption in heavy industrial machinery, generators, and packaging equipment.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
-    features: ["High Torque Capability", "Minimum Stretch", "Oil & Heat Resistant", "ISO 9001 Standards"],
-    slug: "timing-belt"
-  },
-  {
-    id: "heavy-duty",
-    title: "Heavy-Duty Conveyor Belts",
-    description: "Premium steel cord and multi-ply fabric conveyor belts designed to withstand extreme impact, severe abrasion, and high tension. Ideal for handling heavy bulk materials over long distances in mining, steel mills, and quarry operations.",
+    id: "conveyor-belts",
+    title: "Conveyor Belts",
+    description: "High-durability fabric and steel cord conveyor belts engineered to move heavy industrial bulk materials over long distances. Built for severe wear resistance and continuous operation.",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
-    features: ["SAR Grade Compounds", "High Impact Shield", "Rip & Tear Resistant", "Fire Retardant Options"],
+    specs: ["Tensile Range: Up to 3150 N/mm", "Abrasion Loss: < 120 mm³", "Standard Widths: 500 - 2400 mm", "ISO 9001:2015 Quality QC"],
     slug: "conveyor-belt"
   },
   {
-    id: "light-duty",
-    title: "Light-Duty Plastic Belts",
-    description: "FDA-approved PU, PVC, and modular plastic belts built for sanitary, chemical-resistant handling. Perfect for high-speed packaging, food processing, pharmaceuticals, and manufacturing assembly lines.",
-    image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=800&q=80",
-    features: ["FDA & USDA Compliant", "Easy to Clean", "Chemical & Water Resistant", "Antistatic Properties"],
+    id: "rubber-belts",
+    title: "Rubber Belts",
+    description: "Premium grade wear-resistant rubber belts engineered for general purpose power transmission and materials handling. Excellent flexibility and tensile strength.",
+    image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80",
+    specs: ["Material: High-Grade SBR/NBR", "Hardness: 65 ± 5 Shore A", "Temp Range: -30°C to +80°C", "Anti-Static ISO Compliant"],
+    slug: "rubber-belt"
+  },
+  {
+    id: "heat-resistant",
+    title: "Heat Resistant Belts",
+    description: "Specialized heat-shielding conveyor belts engineered to transport materials at elevated temperatures up to 200°C (392°F). Prevents premature cracking and carcass hardening.",
+    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
+    specs: ["Max Temperature: 200°C (392°F)", "Cover Grade: EPDM / Heat Shield", "Carcass: High-Modulus Polyester", "DIN 22102 Tested & Certified"],
+    slug: "heat-resistant"
+  },
+  {
+    id: "heavy-duty",
+    title: "Heavy Duty Belts",
+    description: "Reinforced steel cord belting constructed to withstand extreme impact, crushing, and high-tension loads in quarries, mining fields, and heavy metallurgy mills.",
+    image: "https://images.unsplash.com/photo-1534224039826-c7a0dea0e66a?auto=format&fit=crop&w=800&q=80",
+    specs: ["Steel Cords: High-Tensile Steel", "Impact Shield: Multi-ply Transverse", "Rip & Tear Resistance: Extreme", "FR Class K/S Certified"],
+    slug: "heavy-duty"
+  },
+  {
+    id: "food-grade",
+    title: "Food Grade Belts",
+    description: "Non-toxic, FDA-approved polyurethane (PU) and PVC belts designed for direct food contact. Designed with anti-microbial covers that prevent bacterial buildup.",
+    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80",
+    specs: ["Compliance: FDA & USDA Food Safety", "Material: Food-grade PU / PVC", "Resistance: Oil, Grease & Water", "Easy-to-clean sanitary profile"],
     slug: "pu-belt"
   },
   {
-    id: "custom-belts",
-    title: "Custom Belts & Profiles",
-    description: "Bespoke engineered belt profiles, sidewalls, cleats, and custom tracking guides built to your exact specifications. Designed to solve complex conveying problems, steep inclines, and unique material handling scenarios.",
+    id: "chevron-belts",
+    title: "Chevron Conveyor Belts",
+    description: "Molded chevron cleated belts designed for conveying bulk materials on steep inclines up to 40°. Prevents slip and slide of wet, granular, or round loading materials.",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    specs: ["Cleat Profile: 15mm - 32mm High", "Incline Angle: Up to 40° Max", "Base Belt: High-Tensile EP", "Wear Cover Grade: Abrasion Resistant"],
+    slug: "chevron-belt"
+  },
+  {
+    id: "steel-cord-belts",
+    title: "Steel Cord Belts",
+    description: "Ultra-high tensile steel cord belts built for long-distance bulk conveyor networks in underground mining and overland industrial lines.",
+    image: "https://images.unsplash.com/photo-1534224039826-c7a0dea0e66a?auto=format&fit=crop&w=800&q=80",
+    specs: ["Cord Pitch: Configured to DIN 22131", "Tensile Rating: Up to ST 5400 N/mm", "Elongation: Extremely Low < 0.2%", "Core Protection: Steel Cord Sensor"],
+    slug: "steel-cord"
+  },
+  {
+    id: "elevator-belts",
+    title: "Elevator Conveyor Belts",
+    description: "High-durability vertical bucket elevator belts reinforced with specialty fabrics or steel cords to handle high-elevation material lifting.",
+    image: "https://images.unsplash.com/photo-1553413719-875871274715?auto=format&fit=crop&w=800&q=80",
+    specs: ["Elevator Type: Bucket / Bolt Attach", "Cover Compound: Oil & Heat Shield", "Carcass: Low-stretch Polyester", "Bolt Pullout Force: High Resistance"],
+    slug: "elevator-belt"
+  },
+  {
+    id: "custom-solutions",
+    title: "Custom Solutions",
+    description: "Bespoke engineered belt profiles, sidewalls, cleats, and tracking guides tailored to solve complex material sorting, steep inclines, and automated plant routing challenges.",
     image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
-    features: ["Custom Cleat Profiles", "Corrugated Sidewalls", "Precise CNC Punching", "Application Engineered"],
+    specs: ["Profile Cleats: T, C, TC Shapes", "Corrugated Sidewalls: Up to 120mm", "CNC Fabrication: Made to order", "Application-engineered Design"],
     slug: "custom"
   }
 ];
@@ -44,229 +93,159 @@ const EARTHFLEX_CATEGORIES = [
 export default function ProductsSection() {
   const [selectedId, setSelectedId] = useState(EARTHFLEX_CATEGORIES[0].id);
 
-  // Find the currently active category object
+  // Find active product category
   const activeProduct = EARTHFLEX_CATEGORIES.find((p) => p.id === selectedId) || EARTHFLEX_CATEGORIES[0];
 
-  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    if (typeof window !== "undefined" && window.innerWidth < 1024) {
-      const container = e.currentTarget;
-      if (e.deltaY !== 0) {
-        container.scrollLeft += e.deltaY;
-      }
-    }
-  };
-
   return (
-    <section id="products" className="section-padding bg-background-soft relative overflow-hidden">
-      {/* Scrollbar Styling Injection */}
+    <section id="products" className="relative bg-[#F8FAFC] py-24 border-b border-[#E5E7EB]">
+      {/* Scrollbar styling for the vertical tabs list */}
       <style dangerouslySetInnerHTML={{ __html: `
         .product-list-scroll::-webkit-scrollbar {
-          width: 6px;
-          height: 6px;
+          width: 5px;
         }
         .product-list-scroll::-webkit-scrollbar-track {
-          background: rgba(249, 115, 22, 0.05);
+          background: rgba(70, 115, 197, 0.03);
           border-radius: 99px;
         }
         .product-list-scroll::-webkit-scrollbar-thumb {
-          background: rgba(249, 115, 22, 0.35);
+          background: rgba(70, 115, 197, 0.15);
           border-radius: 99px;
           transition: background 0.2s;
         }
         .product-list-scroll::-webkit-scrollbar-thumb:hover {
-          background: rgba(249, 115, 22, 0.6);
+          background: rgba(70, 115, 197, 0.35);
         }
       `}} />
 
-      {/* Subtle Dot Grid Pattern Vector Background */}
-      <div 
-        className="absolute inset-0 z-0 pointer-events-none opacity-[0.04] select-none"
-        style={{
-          backgroundImage: "radial-gradient(#F97316 1.2px, transparent 1.2px)",
-          backgroundSize: "24px 24px"
-        }}
-      />
-
-      {/* Top Right Blueprint Compass/Gear Vector */}
-      <div className="absolute top-0 right-0 w-[350px] h-[350px] pointer-events-none select-none z-0 translate-x-[20%] translate-y-[-20%] opacity-[0.06] text-accent">
-        <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-          <circle cx="50" cy="50" r="40" strokeWidth="0.5" strokeDasharray="1 2" />
-          <circle cx="50" cy="50" r="30" strokeWidth="0.5" />
-          <circle cx="50" cy="50" r="20" strokeWidth="0.5" strokeDasharray="4 2" />
-          <line x1="50" y1="5" x2="50" y2="95" strokeWidth="0.2" />
-          <line x1="5" y1="50" x2="95" y2="50" strokeWidth="0.2" />
-          <line x1="18.2" y1="18.2" x2="81.8" y2="81.8" strokeWidth="0.2" strokeDasharray="2 2" />
-          <line x1="18.2" y1="81.8" x2="81.8" y2="18.2" strokeWidth="0.2" strokeDasharray="2 2" />
-        </svg>
+      {/* Background structural grid layout */}
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "radial-gradient(#E5E7EB 1.2px, transparent 1.2px)",
+            backgroundSize: "32px 32px"
+          }}
+        />
       </div>
 
-      {/* Huge Background Vector Watermark in Accent Color (Spanning full width) */}
-      <div className="absolute inset-x-0 bottom-0 flex justify-center overflow-hidden pointer-events-none select-none z-0">
-        <span className="text-[15vw] font-black text-accent/3 tracking-[0.15em] leading-none uppercase translate-y-[25%] select-none">
-          Earth Flex
-        </span>
-      </div>
-
-      <div className="container-custom relative z-10">
-        {/* Heading - Left-aligned with 'See All Products' button on the top right */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 lg:mb-12 mb-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-            className="text-left"
-          >
-            <span className="inline-flex items-center gap-2.5 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              OUR PRODUCTS
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-title leading-[1.15] tracking-tight max-w-3xl">
-              <span className="text-accent">Professional</span> conveyor & drive <span className="text-accent">solutions</span> for every industry
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="shrink-0 flex self-start md:self-end"
-          >
-            <Link
-              href="/products/conveyor-belt"
-              className="inline-flex items-center gap-3 text-[15px] font-bold text-title hover:text-accent transition-colors group"
-              id="see-all-products-header"
-            >
-              See All Products
-              <div className="w-10 h-10 rounded-full border border-dark/10 bg-dark/5 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all duration-300">
-                <svg
-                  className="w-4 h-4 text-dark group-hover:text-white transition-colors duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </div>
-            </Link>
-          </motion.div>
+      <div className="container-custom relative z-10 w-full">
+        {/* Header Block */}
+        <div className="max-w-3xl text-left mb-16">
+          <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[#4673C5] uppercase tracking-widest bg-[#4673C5]/10 border border-[#4673C5]/20 px-3.5 py-1.5 rounded-md">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0A741C] animate-pulse" />
+            PRODUCT SHOWCASE
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-extrabold text-[#1F2937] leading-[1.25] tracking-tight mt-4">
+            Industrial-grade belting <span className="text-[#4673C5]">built for high output</span>
+          </h2>
+          <p className="text-sm sm:text-base text-[#4B5563] max-w-2xl mt-4 leading-relaxed">
+            Browse our catalog of custom-engineered material handling solutions designed to maximize plant efficiency, resist environmental fatigue, and withstand extreme loading conditions.
+          </p>
         </div>
 
-        {/* 1. Desktop Interactive Split Grid Catalog (>= 1024px) */}
-        <div className="hidden lg:grid grid-cols-12 gap-8 lg:gap-12 mt-12 items-start">
+        {/* Desktop Interactive Layout (>= 1024px) */}
+        <div className="hidden lg:grid grid-cols-12 gap-8 lg:gap-10 items-stretch mt-12 h-[520px]">
           
-          {/* Desktop Product Directory */}
-          <div 
-            data-lenis-prevent 
-            onWheel={handleWheel}
-            className="lg:col-span-5 flex flex-col gap-4 overflow-y-auto max-h-[500px] pr-4 product-list-scroll"
-          >
-            {EARTHFLEX_CATEGORIES.map((product, index) => {
+          {/* Left Side: Large Vertical Category Tabs (Scrollable) */}
+          <div data-lenis-prevent className="lg:col-span-4 flex flex-col gap-3 h-full overflow-y-auto pr-3 product-list-scroll">
+            {EARTHFLEX_CATEGORIES.map((product) => {
               const isActive = selectedId === product.id;
               
               return (
                 <button
                   key={product.id}
                   onClick={() => setSelectedId(product.id)}
-                  className={`flex items-start gap-4 p-5 rounded-2xl text-left transition-all duration-300 border-l-4 ease-out shrink-0 w-full cursor-pointer ${
+                  className={`group w-full flex items-center justify-between p-5 rounded-2xl text-left transition-all duration-300 border border-l-4 ease-out cursor-pointer shrink-0 ${
                     isActive
-                      ? "bg-white border-accent shadow-md translate-x-1"
-                      : "bg-white/50 hover:bg-white border-transparent hover:translate-x-0.5"
+                      ? "bg-[#4673C5]/5 border-[#4673C5]/20 border-l-[#4673C5] shadow-xs"
+                      : "bg-white border-[#E5E7EB] border-l-transparent hover:border-[#4673C5]/30 hover:border-l-[#4673C5]/30"
                   }`}
                 >
-                  <span className={`text-xs font-bold tracking-wider ${isActive ? "text-accent" : "text-subtitle/40"}`}>
-                    {String(index + 1).padStart(2, "0")}
+                  <span className={`text-base font-bold transition-colors leading-tight ${isActive ? "text-[#4673C5]" : "text-[#4B5563] group-hover:text-[#1F2937]"}`}>
+                    {product.title}
                   </span>
-                  <div className="min-w-0">
-                    <h4 className={`text-base sm:text-lg font-bold transition-colors leading-tight lg:truncate ${isActive ? "text-title" : "text-subtitle/80"}`}>
-                      {product.title}
-                    </h4>
-                    <p className="text-xs text-subtitle/60 mt-1.5 font-medium line-clamp-1">
-                      {product.features.join(" • ")}
-                    </p>
-                  </div>
+                  <svg
+                    className={`w-4 h-4 transition-all duration-300 transform ${
+                      isActive 
+                        ? "translate-x-1 text-[#4673C5]" 
+                        : "text-[#6B7280]/40 group-hover:translate-x-0.5 group-hover:text-[#4673C5]"
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               );
             })}
           </div>
 
-          {/* Cinematic Product Display Card */}
-          <div className="lg:col-span-7 w-full h-[450px] sm:h-[500px]">
+          {/* Right Side: Product Showcase Container */}
+          <div className="lg:col-span-8 flex h-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeProduct.id}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="group relative overflow-hidden rounded-3xl border border-border/40 shadow-lg bg-background-soft cursor-pointer w-full h-full"
+                initial={{ opacity: 0, x: 15 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -15 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="w-full bg-white border border-[#E5E7EB] rounded-3xl p-8 shadow-xs flex flex-col md:grid md:grid-cols-12 md:gap-8 items-stretch h-full"
               >
-                {/* Background Product Image */}
-                <Image
-                  src={activeProduct.image}
-                  alt={activeProduct.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  sizes="55vw"
-                  priority
-                />
+                {/* Left Half: Product Image */}
+                <div className="md:col-span-5 relative min-h-[300px] h-full rounded-2xl overflow-hidden border border-[#E5E7EB]">
+                  <Image
+                    src={activeProduct.image}
+                    alt={activeProduct.title}
+                    fill
+                    className="object-cover"
+                    sizes="35vw"
+                    priority
+                  />
+                </div>
 
-                {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-[#0F172A]/90 via-[#0F172A]/40 to-transparent group-hover:via-[#0F172A]/60 transition-all duration-500" />
-
-                {/* Hover Reveal Content Panel */}
-                <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end overflow-hidden z-10">
-                  <div className="translate-y-[150px] group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-end">
+                {/* Right Half: Technical Specifications */}
+                <div className="md:col-span-7 flex flex-col justify-between text-left mt-6 md:mt-0 h-full">
+                  <div>
+                    <span className="text-[9px] font-bold text-[#0A741C] uppercase tracking-widest bg-[#0A741C]/10 border border-[#0A741C]/20 px-2.5 py-1 rounded w-fit block mb-3">
+                      TECHNICAL SPECIFICATIONS
+                    </span>
                     
-                    {/* Top Tag Badges */}
-                    <div className="mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-50">
-                      <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/10 border border-accent/20 px-3.5 py-1.5 rounded-full backdrop-blur-sm">
-                        {activeProduct.features[0]}
-                      </span>
-                    </div>
-
-                    {/* Product Title */}
-                    <h3 className="text-xl sm:text-2xl lg:text-[1.75rem] font-bold text-white mb-4 text-left transition-colors duration-300 group-hover:text-accent leading-tight">
+                    <h3 className="text-xl sm:text-2xl font-black text-[#1F2937] leading-tight mt-1">
                       {activeProduct.title}
                     </h3>
                     
-                    {/* Divider Line */}
-                    <div className="h-px bg-white/20 w-full mb-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
-                    
-                    {/* Detailed Product Description */}
-                    <p className="text-[13px] sm:text-[13.5px] text-white/80 leading-[1.6] text-left mb-5 sm:mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 font-medium max-w-xl">
+                    <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed mt-4 font-medium">
                       {activeProduct.description}
                     </p>
                     
-                    {/* Horizontal Feature Bullet Badges */}
-                    <div className="flex flex-wrap gap-2 mb-5 sm:mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                      {activeProduct.features.map((feat) => (
-                        <span
-                          key={feat}
-                          className="text-[10px] font-bold text-white/70 bg-white/5 border border-white/10 px-3 py-1 rounded-full uppercase tracking-wider"
-                        >
-                          {feat}
-                        </span>
+                    {/* Specs Bullet Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 border-t border-[#E5E7EB] pt-6">
+                      {activeProduct.specs.map((spec) => (
+                        <div key={spec} className="flex items-center gap-2 text-xs font-bold text-[#1F2937]">
+                          <span className="text-[#0A741C] font-black text-[13px]">✓</span> {spec}
+                        </div>
                       ))}
                     </div>
+                  </div>
 
-                    {/* Read More Conversion Action Button */}
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-250 w-full sm:w-auto">
-                      <Button
-                        href={`/products/${activeProduct.slug}`}
-                        variant="accent"
-                        className="w-full sm:w-auto justify-center px-8 py-3 text-xs font-bold tracking-widest uppercase"
-                      >
-                        Read More
-                      </Button>
-                    </div>
-
+                  {/* Action CTA Buttons */}
+                  <div className="flex flex-wrap gap-4 mt-8 pt-6 border-t border-[#E5E7EB] w-full">
+                    <Button
+                      href={`/products/${activeProduct.slug}`}
+                      variant="outlinePrimary"
+                      className="flex-1 sm:flex-initial text-center justify-center text-xs font-bold tracking-wider py-3"
+                    >
+                      View Details
+                    </Button>
+                    <Button
+                      href="/quote"
+                      variant="primary"
+                      className="flex-1 sm:flex-initial text-center justify-center text-xs font-bold tracking-wider py-3"
+                    >
+                      Request Quote
+                    </Button>
                   </div>
                 </div>
               </motion.div>
@@ -275,34 +254,33 @@ export default function ProductsSection() {
 
         </div>
 
-        {/* 2. Mobile/Tablet Responsive Accordion Layout (< 1024px) */}
-        <div className="lg:hidden flex flex-col gap-4 mt-8 w-full animate-fadeIn">
+        {/* Mobile/Tablet Accordion Layout (< 1024px) */}
+        <div className="lg:hidden flex flex-col gap-4 mt-8 w-full">
           {EARTHFLEX_CATEGORIES.map((product, index) => {
             const isOpen = selectedId === product.id;
             
             return (
               <div 
                 key={product.id}
-                className="overflow-hidden rounded-2xl border border-border/20 bg-white/85 backdrop-blur-xs shadow-xs transition-all duration-300"
+                className="overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-xs transition-all duration-300"
               >
-                {/* Accordion Tab Header Button */}
+                {/* Accordion Tab Trigger */}
                 <button
                   onClick={() => setSelectedId(product.id)}
                   className={`w-full flex items-center justify-between p-5 text-left transition-colors duration-300 cursor-pointer ${
-                    isOpen ? "bg-white border-b border-border/10" : "hover:bg-white"
+                    isOpen ? "bg-[#4673C5]/5 border-b border-[#E5E7EB]" : "hover:bg-gray-50"
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <span className={`text-xs font-mono font-bold ${isOpen ? "text-accent" : "text-subtitle/40"}`}>
+                    <span className={`text-xs font-mono font-bold ${isOpen ? "text-[#4673C5]" : "text-[#6B7280]/40"}`}>
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h4 className={`text-base font-bold transition-colors duration-300 ${isOpen ? "text-title" : "text-subtitle/80"}`}>
+                    <h4 className={`text-base font-bold transition-colors duration-300 ${isOpen ? "text-[#4673C5]" : "text-[#1F2937]"}`}>
                       {product.title}
                     </h4>
                   </div>
-                  {/* Rotating Chevron Icon Indicator */}
                   <svg
-                    className={`w-5 h-5 text-subtitle/50 transition-transform duration-300 ease-out ${isOpen ? "rotate-180 text-accent" : ""}`}
+                    className={`w-5 h-5 text-[#6B7280]/50 transition-transform duration-300 ease-out ${isOpen ? "rotate-180 text-[#4673C5]" : ""}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -318,16 +296,11 @@ export default function ProductsSection() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: "easeInOut" }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="p-5 flex flex-col gap-4 bg-white/40">
-                        {/* Smooth Zoom & Fade Entrance for the Image */}
-                        <motion.div 
-                          initial={{ opacity: 0, scale: 0.94, y: 10 }}
-                          animate={{ opacity: 1, scale: 1, y: 0 }}
-                          transition={{ delay: 0.1, duration: 0.45, ease: "easeOut" }}
-                          className="relative w-full aspect-video rounded-xl overflow-hidden shadow-sm border border-border/10"
-                        >
+                      <div className="p-5 flex flex-col gap-4 bg-[#F8FAFC] border-t border-[#E5E7EB] text-left">
+                        {/* Zoom/Fade Entrance for Image */}
+                        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-xs border border-[#E5E7EB]">
                           <Image
                             src={product.image}
                             alt={product.title}
@@ -336,50 +309,42 @@ export default function ProductsSection() {
                             sizes="(max-width: 1024px) 100vw"
                             priority
                           />
-                        </motion.div>
+                        </div>
 
-                        {/* Staggered Entrance for Description */}
-                        <motion.p 
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.18, duration: 0.4, ease: "easeOut" }}
-                          className="text-[13.5px] leading-relaxed text-subtitle/90 font-medium text-justify"
-                        >
+                        {/* Description */}
+                        <p className="text-xs sm:text-sm leading-relaxed text-[#4B5563] font-medium">
                           {product.description}
-                        </motion.p>
+                        </p>
 
-                        {/* Staggered Entrance for Feature Badges */}
-                        <motion.div 
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.24, duration: 0.4, ease: "easeOut" }}
-                          className="flex flex-wrap gap-2"
-                        >
-                          {product.features.map((feat) => (
-                            <span
-                              key={feat}
-                              className="text-[10px] font-bold text-subtitle/80 bg-white/90 border border-border/40 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-2xs"
+                        {/* Technical Bullet Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 pt-4 border-t border-[#E5E7EB]">
+                          {product.specs.map((spec) => (
+                            <div
+                              key={spec}
+                              className="flex items-center gap-2 text-xs font-bold text-[#1F2937]"
                             >
-                              {feat}
-                            </span>
+                              <span className="text-[#0A741C] font-black">✓</span> {spec}
+                            </div>
                           ))}
-                        </motion.div>
+                        </div>
 
-                        {/* Staggered Entrance for Read More Button */}
-                        <motion.div 
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
-                          className="pt-2"
-                        >
+                        {/* Actions */}
+                        <div className="flex gap-4 mt-4 pt-4 border-t border-[#E5E7EB]">
                           <Button
                             href={`/products/${product.slug}`}
-                            variant="accent"
-                            className="w-full justify-center py-3 text-xs font-bold tracking-widest uppercase"
+                            variant="outlinePrimary"
+                            className="flex-1 justify-center py-2.5 text-xs font-bold tracking-wider"
                           >
-                            Read More
+                            View Details
                           </Button>
-                        </motion.div>
+                          <Button
+                            href="/quote"
+                            variant="primary"
+                            className="flex-1 justify-center py-2.5 text-xs font-bold tracking-wider"
+                          >
+                            Request Quote
+                          </Button>
+                        </div>
                       </div>
                     </motion.div>
                   )}

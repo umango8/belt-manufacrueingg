@@ -76,17 +76,17 @@ export default function BeltApplications() {
       {/* Styles for glowing, flowing animated conveyor connectors */}
       <style jsx global>{`
         .conveyor-line-h {
-          background-image: linear-gradient(90deg, #c87533 60%, transparent 40%);
+          background-image: linear-gradient(90deg, #4673C5 60%, transparent 40%);
           background-size: 8px 2px;
           animation: conveyor-flow-h 0.6s linear infinite;
         }
         .conveyor-line-h-rev {
-          background-image: linear-gradient(-90deg, #c87533 60%, transparent 40%);
+          background-image: linear-gradient(-90deg, #4673C5 60%, transparent 40%);
           background-size: 8px 2px;
           animation: conveyor-flow-h-rev 0.6s linear infinite;
         }
         .conveyor-line-v {
-          background-image: linear-gradient(180deg, #c87533 60%, transparent 40%);
+          background-image: linear-gradient(180deg, #4673C5 60%, transparent 40%);
           background-size: 2px 8px;
           animation: conveyor-flow-v 0.6s linear infinite;
         }
@@ -235,7 +235,7 @@ export default function BeltApplications() {
                 {/* Card element */}
                 <motion.div
                   variants={fadeInUp}
-                  className="relative bg-white/3 border border-white/6 rounded-xl p-6 sm:p-7 hover:border-accent/30 hover:bg-white/6 hover:shadow-[0_20px_60px_rgba(249,115,22,0.08)] hover:-translate-y-1.5 transition-all duration-500 overflow-hidden backdrop-blur-sm z-10"
+                  className="relative bg-white/3 border border-white/6 rounded-xl p-6 sm:p-7 hover:border-accent/30 hover:bg-white/6 hover:shadow-[0_20px_60px_rgba(70,115,197,0.08)] hover:-translate-y-1.5 transition-all duration-500 overflow-hidden backdrop-blur-sm z-10"
                   id={`application-${app.id}`}
                 >
                   {/* Corner accents */}

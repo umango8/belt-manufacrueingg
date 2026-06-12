@@ -218,7 +218,7 @@ export default function IndustryDetails() {
                   {section.stats.map((stat) => (
                     <div
                       key={stat.label}
-                      className="bg-primary/3 border border-border/40 rounded-xl px-5 py-4 text-center min-w-[100px] hover:border-accent/30 hover:shadow-[0_4px_20px_rgba(249,115,22,0.06)] transition-all duration-500"
+                      className="bg-primary/3 border border-border/40 rounded-xl px-5 py-4 text-center min-w-[100px] hover:border-accent/30 hover:shadow-[0_4px_20px_rgba(70,115,197,0.06)] transition-all duration-500"
                     >
                       <div className="text-2xl sm:text-3xl font-bold text-accent mb-1 tracking-tight">
                         <AnimatedCounter target={stat.value} suffix={stat.suffix} />

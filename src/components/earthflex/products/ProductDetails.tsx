@@ -10,7 +10,7 @@ import Button from "@/components/shared/ui/Button";
 
 const industryColors = [
   "bg-blue-50 text-blue-700 border-blue-100",
-  "bg-orange-50 text-orange-700 border-orange-100",
+  "bg-sky-50 text-sky-700 border-sky-100",
   "bg-green-50 text-green-700 border-green-100",
   "bg-purple-50 text-purple-700 border-purple-100",
   "bg-red-50 text-red-700 border-red-100",
@@ -65,7 +65,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         <div className="mb-4 flex">
           <Link
             href="/#products"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#3a4a5c]/70 hover:text-[#c87533] transition-colors uppercase tracking-widest bg-white px-5 py-2.5 rounded-full border border-[#dce1e8] shadow-3xs"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#3a4a5c]/70 hover:text-[#4673C5] transition-colors uppercase tracking-widest bg-white px-5 py-2.5 rounded-full border border-[#dce1e8] shadow-3xs"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
@@ -89,8 +89,8 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
 
             {/* Category badge */}
             <div className="absolute top-5 left-5">
-              <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[#c87533] bg-[#c87533]/10 border border-[#c87533]/20 px-3.5 py-1.5 rounded-full backdrop-blur-sm uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#c87533] animate-pulse" />
+              <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[#4673C5] bg-[#4673C5]/10 border border-[#4673C5]/20 px-3.5 py-1.5 rounded-full backdrop-blur-sm uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#4673C5] animate-pulse" />
                 {product.category}
               </span>
             </div>
@@ -124,7 +124,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {/* -- 2. Product Description ---------------------------------------- */}
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-5">
-            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <div className="w-1 h-6 bg-[#4673C5] rounded-full" />
             <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Product Overview</h2>
           </div>
           <p className="text-[15px] text-[#3a4a5c] leading-relaxed font-medium">{product.description}</p>
@@ -137,7 +137,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {/* -- 3. Specifications Table --------------------------------------- */}
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm overflow-hidden">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <div className="w-1 h-6 bg-[#4673C5] rounded-full" />
             <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Technical Specifications</h2>
           </div>
 
@@ -167,7 +167,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {/* -- 4. Applications ----------------------------------------------- */}
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <div className="w-1 h-6 bg-[#4673C5] rounded-full" />
             <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Industry Applications</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -192,7 +192,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {/* -- 5. Features & Benefits ---------------------------------------- */}
         <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
           <div className="flex items-center gap-2.5 mb-6">
-            <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+            <div className="w-1 h-6 bg-[#4673C5] rounded-full" />
             <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Features & Benefits</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -203,9 +203,9 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
-                className="group flex gap-4 p-4 rounded-xl border border-[#dce1e8] hover:border-[#c87533]/30 hover:shadow-[0_4px_24px_rgba(249,115,22,0.08)] transition-all duration-300 hover:-translate-y-0.5"
+                className="group flex gap-4 p-4 rounded-xl border border-[#dce1e8] hover:border-[#4673C5]/30 hover:shadow-[0_4px_24px_rgba(70,115,197,0.08)] transition-all duration-300 hover:-translate-y-0.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-[#c87533] group-hover:text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-[#4673C5] group-hover:text-white flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm">
                   <FeatureIcon index={i} />
                 </div>
                 <div>
@@ -221,7 +221,7 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
         {relatedProducts.length > 0 && (
           <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-[#dce1e8] p-6 sm:p-8 mb-6 shadow-sm">
             <div className="flex items-center gap-2.5 mb-6">
-              <div className="w-1 h-6 bg-[#c87533] rounded-full" />
+              <div className="w-1 h-6 bg-[#4673C5] rounded-full" />
               <h2 className="text-lg font-bold text-[#0c1a2e] tracking-tight">Related Products</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -236,14 +236,14 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
                   <Link
                     href={`/products/${rel.slug}`}
                     id={`related-${rel.slug}`}
-                    className="group block rounded-xl overflow-hidden border border-[#dce1e8] hover:border-[#c87533]/30 hover:shadow-[0_8px_32px_rgba(249,115,22,0.1)] transition-all duration-300 hover:-translate-y-1"
+                    className="group block rounded-xl overflow-hidden border border-[#dce1e8] hover:border-[#4673C5]/30 hover:shadow-[0_8px_32px_rgba(70,115,197,0.1)] transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="relative h-[140px] overflow-hidden">
                       <Image src={rel.image} alt={rel.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="33vw" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a2e]/60 to-transparent" />
                     </div>
                     <div className="p-4 bg-white">
-                      <p className="text-[13px] font-bold text-[#0c1a2e] group-hover:text-[#c87533] transition-colors mb-1">{rel.title}</p>
+                      <p className="text-[13px] font-bold text-[#0c1a2e] group-hover:text-[#4673C5] transition-colors mb-1">{rel.title}</p>
                       <p className="text-[11px] text-[#3a4a5c]/50 line-clamp-1">{rel.shortDesc}</p>
                     </div>
                   </Link>

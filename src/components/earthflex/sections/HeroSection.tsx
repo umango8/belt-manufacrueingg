@@ -2,161 +2,115 @@
 
 import { motion } from "framer-motion";
 import Button from "@/components/shared/ui/Button";
-import { useEffect, useState, useRef } from "react";
-import { useInView } from "framer-motion";
-
-const HERO_STATS = [
-  { value: 140, suffix: "+", label: "Projects" },
-  { value: 25, suffix: "+", label: "Years Experience" },
-  { value: 95, suffix: "+", label: "Happy Clients" },
-  { value: 100, suffix: "%", label: "Quality Focused" },
-];
-
-function Counter({ target, suffix }: { target: number; suffix: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (!isInView) return;
-    let start = 0;
-    const duration = 1500;
-    const step = target / (duration / 16);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [isInView, target]);
-
-  return (
-    <span ref={ref} className="font-bold text-accent">
-      {count}
-      {suffix}
-    </span>
-  );
-}
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative min-h-[90vh] lg:min-h-screen flex items-center bg-[#090d16] overflow-hidden pt-32 pb-20">
-      {/* Background Grid and Radial Gradient */}
-      <div className="absolute inset-0 z-0 opacity-25">
+    <section 
+      id="home" 
+      className="relative lg:h-[calc(100vh-60px)] lg:max-h-[800px] min-h-[600px] flex items-center bg-white overflow-hidden pt-20 pb-12 border-b border-[#E5E7EB]"
+    >
+      {/* Full-width background video with premium white gradient overlay */}
+      <div className="absolute inset-0 z-0">
+        <video
+          src="/hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Left-to-right white gradient for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/10 md:from-white md:via-white/92 md:to-white/20 lg:from-white lg:via-white/85 lg:to-transparent z-10" />
+        
+        {/* Bottom vertical fade to blend into the next section */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent z-10" />
+      </div>
+
+      {/* Structural Grid Overlay */}
+      <div className="absolute inset-0 z-10 opacity-30 pointer-events-none">
         <div 
           className="absolute inset-0"
           style={{
-            backgroundImage: "radial-gradient(#F97316 0.8px, transparent 0.8px)",
-            backgroundSize: "24px 24px"
+            backgroundImage: "radial-gradient(#E5E7EB 1.2px, transparent 1.2px)",
+            backgroundSize: "32px 32px"
           }}
         />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-[#090d16]/80 to-[#090d16]" />
       </div>
 
-      {/* Background Accent glow */}
-      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-accent/5 rounded-full blur-[80px] pointer-events-none" />
-
-      {/* Content */}
-      <div className="relative container-custom w-full z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      {/* Main Content Container (Vertically centered text box) */}
+      <div className="relative container-custom w-full z-20">
+        <div className="max-w-3xl text-left">
           
-          {/* Headline and Left Content */}
-          <div className="lg:col-span-7 text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-6"
-            >
-              <span className="inline-flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 border border-accent/20 px-4 py-2 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Earth India Brand Family
-              </span>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-4"
+          >
+            <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[#4673C5] uppercase tracking-widest bg-[#4673C5]/10 border border-[#4673C5]/20 px-3.5 py-1.5 rounded-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0A741C] animate-pulse" />
+              PREMIUM INDUSTRIAL BELTING SYSTEMS
+            </span>
+          </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[2rem] sm:text-[3.25rem] lg:text-[4rem] xl:text-[4.5rem] font-extrabold text-white leading-[1.1] tracking-tight mb-6"
-            >
-              Save Your Money With <br className="hidden sm:inline" />
-              <span className="text-accent">Zero-Downtime</span> Conveyor Belts
-            </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-[2.25rem] sm:text-[3rem] xl:text-[3.5rem] font-extrabold text-[#1F2937] leading-[1.15] tracking-tight mb-4"
+          >
+            Engineered for Durability.<br />
+            <span className="text-[#4673C5]">Optimized for Zero Downtime.</span>
+          </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-base sm:text-lg text-white/80 max-w-xl mb-4 leading-relaxed font-medium"
-            >
-              Engineered with certified heavy-duty compounds to maximize conveyor lifespan, eliminate unexpected structural failures, and dramatically reduce maintenance overheads.
-            </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-sm sm:text-base text-[#4B5563] max-w-xl mb-5 leading-relaxed font-semibold"
+          >
+            EarthFlex delivers high-performance rubber conveyor and timing belts certified to withstand extreme abrasions and industrial fatigue.
+          </motion.p>
 
-            {/* Company Intro Requirement */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="border-l-2 border-accent pl-4 mb-8 text-xs sm:text-sm text-white/60 max-w-lg italic"
-            >
-              EarthFlex is a specialized child brand of Earth India, inheriting decades of industrial engineering mastery to supply robust belting solutions for mining, cement, steel, and power generation sectors.
-            </motion.div>
+          {/* Corporate Pedigree Callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="border-l-[3px] border-[#4673C5] pl-4 mb-6 text-xs sm:text-sm text-[#6B7280] max-w-lg font-bold"
+          >
+            Division of the Earth India Group, supplying robust materials handling solutions for mining, cement, steel, and power generation networks.
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
+          {/* CTA Buttons - Center Split Animation */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-wrap gap-4 items-center"
+          >
+            <Button
+              href="/quote"
+              variant="accent"
+              size="lg"
+              className="shadow-lg shadow-[#0A741C]/15"
             >
-              <Button
-                href="#contact"
-                variant="accent"
-                className="px-8 py-4 text-xs font-bold tracking-widest uppercase shadow-lg shadow-accent/25 hover:shadow-accent/40"
-              >
-                Get a Free Inspection
-              </Button>
-              <Button
-                href="#products"
-                variant="outline"
-                className="px-8 py-4 text-xs font-bold tracking-widest uppercase text-white border-white/20 hover:border-white/40"
-              >
-                View Our Products
-              </Button>
-            </motion.div>
-          </div>
-
-          {/* 4 Stats Cards Grid - Right side on desktop */}
-          <div className="lg:col-span-5 w-full">
-            <div className="grid grid-cols-2 gap-4">
-              {HERO_STATS.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                  whileHover={{ y: -5, borderColor: "rgba(249, 115, 22, 0.4)" }}
-                  className="bg-[#0f1524]/90 border border-white/5 p-6 rounded-2xl flex flex-col justify-between h-[150px] sm:h-[170px] transition-all duration-300 shadow-xl backdrop-blur-md text-left group"
-                >
-                  <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    <Counter target={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <div className="text-xs sm:text-sm font-bold text-white/50 group-hover:text-white transition-colors uppercase tracking-wider mt-auto leading-snug">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+              GET A FREE INSPECTION
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </Button>
+            <Button
+              href="/products/conveyor-belt"
+              variant="outlinePrimary"
+              size="lg"
+            >
+              VIEW OUR PRODUCTS
+            </Button>
+          </motion.div>
 
         </div>
       </div>
     </section>
   );
 }
-

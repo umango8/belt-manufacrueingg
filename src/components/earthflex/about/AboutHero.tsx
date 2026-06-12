@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutHero() {
   return (
-    <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center bg-[#050811] overflow-hidden">
+    <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center bg-[#050811]   overflow-hidden">
       {/* Background Industrial Image */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img
@@ -18,7 +18,7 @@ export default function AboutHero() {
 
       {/* Animated industrial background pattern */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] select-none"
+        className="absolute inset-0 z-0 pointer-events-none opacity-[0.15] select-none"
         style={{
           backgroundImage: "radial-gradient(white 1.2px, transparent 1.2px)",
           backgroundSize: "24px 24px",
@@ -26,7 +26,7 @@ export default function AboutHero() {
       />
 
       {/* Animated accent glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/5 rounded-full blur-[150px] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/10 rounded-full blur-[150px] pointer-events-none z-0" />
 
       {/* Content */}
       <div className="relative container-custom w-full z-10 pt-32 lg:pt-40 pb-24 lg:pb-32">

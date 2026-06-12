@@ -38,9 +38,9 @@ export default function FAQSection() {
     <section id="faq" className="section-padding bg-background-soft relative overflow-hidden">
       {/* Background patterns */}
       <div 
-        className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] select-none"
+        className="absolute inset-0 z-0 pointer-events-none opacity-[0.04] select-none"
         style={{
-          backgroundImage: "radial-gradient(#F97316 1.2px, transparent 1.2px)",
+          backgroundImage: "radial-gradient(#4673C5 1.2px, transparent 1.2px)",
           backgroundSize: "24px 24px"
         }}
       />

@@ -196,7 +196,7 @@ export default function WhyChooseUs() {
             <motion.div
               key={feature.title}
               variants={fadeInUp}
-              className="group relative bg-[#0c1a2e]/40 border border-white/5 backdrop-blur-md rounded-xl p-6 sm:p-7 lg:p-8 hover:border-accent/30 hover:shadow-[0_20px_50px_rgba(249,115,22,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+              className="group relative bg-[#0c1a2e]/40 border border-white/5 backdrop-blur-md rounded-xl p-6 sm:p-7 lg:p-8 hover:border-accent/30 hover:shadow-[0_20px_50px_rgba(70,115,197,0.1)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
               id={`why-choose-${index}`}
             >
               {/* Corner bracket accents */}
@@ -214,7 +214,7 @@ export default function WhyChooseUs() {
               <div className="absolute top-0 left-0 w-32 h-32 bg-accent/3 rounded-full blur-[60px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
               {/* Icon */}
-              <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center text-white mb-6 rounded-full group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-[0_0_15px_rgba(249,115,22,0.3)] relative z-10">
+              <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center text-white mb-6 rounded-full group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-[0_0_15px_rgba(70,115,197,0.3)] relative z-10">
                 <div className="group-hover:scale-110 group-hover:-translate-y-0.5 transition-all duration-500">
                   {feature.icon}
                 </div>

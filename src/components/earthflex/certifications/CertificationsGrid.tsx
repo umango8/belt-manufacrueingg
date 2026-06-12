@@ -173,7 +173,7 @@ export default function CertificationsGrid() {
                 y: -6, 
                 transition: { duration: 0.3, ease: "easeOut" } 
               }}
-              className="group relative bg-white border border-border/60 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-accent/40 hover:shadow-[0_20px_50px_rgba(249,115,22,0.06)] transition-all duration-500 overflow-hidden"
+              className="group relative bg-white border border-border/60 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-accent/40 hover:shadow-[0_20px_50px_rgba(70,115,197,0.06)] transition-all duration-500 overflow-hidden"
               id={`cert-card-${cert.id}`}
             >
               {/* Card top border glow effect */}

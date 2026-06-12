@@ -94,14 +94,14 @@ export default function ProductSidebar() {
         >
           {/* Sidebar header */}
           <div className="px-5 py-4 border-b border-[#eef1f5] bg-[#0c1a2e]">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#c87533] mb-1">Product Range</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#4673C5] mb-1">Product Range</p>
             <p className="text-sm font-semibold text-white">All Industrial Belts</p>
           </div>
 
           {/* Scrollable product list */}
           <div
             className="overflow-y-auto max-h-[calc(100vh-200px)] lg:max-h-[70vh]"
-            style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(249,115,22,0.3) transparent" }}
+            style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(70,115,197,0.35) transparent" }}
           >
             {Object.entries(grouped).map(([category, products]) => (
               <div key={category}>
@@ -130,21 +130,24 @@ export default function ProductSidebar() {
                       >
                         {/* Active left-border indicator */}
                         {isActive && (
-                          <span className="absolute left-0 top-2 bottom-2 w-[3px] bg-[#c87533] rounded-r-full" />
+                          <span className="absolute left-0 top-2 bottom-2 w-[3px] bg-[#4673C5] rounded-r-full" />
                         )}
 
                         {/* Icon */}
-                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
-                          isActive
-                            ? "bg-[#c87533] text-white shadow-[0_4px_12px_rgba(249,115,22,0.4)]"
-                            : "bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-[#c87533]/10 group-hover:text-[#c87533]"
-                        }`}>
-                          {iconMap[product.icon] ?? iconMap.conveyor}
-                        </div>
+                        {isActive && (
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-200 bg-[#4673C5] text-white shadow-[0_4px_12px_rgba(70,115,197,0.4)]">
+                            {iconMap[product.icon] ?? iconMap.conveyor}
+                          </div>
+                        )}
+                        {!isActive && (
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-200 bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-[#4673C5]/10 group-hover:text-[#4673C5]">
+                            {iconMap[product.icon] ?? iconMap.conveyor}
+                          </div>
+                        )}
 
                         {/* Text */}
                         <div className="min-w-0 flex-1">
-                          <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0c1a2e] group-hover:text-[#c87533]"} transition-colors`}>
+                          <p className={`text-[13px] font-semibold leading-tight truncate ${isActive ? "text-white" : "text-[#0c1a2e] group-hover:text-[#4673C5]"} transition-colors`}>
                             {product.title}
                           </p>
                           <p className={`text-[10px] mt-0.5 leading-tight line-clamp-1 ${isActive ? "text-white/60" : "text-[#3a4a5c]/50"}`}>
@@ -154,11 +157,11 @@ export default function ProductSidebar() {
 
                         {/* Arrow */}
                         {isActive ? (
-                          <svg className="w-3.5 h-3.5 text-[#c87533] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3.5 h-3.5 text-[#4673C5] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         ) : (
-                          <svg className="w-3 h-3 text-[#3a4a5c]/20 group-hover:text-[#c87533] flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3 h-3 text-[#3a4a5c]/20 group-hover:text-[#4673C5] flex-shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         )}
@@ -175,7 +178,7 @@ export default function ProductSidebar() {
               <p className="text-[11px] text-white/50 mb-3 leading-snug">Our engineers design bespoke solutions for your exact requirements.</p>
               <Link
                 href="/quote"
-                className="block w-full text-center text-[11px] font-bold text-white bg-[#c87533] hover:bg-[#ea6c0c] py-2.5 rounded-lg transition-colors duration-200"
+                className="block w-full text-center text-[11px] font-bold text-white bg-[#0A741C] hover:bg-[#4673C5] py-2.5 rounded-lg transition-colors duration-200"
                 id="sidebar-get-quote"
               >
                 Request Quote
@@ -210,7 +213,7 @@ export default function ProductSidebar() {
                   {/* Icon */}
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
                     isActive
-                      ? "bg-accent text-white shadow-[0_2px_8px_rgba(249,115,22,0.3)]"
+                      ? "bg-[#4673C5] text-white shadow-[0_2px_8px_rgba(70,115,197,0.3)]"
                       : "bg-[#0c1a2e]/5 text-[#0c1a2e]"
                   }`}>
                     {iconMap[product.icon] ?? iconMap.conveyor}

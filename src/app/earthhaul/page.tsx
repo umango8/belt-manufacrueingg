@@ -92,7 +92,7 @@ export default function EarthHaulPage() {
         {/* Header Links */}
         <nav className="hidden md:flex items-center gap-8 text-[14px] font-medium text-white/60">
           <Link href="/" className="hover:text-yellow-500 transition-colors">Group Gateway</Link>
-          <Link href="/earthflex" className="hover:text-orange-500 transition-colors">EarthFlex Division</Link>
+          <Link href="/earthflex" className="hover:text-yellow-500 transition-colors">EarthFlex Division</Link>
           <a href="#services" className="hover:text-yellow-500 transition-colors">Services</a>
           <a href="#fleet" className="hover:text-yellow-500 transition-colors">Our Fleet</a>
           <a href="#quote" className="hover:text-yellow-500 transition-colors">Get Quote</a>

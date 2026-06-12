@@ -137,7 +137,7 @@ export default function WhyTrustUs() {
             <motion.div
               key={feature.title}
               variants={fadeInUp}
-              className="group relative bg-white border border-border/60 rounded-xl p-6 sm:p-7 lg:p-8 hover:border-accent/30 hover:shadow-[0_20px_50px_rgba(249,115,22,0.07)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+              className="group relative bg-white border border-border/60 rounded-xl p-6 sm:p-7 lg:p-8 hover:border-accent/30 hover:shadow-[0_20px_50px_rgba(70,115,197,0.07)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
               id={`trust-feature-${index}`}
             >
               {/* Corner brackets */}
@@ -155,7 +155,7 @@ export default function WhyTrustUs() {
               <div className="absolute top-0 left-0 w-32 h-32 bg-accent/3 rounded-full blur-[60px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
               {/* Icon */}
-              <div className="w-14 h-14 bg-primary/5 border border-primary/15 flex items-center justify-center text-primary mb-6 rounded-full group-hover:bg-[#0B1628] group-hover:border-accent group-hover:text-accent transition-all duration-500 shadow-sm group-hover:shadow-[0_0_15px_rgba(249,115,22,0.2)] relative z-10">
+              <div className="w-14 h-14 bg-primary/5 border border-primary/15 flex items-center justify-center text-primary mb-6 rounded-full group-hover:bg-[#0B1628] group-hover:border-accent group-hover:text-accent transition-all duration-500 shadow-sm group-hover:shadow-[0_0_15px_rgba(70,115,197,0.2)] relative z-10">
                 <div className="group-hover:scale-110 group-hover:-translate-y-0.5 transition-all duration-500">
                   {feature.icon}
                 </div>

@@ -221,7 +221,7 @@ function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES[0]; ind
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="pointer-events-none absolute z-30 w-24 h-24 rounded-full bg-accent text-white flex flex-col items-center justify-center text-center font-bold text-[10px] uppercase tracking-wider shadow-[0_0_25px_rgba(249,115,22,0.5)] border border-white/20"
+            className="pointer-events-none absolute z-30 w-24 h-24 rounded-full bg-accent text-white flex flex-col items-center justify-center text-center font-bold text-[10px] uppercase tracking-wider shadow-[0_0_25px_rgba(70,115,197,0.5)] border border-white/20"
             style={{
               left: 0,
               top: 0,

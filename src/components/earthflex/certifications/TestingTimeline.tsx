@@ -192,7 +192,7 @@ export default function TestingTimeline() {
                   // Define dynamic styling states
                   let cardStyle = "bg-[#0B0F19]/20 border-white/[0.02] opacity-0 scale-90 pointer-events-none";
                   if (isActive) {
-                    cardStyle = "bg-[#0B0F19]/90 border-accent/40 shadow-[0_4px_30px_rgba(249,115,22,0.15)] opacity-100 scale-100";
+                    cardStyle = "bg-[#0B0F19]/90 border-accent/40 shadow-[0_4px_30px_rgba(70,115,197,0.15)] opacity-100 scale-100";
                   } else if (isPast) {
                     cardStyle = "bg-[#0B0F19]/30 border-white/[0.04] opacity-35 scale-95";
                   }

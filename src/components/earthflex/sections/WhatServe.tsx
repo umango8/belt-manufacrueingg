@@ -1,84 +1,158 @@
 "use client";
 
-import { useRef, useCallback } from "react";
-import Image from "next/image";
+import React, { useRef, useCallback } from "react";
 import Link from "next/link";
 
-interface ServiceItem {
+interface IndustryItem {
   id: string;
-  title: string;
-  badge: string;
-  image: string;
-  description: string;
+  name: string;
+  bgColor: string;
+  textColor: string;
+  borderColor: string;
+  hoverBg: string;
   icon: React.ReactNode;
 }
 
-const SERVICES: ServiceItem[] = [
+const INDUSTRIES: IndustryItem[] = [
+  {
+    id: "manufacturing",
+    name: "Manufacturing",
+    bgColor: "rgba(70, 115, 197, 0.10)",
+    textColor: "#4673C5",
+    borderColor: "rgba(70, 115, 197, 0.20)",
+    hoverBg: "rgba(70, 115, 197, 0.18)",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
+  },
   {
     id: "mining",
-    title: "Mining Industry",
-    badge: "MINING & QUARRYING",
-    image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80",
-    description: "Extremely rugged, abrasion-resistant steel cord and fabric belts built to convey heavy ores, coal, and rock under severe impact conditions.",
+    name: "Mining",
+    bgColor: "rgba(31, 41, 55, 0.06)",
+    textColor: "#1F2937",
+    borderColor: "rgba(31, 41, 55, 0.12)",
+    hoverBg: "rgba(31, 41, 55, 0.12)",
     icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 9V2m0 16v-6m0 0l-3-3m3 3l3-3m-6 9a9 9 0 1118 0 9 9 0 01-18 0z" />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M14.5 9.5L21 3m-6.5 6.5l-5 5L3 21l1.5-6.5 5-5 5-5zM17 5l2 2" />
       </svg>
     ),
   },
   {
-    id: "food-pharma",
-    title: "Food & Pharma",
-    badge: "FDA-GRADE / SANITARY",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80",
-    description: "Non-toxic, anti-bacterial PU and PVC belts that meet strict FDA, USDA, and EU sanitary standards for safe processing and packaging.",
+    id: "food-processing",
+    name: "Food Processing",
+    bgColor: "rgba(10, 116, 28, 0.10)",
+    textColor: "#0A741C",
+    borderColor: "rgba(10, 116, 28, 0.20)",
+    hoverBg: "rgba(10, 116, 28, 0.18)",
     icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M17 8l-5-5M7 8l5-5M17 14l-5 5M7 14l5 5" />
       </svg>
     ),
   },
   {
-    id: "textile-printing",
-    title: "Textile & Printing",
-    badge: "HIGH-PRECISION",
-    image: "https://images.unsplash.com/photo-1558244661-d248897f7bc4?auto=format&fit=crop&w=800&q=80",
-    description: "Custom power transmission and timing belts offering exact synchronization, low noise, and stable tension control for looms and printing presses.",
+    id: "logistics",
+    name: "Logistics",
+    bgColor: "rgba(217, 119, 6, 0.08)",
+    textColor: "#B45309",
+    borderColor: "rgba(217, 119, 6, 0.16)",
+    hoverBg: "rgba(217, 119, 6, 0.14)",
     icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 6v12M12 6v12M16 6v12" />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 16V6a1 1 0 00-1-1H3a1 1 0 00-1 1v10a1 1 0 001 1h1M18 8h-3v5h5V9a1 1 0 00-1-1z" />
       </svg>
     ),
   },
   {
-    id: "ceramic-glass",
-    title: "Ceramic & Glass",
-    badge: "HEAT & CUT RESISTANT",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-    description: "Specialized heat-resistant and high-friction belts developed to handle sharp tile edges, glass panels, and extreme kiln temperatures.",
+    id: "packaging",
+    name: "Packaging",
+    bgColor: "rgba(13, 148, 136, 0.08)",
+    textColor: "#0F766E",
+    borderColor: "rgba(13, 148, 136, 0.16)",
+    hoverBg: "rgba(13, 148, 136, 0.14)",
     icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547" />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-14L4 7m8 4v10M4 7v10l8 4" />
       </svg>
     ),
   },
   {
-    id: "cement-chemical",
-    title: "Cement & Chemical",
-    badge: "CHEMICAL & HEAT SHIELD",
-    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80",
-    description: "High-performance heat-resistant belts up to 200°C and chemical-proof covers for acidic, alkaline, and petroleum-based materials.",
+    id: "cement",
+    name: "Cement",
+    bgColor: "rgba(71, 85, 105, 0.08)",
+    textColor: "#475569",
+    borderColor: "rgba(71, 85, 105, 0.16)",
+    hoverBg: "rgba(71, 85, 105, 0.14)",
     icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19.428 15.428a2 2 0 00-1.022-.547" />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6M9 12h6M9 17h4" />
+      </svg>
+    ),
+  },
+  {
+    id: "steel",
+    name: "Steel",
+    bgColor: "rgba(79, 70, 229, 0.08)",
+    textColor: "#4338CA",
+    borderColor: "rgba(79, 70, 229, 0.16)",
+    hoverBg: "rgba(79, 70, 229, 0.14)",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2 22h20M5 22V4a2 2 0 012-2h10a2 2 0 012 2v18M9 2v20M15 2v20M5 8h14M5 14h14" />
+      </svg>
+    ),
+  },
+  {
+    id: "warehousing",
+    name: "Warehousing",
+    bgColor: "rgba(124, 58, 237, 0.08)",
+    textColor: "#6D28D9",
+    borderColor: "rgba(124, 58, 237, 0.16)",
+    hoverBg: "rgba(124, 58, 237, 0.14)",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6" />
+      </svg>
+    ),
+  },
+  {
+    id: "recycling",
+    name: "Recycling",
+    bgColor: "rgba(5, 150, 105, 0.08)",
+    textColor: "#047857",
+    borderColor: "rgba(5, 150, 105, 0.16)",
+    hoverBg: "rgba(5, 150, 105, 0.14)",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 7.89M9 11l3 3m0 0l3-3m-3 3V8" />
+      </svg>
+    ),
+  },
+  {
+    id: "automotive",
+    name: "Automotive",
+    bgColor: "rgba(225, 29, 72, 0.08)",
+    textColor: "#BE123C",
+    borderColor: "rgba(225, 29, 72, 0.16)",
+    hoverBg: "rgba(225, 29, 72, 0.14)",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+        <circle cx="12" cy="12" r="3" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v7M12 15v7M2 12h7M15 12h7" />
       </svg>
     ),
   },
 ];
 
-// Duplicate the array of 5 elements to make exactly 10 elements (3340px width marquee loop)
-const DOUBLE_SERVICES = [...SERVICES, ...SERVICES];
+// Duplicate list to guarantee seamless scrolling on all screen sizes
+const DOUBLE_INDUSTRIES = [...INDUSTRIES, ...INDUSTRIES, ...INDUSTRIES, ...INDUSTRIES];
 
 export default function WhatWeServeSection() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -92,12 +166,10 @@ export default function WhatWeServeSection() {
     touchState.current.dragging = true;
     touchState.current.startX = e.touches[0].clientX;
 
-    // Capture current animated position
     const style = window.getComputedStyle(track);
     const matrix = new DOMMatrixReadOnly(style.transform);
     touchState.current.currentX = matrix.m41;
 
-    // Freeze animation at current position
     track.style.animation = "none";
     track.style.transform = `translate3d(${touchState.current.currentX}px, 0, 0)`;
 
@@ -118,78 +190,68 @@ export default function WhatWeServeSection() {
 
     touchState.current.dragging = false;
 
-    // Resume marquee animation after a short delay
     resumeTimer.current = setTimeout(() => {
       track.style.transform = "";
       track.style.animation = "";
-    }, 1500);
+    }, 1200);
   }, []);
 
   return (
-    <section id="services" className="section-padding bg-[#111827] relative overflow-hidden">
-      {/* Hardware-Accelerated Marquee Stylesheet Injection */}
+    <section id="services" className="relative overflow-hidden bg-white py-20 border-b border-[#E5E7EB]">
+      {/* Hardware-Accelerated Seamless Marquee Stylesheet Injection */}
       <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes marquee {
+        @keyframes marquee-forward-slow {
           0% {
             transform: translate3d(0, 0, 0);
           }
           100% {
-            transform: translate3d(-3340px, 0, 0);
+            transform: translate3d(-50%, 0, 0);
           }
         }
-        .animate-marquee-custom {
-          animation: marquee 40s linear infinite;
+        .animate-marquee-forward-slow {
+          animation: marquee-forward-slow 28s linear infinite;
         }
-        .parent-hover-pause:hover .animate-marquee-custom {
+        .parent-hover-pause:hover .animate-marquee-forward-slow {
           animation-play-state: paused;
         }
       `}} />
 
-      {/* Huge Background Vector Watermark Text */}
-      <div className="absolute inset-x-0 bottom-0 flex justify-center overflow-hidden pointer-events-none select-none z-0">
-        <span className="text-[14vw] font-black text-accent/4 tracking-[0.10em] leading-none uppercase translate-y-[28%] select-none">
-          Earth Flex
-        </span>
-      </div>
-
-      {/* Header */}
-      <div className="container-custom relative z-10 mb-16">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+      {/* Header Container */}
+      <div className="container-custom relative z-10 mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
           <div className="max-w-3xl text-left">
-            <span className="inline-flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              INDUSTRIES WE CATER TO
+            <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[#4673C5] uppercase tracking-widest bg-[#4673C5]/10 border border-[#4673C5]/20 px-3.5 py-1.5 rounded-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0A741C] animate-pulse" />
+              INDUSTRIES WE SERVE
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-semibold text-white leading-[1.3] tracking-tight text-left mt-6">
-              Powering operations across <span className="text-accent font-bold">global production lines</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-extrabold text-[#1F2937] leading-[1.25] tracking-tight mt-4">
+              Engineered to perform in <span className="text-[#4673C5]">demanding conditions</span>
             </h2>
+            <p className="text-sm sm:text-base text-[#4B5563] max-w-2xl mt-4 leading-relaxed">
+              We design and manufacture heavy-duty rubber conveyor belts, high-precision timing drives, and custom process profiles tailored to satisfy the output needs of global industrial networks.
+            </p>
           </div>
 
-          {/* Right Header Controls */}
-          <div className="flex items-center gap-6 shrink-0 lg:mb-2 text-left justify-between sm:justify-start w-full sm:w-auto">
-            <span className="hidden md:inline-flex items-center gap-2 text-xs font-semibold text-white/40 border border-white/10 px-4 py-2 rounded-full bg-white/5">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping" />
+          {/* Right Header Navigation Link */}
+          <div className="flex items-center gap-5 shrink-0 lg:mb-2 text-left justify-between sm:justify-start w-full sm:w-auto">
+            <span className="hidden md:inline-flex items-center gap-2 text-[11px] font-semibold text-[#6B7280] border border-[#E5E7EB] px-3.5 py-1.5 rounded-md bg-[#F8FAFC]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0A741C] animate-ping" />
               PAUSE ON HOVER
             </span>
 
             <Link
               href="/industries"
-              className="inline-flex items-center gap-3 text-[15px] font-semibold text-white hover:text-accent transition-colors group"
+              className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#1F2937] hover:text-[#4673C5] transition-colors group"
             >
               See All Industries
-              <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all duration-300">
+              <div className="w-8 h-8 rounded-full border border-[#E5E7EB] bg-[#F8FAFC] flex items-center justify-center group-hover:bg-[#4673C5] group-hover:border-[#4673C5] group-hover:text-white transition-all duration-300">
                 <svg
-                  className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="w-3.5 h-3.5 text-[#1F2937] group-hover:text-white transition-colors duration-300 transform group-hover:translate-x-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>
             </Link>
@@ -197,70 +259,45 @@ export default function WhatWeServeSection() {
         </div>
       </div>
 
-      {/* Sliding Infinite Loop Marquee Container */}
-      <div className="overflow-hidden w-full relative z-10 parent-hover-pause py-4">
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-40 sm:bg-gradient-to-r from-[#111827] via-[#111827]/60 to-transparent pointer-events-none z-20" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-40 sm:bg-gradient-to-l from-[#111827] via-[#111827]/60 to-transparent pointer-events-none z-20" />
+      {/* Infinite Auto-Scrolling Marquee Container with Detailed Cards */}
+      <div className="container-custom mx-auto overflow-hidden relative z-10 parent-hover-pause py-4">
+        {/* Soft Left and Right Gradient Fades */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-20" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-20" />
 
         <div
           ref={trackRef}
-          className="flex gap-6 animate-marquee-custom w-max px-6 md:px-12"
+          className="flex gap-5 animate-marquee-forward-slow w-max pl-5 sm:pl-8 lg:pl-10 pr-6"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           style={{ touchAction: "pan-y" }}
         >
-          {DOUBLE_SERVICES.map((service, index) => {
-            const uniqueKey = `${service.id}-${index}`;
+          {DOUBLE_INDUSTRIES.map((industry, index) => {
+            const uniqueKey = `${industry.id}-${index}`;
             
             return (
               <div
                 key={uniqueKey}
-                className="group relative overflow-hidden rounded-3xl h-[440px] w-[310px] shrink-0 p-8 flex flex-col justify-between border border-white/5 transition-shadow duration-500 cursor-pointer block"
+                style={{
+                  backgroundColor: industry.bgColor,
+                  borderColor: industry.borderColor,
+                  color: industry.textColor,
+                }}
+                className="flex items-center gap-4 px-7 py-4.5 rounded-xl border shrink-0 transition-all duration-300 cursor-pointer select-none hover:-translate-y-1 hover:shadow-md hover:shadow-[#1F2937]/5"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = industry.hoverBg;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = industry.bgColor;
+                }}
               >
-                {/* Background Image & Overlay */}
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out"
-                    sizes="310px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/40 via-[#111827]/60 to-[#111827]/20 group-hover:via-[#111827]/75 transition-all duration-500" />
+                <div className="w-10 h-10 rounded-xl bg-white/70 backdrop-blur-xs flex items-center justify-center border border-white/30 shadow-xs shrink-0 transition-colors duration-300">
+                  {industry.icon}
                 </div>
-
-                {/* Top Row */}
-                <div className="flex items-center justify-between w-full relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-white/95 text-[#111827] flex items-center justify-center shadow-md border border-white/20 backdrop-blur-sm group-hover:bg-accent group-hover:text-white transition-all duration-300 ease-out">
-                    {service.icon}
-                  </div>
-                  <span className="text-[10px] font-bold px-3.5 py-1.5 rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md uppercase tracking-wider">
-                    {service.badge}
-                  </span>
-                </div>
-
-                {/* Bottom Content Area */}
-                <div className="relative w-full h-full flex flex-col justify-end overflow-hidden pt-12 z-10">
-                  <div className="translate-y-0 md:translate-y-[160px] md:group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-end">
-                    
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-left transition-colors duration-300 group-hover:text-accent">
-                      {service.title}
-                    </h3>
-                    
-                    <div className="hidden md:block h-px bg-white/20 w-full mb-4 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-[50ms]" />
-                    
-                    <p className="hidden md:block text-[13.5px] text-white/80 leading-[1.55] text-left mb-6 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-[100ms] font-medium text-justify">
-                      {service.description}
-                    </p>
-                    
-                    <div className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-[150ms] w-full">
-                      <div className="w-full justify-center py-2.5 text-xs font-bold tracking-widest uppercase border border-accent bg-accent text-white rounded-full flex items-center justify-center transition-colors duration-300">
-                        Read More
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <span className="text-sm font-extrabold uppercase tracking-wider whitespace-nowrap">
+                  {industry.name}
+                </span>
               </div>
             );
           })}

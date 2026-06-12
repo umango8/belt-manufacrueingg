@@ -2,143 +2,203 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
 
-interface WhyUsItem {
+interface BenefitItem {
+  id: string;
   title: string;
   description: string;
-  icon: string;
+  bgColor: string;
+  borderColor: string;
+  iconColor: string;
+  iconBg: string;
+  icon: React.ReactNode;
 }
 
-const WHY_US_ITEMS: WhyUsItem[] = [
+const BENEFIT_ITEMS: BenefitItem[] = [
   {
-    title: "Certified Quality",
-    description:
-      "All EarthFlex products are certified under international ISO standards, passing rigorous multi-stage tests for extreme tensile strength and abrasion resistance.",
-    icon: "quality",
+    id: "BF-1",
+    title: "Strong Quality",
+    description: "We check every single belt before sending it to you. We make sure it is strong enough to do the job perfectly without snapping.",
+    bgColor: "bg-[#4673C5]/5",
+    borderColor: "border-[#4673C5]/10",
+    iconColor: "text-[#4673C5]",
+    iconBg: "bg-[#4673C5]/10",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
   },
   {
-    title: "Custom Engineered",
-    description:
-      "Every conveyor belt is custom engineered for width, thickness, and compound selection matched exactly to your factory conveyors and machinery specifications.",
-    icon: "engineering",
+    id: "BF-2",
+    title: "Made to Fit",
+    description: "All machines are not the same size. We cut and shape the belts to match your exact machine size so they fit perfectly.",
+    bgColor: "bg-[#0A741C]/5",
+    borderColor: "border-[#0A741C]/10",
+    iconColor: "text-[#0A741C]",
+    iconBg: "bg-[#0A741C]/10",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+      </svg>
+    ),
   },
   {
-    title: "Direct Manufacturer Pricing",
-    description:
-      "Eliminate intermediate markups. Deal directly with our state-of-the-art production plant for premium belts at optimal factory prices.",
-    icon: "pricing",
+    id: "BF-3",
+    title: "Fast Delivery",
+    description: "We know you cannot afford to wait. We keep a huge stock ready to ship so we can send your order fast and save your time.",
+    bgColor: "bg-[#0284c7]/5",
+    borderColor: "border-[#0284c7]/10",
+    iconColor: "text-[#0284c7]",
+    iconBg: "bg-[#0284c7]/10",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
   },
   {
-    title: "Direct Advisory Support",
-    description:
-      "Get direct access to senior industrial engineers for site inspections, trouble-shooting, and belt selection advisory support.",
-    icon: "support",
+    id: "BF-4",
+    title: "Free Help",
+    description: "You do not have to guess. Our team helps you pick the right belt and gives you easy tips to fix and take care of it.",
+    bgColor: "bg-[#4f46e5]/5",
+    borderColor: "border-[#4f46e5]/10",
+    iconColor: "text-[#4f46e5]",
+    iconBg: "bg-[#4f46e5]/10",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    ),
   },
 ];
 
-const iconMap: Record<string, React.ReactNode> = {
-  quality: (
-    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-    </svg>
-  ),
-  engineering: (
-    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
-  ),
-  pricing: (
-    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  ),
-  support: (
-    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-    </svg>
-  ),
-};
-
 export default function WhyUsSection() {
   return (
-    <section id="why-us" className="section-padding bg-background-soft overflow-hidden">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-12 lg:gap-16 sm:gap-10 gap-6 items-center">
+    <section id="why-us" className="relative bg-white py-24 border-b border-[#E5E7EB] overflow-hidden">
+      
+      {/* Top Watermark Circle Badge SVG */}
+      <div className="absolute -top-12 -right-12 opacity-30 select-none pointer-events-none z-0 hidden lg:block">
+        <svg width="320" height="320" viewBox="0 0 200 200" fill="none" className="text-[#4673C5]/5 stroke-current">
+          <circle cx="100" cy="100" r="90" strokeWidth="1" strokeDasharray="4 4" />
+          <circle cx="100" cy="100" r="75" strokeWidth="1.5" />
+          <circle cx="100" cy="100" r="60" strokeWidth="0.5" strokeDasharray="8 4" />
+          <path d="M100 10v180M10 100h180" strokeWidth="0.5" strokeDasharray="2 2" />
+          {/* Circular text path mapping */}
+          <path id="badgePath" d="M100 25a75 75 0 1 1 0 150 75 75 0 1 1 0-150" fill="none" />
+          <text className="text-[7.5px] font-mono font-bold tracking-[0.22em] fill-[#4673C5]/12">
+            <textPath href="#badgePath" startOffset="0%">
+              EARTHFLEX INDUSTRIAL BELTING SYSTEM • PREMIUM B2B DIV •
+            </textPath>
+          </text>
+          {/* Compass Center Logo Symbol */}
+          <rect x="85" y="85" width="30" height="30" rx="6" strokeWidth="1.5" />
+          <path d="M92 100h16M100 92v16" strokeWidth="1.5" />
+        </svg>
+      </div>
+
+      {/* Bottom Large Background Text SVG Watermark */}
+      {/* <div className="absolute -bottom-8 left-0 right-0 w-full overflow-hidden select-none pointer-events-none z-0 opacity-40">
+        <svg viewBox="0 0 1000 120" className="w-full h-auto fill-none">
+          <text
+            x="50%"
+            y="95"
+            textAnchor="middle"
+            className="text-[120px] font-black tracking-[-0.05em]"
+            style={{ fill: "none", stroke: "rgba(70, 115, 197, 0.045)", strokeWidth: "1.2px" }}
+          >
+            EARTHFLEX
+          </text>
+        </svg>
+      </div> */}
+
+      {/* Background structural grid layout */}
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "radial-gradient(#E5E7EB 1.2px, transparent 1.2px)",
+            backgroundSize: "32px 32px"
+          }}
+        />
+      </div>
+
+      <div className="container-custom relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Side */}
-          <div className="lg:col-span-5 flex flex-col justify-center text-left lg:pr-4">
-            <span className="inline-flex items-center gap-2.5 text-xs font-bold text-accent uppercase tracking-widest bg-accent/10 px-4 py-2 rounded-full mb-4 w-fit">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          {/* Left Column: Heading and Stats */}
+          <div className="lg:col-span-5 flex flex-col justify-center text-left">
+            <span className="inline-flex items-center gap-2 text-[10px] font-bold text-[#4673C5] uppercase tracking-widest bg-[#4673C5]/10 border border-[#4673C5]/20 px-3.5 py-1.5 rounded-md w-fit">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4673C5] animate-pulse" />
               WHY CHOOSE US
             </span>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-title leading-[1.15] tracking-tight max-w-3xl md:mb-6 mb-4 mt-6">
-              The <span className="text-accent">EarthFlex</span> Advantage
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.25rem] font-extrabold text-[#1F2937] leading-[1.2] tracking-tight mt-6">
+              The <span className="text-[#4673C5]">Earthflex</span> Advantage
             </h2>
             
-            <p className="text-base text-subtitle leading-relaxed font-medium md:mb-8 mb-6 text-justify sm:text-left">
-              We combine decades of manufacturing expertise under the Earth India Group with modern engineering practices to deliver premium conveyor solutions you can trust. Every belt we fabricate undergoes strict quality checkpoints to ensure unmatched resilience in heavy-duty industrial environments.
+            <p className="text-sm sm:text-base text-[#4B5563] mt-5 leading-relaxed font-medium">
+              A broken belt brings your factory to a full stop and wastes your money. We fix this by making extra-tough Earthflex belts that do not snap. They easily handle hot heat and heavy loads so your machines keep working day and night without any issues.
             </p>
             
-            <div className="grid grid-cols-2 gap-6 md:pt-6 pt-4 border-t border-border/10">
+            {/* Stats Row */}
+            <div className="grid grid-cols-2 gap-6 pt-8 mt-8 border-t border-[#E5E7EB]">
               <div>
-                <span className="block text-3xl font-black text-accent font-heading">25+</span>
-                <span className="text-xs font-mono font-bold text-subtitle uppercase tracking-widest leading-none block mt-1">
-                  Years Experience
+                <span className="block text-3xl font-black text-[#4673C5] tracking-tight">25+</span>
+                <span className="text-[10px] font-bold text-[#6B7280] uppercase tracking-wider block mt-1">
+                  Years of Work
                 </span>
               </div>
               <div>
-                <span className="block text-3xl font-black text-title font-heading">100%</span>
-                <span className="text-xs font-mono font-bold text-subtitle uppercase tracking-widest leading-none block mt-1">
-                  Inspected
+                <span className="block text-3xl font-black text-[#1F2937] tracking-tight">100%</span>
+                <span className="text-[10px] font-bold text-[#6B7280] uppercase tracking-wider block mt-1">
+                  Safe & Tested
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Right Side: Bento Grid */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8"
-          >
-            {WHY_US_ITEMS.map((item, index) => (
+          {/* Right Column: 2x2 Bento Cards Grid */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
+            {BENEFIT_ITEMS.map((item, index) => (
               <motion.div
-                key={item.title}
-                variants={fadeInUp}
-                className="bg-white border border-border/10 sm:p-6 p-4 lg:p-9 flex flex-col justify-start text-left relative group hover:border-accent/40 hover:shadow-[0_20px_40px_rgba(249,115,22,0.06)] hover:-translate-y-2 transition-all duration-500 rounded-2xl overflow-hidden shadow-xs"
+                key={item.id}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`group relative ${item.bgColor} border ${item.borderColor} rounded-2xl p-6 lg:p-8 flex flex-col justify-between text-left transition-all duration-300 hover:border-[#4673C5] hover:bg-white hover:shadow-xl hover:shadow-[#4673C5]/5 cursor-default`}
                 id={`why-us-${index}`}
               >
-                {/* 4 Technical corner brackets */}
-                <div className="absolute top-3 left-3 w-2.5 h-2.5 border-t border-l border-accent/15 group-hover:border-accent/80 transition-all duration-500 pointer-events-none" />
-                <div className="absolute top-3 right-3 w-2.5 h-2.5 border-t border-r border-accent/15 group-hover:border-accent/80 transition-all duration-500 pointer-events-none" />
-                <div className="absolute bottom-3 left-3 w-2.5 h-2.5 border-b border-l border-accent/15 group-hover:border-accent/80 transition-all duration-500 pointer-events-none" />
-                <div className="absolute bottom-3 right-3 w-2.5 h-2.5 border-b border-r border-accent/15 group-hover:border-accent/80 transition-all duration-500 pointer-events-none" />
+                {/* Technical corners */}
+                <div className="absolute top-3 left-3 w-2 h-2 border-t border-l border-current opacity-10 group-hover:opacity-40 group-hover:text-[#4673C5] transition-all duration-300 pointer-events-none" />
+                <div className="absolute top-3 right-3 w-2 h-2 border-t border-r border-current opacity-10 group-hover:opacity-40 group-hover:text-[#4673C5] transition-all duration-300 pointer-events-none" />
+                <div className="absolute bottom-3 left-3 w-2 h-2 border-b border-l border-current opacity-10 group-hover:opacity-40 group-hover:text-[#4673C5] transition-all duration-300 pointer-events-none" />
+                <div className="absolute bottom-3 right-3 w-2 h-2 border-b border-r border-current opacity-10 group-hover:opacity-40 group-hover:text-[#4673C5] transition-all duration-300 pointer-events-none" />
 
-                <span className="absolute right-6 top-6 text-xs font-mono font-bold text-title/15 group-hover:text-accent/60 transition-colors">
-                  BF-{index + 1}
+                {/* Card index marker */}
+                <span className="absolute right-6 top-6 text-[10px] font-mono font-bold text-[#6B7280]/30 group-hover:text-[#4673C5]/40 transition-colors duration-300 select-none">
+                  {item.id}
                 </span>
 
-                <div className="w-14 h-14 bg-accent/5 border border-accent/20 flex items-center justify-center text-accent mb-6 group-hover:bg-[#111827] group-hover:border-accent group-hover:text-accent transition-all duration-500 rounded-full shadow-sm group-hover:shadow-[0_0_15px_rgba(249,115,22,0.2)]">
-                  <div className="group-hover:scale-110 transition-transform duration-500">
-                    {iconMap[item.icon]}
+                {/* Card Header & Content */}
+                <div>
+                  {/* Icon Container with transition to Blue hover color */}
+                  <div className={`w-12 h-12 ${item.iconBg} ${item.iconColor} flex items-center justify-center mb-6 group-hover:bg-[#4673C5] group-hover:text-white transition-all duration-300 rounded-xl shadow-xs`}>
+                    {item.icon}
                   </div>
+
+                  <h3 className="text-base lg:text-lg font-bold text-[#1F2937] mb-2 group-hover:text-[#4673C5] transition-colors duration-300 leading-snug">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
+                    {item.description}
+                  </p>
                 </div>
-
-                <h3 className="text-lg font-bold text-title mb-3 group-hover:text-accent transition-colors font-heading">
-                  {item.title}
-                </h3>
-
-                <p className="text-sm text-subtitle leading-relaxed font-medium text-justify">
-                  {item.description}
-                </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
         </div>
       </div>

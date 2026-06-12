@@ -29,7 +29,9 @@ export default function EarthFlexHome() {
         <WhyUsSection />
         <ReviewsSection />
         <FAQSection />
-        <CTASection />
+     <div className="section-padding">
+         <CTASection />
+     </div>
       </main>
       <Footer />
     </>

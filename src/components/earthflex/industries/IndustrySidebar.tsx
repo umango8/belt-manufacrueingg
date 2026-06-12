@@ -96,7 +96,7 @@ export default function IndustrySidebar() {
           {/* Scrollable industry list */}
           <div
             className="overflow-y-auto max-h-[calc(100vh-200px)] lg:max-h-[70vh]"
-            style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(249,115,22,0.3) transparent" }}
+            style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(70,115,197,0.35) transparent" }}
           >
             {/* Category label */}
             <div className="px-4 pt-4 pb-1.5">
@@ -129,7 +129,7 @@ export default function IndustrySidebar() {
                     {/* Icon */}
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-200 ${
                       isActive
-                        ? "bg-accent text-white shadow-[0_4px_12px_rgba(249,115,22,0.4)]"
+                        ? "bg-accent text-white shadow-[0_4px_12px_rgba(70,115,197,0.4)]"
                         : "bg-[#0c1a2e]/5 text-[#0c1a2e] group-hover:bg-accent/10 group-hover:text-accent"
                     }`}>
                       {iconMap[industry.icon] ?? iconMap.textile}
@@ -166,7 +166,7 @@ export default function IndustrySidebar() {
               <p className="text-[11px] text-white/50 mb-3 leading-snug">Our engineers design belts tailored to your industry requirements.</p>
               <Link
                 href="/quote"
-                className="block w-full text-center text-[11px] font-bold text-white bg-accent hover:bg-[#ea6c0c] py-2.5 rounded-lg transition-colors duration-200"
+                className="block w-full text-center text-[11px] font-bold text-white bg-accent hover:bg-[#4673C5] py-2.5 rounded-lg transition-colors duration-200"
                 id="industry-sidebar-get-quote"
               >
                 Request Quote
@@ -201,7 +201,7 @@ export default function IndustrySidebar() {
                   {/* Icon */}
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
                     isActive
-                      ? "bg-accent text-white shadow-[0_2px_8px_rgba(249,115,22,0.3)]"
+                      ? "bg-accent text-white shadow-[0_2px_8px_rgba(70,115,197,0.3)]"
                       : "bg-[#0c1a2e]/5 text-[#0c1a2e]"
                   }`}>
                     {iconMap[industry.icon] ?? iconMap.textile}

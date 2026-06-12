@@ -76,12 +76,12 @@ export default function Button({
 
   // Hover panel background colors for the center-split animation
   const hoverBgColors = {
-    primary: "bg-accent",   // fills with Industrial Orange on hover
-    accent: "bg-primary",   // fills with Deep Navy on hover
-    outline: "bg-white",    // fills with white on hover
-    white: "bg-accent",    // fills with Industrial Orange on hover
-    dark: "bg-accent",      // fills with Industrial Orange on hover
-    secondary: "bg-accent",  // fills with Industrial Orange on hover
+    primary: "bg-[#3b62ab]",   // fills with Premium Dark Blue on hover
+    accent: "bg-primary",      // fills with Brand Blue on hover
+    outline: "bg-white",       // fills with white on hover
+    white: "bg-primary",       // fills with Brand Blue on hover
+    dark: "bg-primary",         // fills with Brand Blue on hover
+    secondary: "bg-primary",    // fills with Brand Blue on hover
     outlinePrimary: "bg-primary",
     outlineSecondary: "bg-secondary",
     outlineDark: "bg-dark",
