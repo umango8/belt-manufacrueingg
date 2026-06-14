@@ -1,19 +1,17 @@
 import EarthHaulHeader from "@/components/earthhaul/layout/Header";
 import EarthHaulFooter from "@/components/earthhaul/layout/Footer";
 import HeroSection from "@/components/earthhaul/sections/HeroSection";
-import StatsSection from "@/components/earthhaul/sections/StatsSection";
+import AboutPreviewSection from "@/components/earthhaul/sections/AboutPreviewSection";
 import SolutionsSection from "@/components/earthhaul/sections/SolutionsSection";
+import ProductsSection from "@/components/earthhaul/sections/ProductsSection";
 import IndustriesSection from "@/components/earthhaul/sections/IndustriesSection";
-import WhyChooseSection from "@/components/earthhaul/sections/WhyChooseSection";
 import ProcessSection from "@/components/earthhaul/sections/ProcessSection";
-import CaseStudiesSection from "@/components/earthhaul/sections/CaseStudiesSection";
-import TrustSection from "@/components/earthhaul/sections/TrustSection";
 import CTASection from "@/components/earthhaul/sections/CTASection";
 
 export const metadata = {
-  title: "EarthHaul | Smart Conveyor & Automation Systems | Earth India Group",
+  title: "EarthHaul | Smart Conveyor & Industrial Automation Solutions",
   description:
-    "EarthHaul engineers advanced conveyor and industrial automation systems for mining, steel, cement, food processing, warehousing, and heavy manufacturing industries. ISO 9001:2015 certified.",
+    "EarthHaul engineers premium conveyor systems and intelligent automation solutions for factories, warehouses, and manufacturing industries. ISO 9001:2015 certified. 15+ years of industrial engineering excellence.",
   keywords: [
     "EarthHaul",
     "conveyor systems",
@@ -23,6 +21,8 @@ export const metadata = {
     "factory automation",
     "belt conveyor systems",
     "heavy duty conveyor",
+    "industrial conveyor manufacturer India",
+    "automation solutions",
     "Earth India Group",
   ],
 };
@@ -33,13 +33,11 @@ export default function EarthHaulPage() {
       <EarthHaulHeader />
       <main>
         <HeroSection />
-        <StatsSection />
+        <AboutPreviewSection />
         <SolutionsSection />
+        <ProductsSection />
         <IndustriesSection />
-        <WhyChooseSection />
         <ProcessSection />
-        <CaseStudiesSection />
-        <TrustSection />
         <CTASection />
       </main>
       <EarthHaulFooter />
